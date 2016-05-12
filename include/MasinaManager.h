@@ -18,6 +18,8 @@ class MasinaManager
         void MoveForward();
         void MoveBackward();
 
+        int getMasinaCount();
+
     protected:
 
     private:

@@ -7,6 +7,8 @@ using namespace std;
 #include "Masina.h"
 #include "MasinaManager.h"
 #include "Screen.h"
+#include "C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+
 class DisplayCarsScreen : public Screen
 {
     public:

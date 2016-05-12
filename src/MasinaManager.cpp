@@ -30,3 +30,7 @@ void MasinaManager::MoveBackward() {
     curentMasinaIndex--;
     if (curentMasinaIndex == -1) curentMasinaIndex = listaMasini.size() - 1;
 }
+
+int MasinaManager::getMasinaCount(){
+    return listaMasini.size();
+}
