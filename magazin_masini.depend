@@ -1,0 +1,126 @@
+# depslib dependency file v1.0
+1463003265 source:c:\users\mihai\desktop\magazin_masini\main.cpp
+	<iostream>
+	<string>
+	<map>
+	"magazin.h"
+
+1463079580 c:\users\mihai\desktop\magazin_masini\include\magazin.h
+	<iostream>
+	<string>
+	<map>
+	<vector>
+	"masina.h"
+	"SFML/Graphics.hpp"
+	"C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+	"SplashScreen.h"
+	"LogInfoScreen.h"
+	"LogScreen.h"
+	"RegisterScreen.h"
+	"Menu.h"
+	"Screen.h"
+	"UserManager.h"
+	"MasinaManager.h"
+	"DisplayCarsScreen.h"
+
+1463088669 c:\users\mihai\desktop\magazin_masini\include\masina.h
+	<iostream>
+	<string>
+	<map>
+	"SFML/Graphics.hpp"
+	"C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+
+1463088648 source:c:\users\mihai\desktop\magazin_masini\src\masina.cpp
+	"Masina.h"
+	<ctime>
+	<random>
+
+1463088540 c:\users\mihai\desktop\magazin_masini\utils.h
+	<string>
+
+1463079640 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
+	"Magazin.h"
+	"Masina.h"
+	<ctime>
+	<random>
+
+1463088583 source:c:\users\mihai\desktop\magazin_masini\utils.cpp
+	<string>
+	"utils.h"
+
+1463001953 source:c:\users\mihai\desktop\magazin_masini\src\user.cpp
+	"User.h"
+
+1463001963 c:\users\mihai\desktop\magazin_masini\include\user.h
+	<string>
+	"UserManager.h"
+
+1463001616 c:\users\mihai\desktop\magazin_masini\include\usermanager.h
+	"User.h"
+	<bits/stdc++.h>
+
+1463001925 source:c:\users\mihai\desktop\magazin_masini\src\usermanager.cpp
+	"UserManager.h"
+
+1463003606 c:\users\mihai\desktop\magazin_masini\include\splashscreen.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+
+1463003798 source:c:\users\mihai\desktop\magazin_masini\src\splashscreen.cpp
+	"SplashScreen.h"
+
+1463007151 source:c:\users\mihai\desktop\magazin_masini\src\loginfoscreen.cpp
+	"LogInfoScreen.h"
+
+1463005386 c:\users\mihai\desktop\magazin_masini\include\loginfoscreen.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+
+1463008101 c:\users\mihai\desktop\magazin_masini\include\logscreen.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+
+1463008058 c:\users\mihai\desktop\magazin_masini\include\registerscreen.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+
+1463008154 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
+	"LogScreen.h"
+
+1463008997 source:c:\users\mihai\desktop\magazin_masini\src\registerscreen.cpp
+	"RegisterScreen.h"
+
+1463008983 c:\users\mihai\desktop\magazin_masini\include\menu.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+
+1463010300 source:c:\users\mihai\desktop\magazin_masini\src\menu.cpp
+	"Menu.h"
+
+1463078568 c:\users\mihai\desktop\magazin_masini\include\screen.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+
+1463089374 c:\users\mihai\desktop\magazin_masini\include\masinamanager.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+	"Masina.h"
+
+1463087530 source:c:\users\mihai\desktop\magazin_masini\src\masinamanager.cpp
+	"MasinaManager.h"
+
+1463079950 source:c:\users\mihai\desktop\magazin_masini\src\screen.cpp
+	"Screen.h"
+
+1463088258 source:c:\users\mihai\desktop\magazin_masini\src\displaycarsscreen.cpp
+	"DisplayCarsScreen.h"
+
+1463079550 c:\users\mihai\desktop\magazin_masini\include\displaycarsscreen.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+	"Masina.h"
+	"MasinaManager.h"
+	"Screen.h"
+
+1463077850 c:\users\mihai\desktop\magazin_masini\include\masinamanger.h
+
