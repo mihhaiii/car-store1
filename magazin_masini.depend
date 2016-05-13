@@ -35,7 +35,7 @@
 	<ctime>
 	<random>
 
-1463090690 c:\users\mihai\desktop\magazin_masini\utils.h
+1463134474 c:\users\mihai\desktop\magazin_masini\utils.h
 	<string>
 	"SFML/Graphics.hpp"
 
@@ -113,16 +113,25 @@
 1463079950 source:c:\users\mihai\desktop\magazin_masini\src\screen.cpp
 	"Screen.h"
 
-1463090653 source:c:\users\mihai\desktop\magazin_masini\src\displaycarsscreen.cpp
+1463136511 source:c:\users\mihai\desktop\magazin_masini\src\displaycarsscreen.cpp
 	"DisplayCarsScreen.h"
 
-1463090342 c:\users\mihai\desktop\magazin_masini\include\displaycarsscreen.h
+1463137606 c:\users\mihai\desktop\magazin_masini\include\displaycarsscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
+	"C:\Users\Mihai\Desktop\magazin_masini\utils.h"
 	"Masina.h"
 	"MasinaManager.h"
 	"Screen.h"
-	"C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+	"Button.h"
 
 1463077850 c:\users\mihai\desktop\magazin_masini\include\masinamanger.h
+
+1463135119 c:\users\mihai\desktop\magazin_masini\include\button.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+	"C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+
+1463136657 source:c:\users\mihai\desktop\magazin_masini\src\button.cpp
+	"Button.h"
 

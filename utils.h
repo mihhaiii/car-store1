@@ -10,6 +10,10 @@ enum Models {
     a32, f5, h1100, j3r3, lk90
 };
 
+enum ButtonAction {
+    ShowNextCar, ShowPrevCar, Back, Exit, ShowCars, ViewCar
+};
+
 extern const char* Brands2Str[];
 extern const char* Models2Str[];
 
