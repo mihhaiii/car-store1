@@ -10,6 +10,7 @@ class User
 {
     public:
         User();
+        User(string,string,string);
         virtual ~User();
 
         static bool checkName(string);

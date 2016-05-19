@@ -6,6 +6,9 @@ DisplayCarsScreen::DisplayCarsScreen() :
     afisDetaliiButton("images/afisdetalii.png")
 {
     //ctor
+    leftButton.setPosition(200,300);
+    rightButton.setPosition(700,300);
+    afisDetaliiButton.setPosition(450,500);
 }
 
 DisplayCarsScreen::~DisplayCarsScreen()
@@ -48,12 +51,12 @@ void DisplayCarsScreen::show(sf::RenderWindow& window, MasinaManager* mm)
         mm->getCurentMasina()->showImage(window);
         mm->getCurentMasina()->showInfo(window);
 
-        leftButton.show(window,200,300);
-        rightButton.show(window,700,300);
-        afisDetaliiButton.show(window,450,500);
+        leftButton.show(window);
+        rightButton.show(window);
+        afisDetaliiButton.show(window);
 
 
-        showText(int2str(curr+1), window);
+        showText(int2str(curr+1), window, 50,50);
 
         window.display();
     }

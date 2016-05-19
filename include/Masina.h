@@ -5,7 +5,7 @@
 #include <string>
 #include <map>
 #include "SFML/Graphics.hpp"
-#include "C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+#include "utils.h"
 
 using namespace std;
 

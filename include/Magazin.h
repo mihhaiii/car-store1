@@ -7,7 +7,7 @@
 #include <vector>
 #include "masina.h"
 #include "SFML/Graphics.hpp"
-#include "C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+#include "utils.h"
 #include "SplashScreen.h"
 #include "LogInfoScreen.h"
 #include "LogScreen.h"
@@ -17,6 +17,7 @@
 #include "UserManager.h"
 #include "MasinaManager.h"
 #include "DisplayCarsScreen.h"
+#include "User.h"
 using namespace std;
 
 class Magazin

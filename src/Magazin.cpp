@@ -18,6 +18,8 @@ Magazin::Magazin()
     {
         cout << Brands2Str[m->getMarca()] << ' ' << Models2Str[m->getModel()] << ' ' << m->getPret() << ' ' << m->getAn() << endl;
     }*/
+
+    _userManager.AddUser(new User("mihai","admin","admin"));
 }
 
 Magazin::~Magazin()

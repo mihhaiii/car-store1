@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
 using namespace std;
-#include "C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+#include "utils.h"
 
 #include "Masina.h"
 #include "MasinaManager.h"

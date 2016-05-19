@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
 using namespace std;
-#include "C:\Users\Mihai\Desktop\magazin_masini\utils.h"
+#include "utils.h"
 
 class Button
 {
@@ -13,7 +13,8 @@ class Button
         virtual ~Button();
 
         bool isButtonPressedAt(int,int);
-        void show(sf::RenderWindow&,int,int);
+        void show(sf::RenderWindow&);
+        void setPosition(int,int);
 
     protected:
 

@@ -22,12 +22,15 @@ bool Button::isButtonPressedAt(int x, int y){
     return x >= rect.left && x <= rect.left + rect.width && y >= rect.top && y <= rect.top + rect.height;
 }
 
-void Button::show(sf::RenderWindow& window, int x, int y) {
+void Button::show(sf::RenderWindow& window) {
+
+    window.draw(_sprite);
+}
+void Button::setPosition(int x, int y)
+{
     _sprite.setPosition(x,y);
     rect.left = x;
     rect.top = y;
     rect.width = _sprite.getLocalBounds().width;
     rect.height = _sprite.getLocalBounds().height;
-    window.draw(_sprite);
 }
-

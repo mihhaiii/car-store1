@@ -5,6 +5,10 @@ User::User()
     //ctor
 }
 
+User::User(string a, string b, string c) :
+    name(a), username(b), parola(c)
+    {
+    }
 User::~User()
 {
     //dtor

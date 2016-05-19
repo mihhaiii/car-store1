@@ -34,29 +34,35 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Button.h" />
+		<Unit filename="include/DisplayCarsScreen.h" />
 		<Unit filename="include/LogInfoScreen.h" />
 		<Unit filename="include/LogScreen.h" />
 		<Unit filename="include/Magazin.h" />
 		<Unit filename="include/Masina.h" />
+		<Unit filename="include/MasinaManager.h" />
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/RegisterScreen.h" />
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/SplashScreen.h" />
 		<Unit filename="include/User.h" />
 		<Unit filename="include/UserManager.h" />
+		<Unit filename="include/utils.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Button.cpp" />
+		<Unit filename="src/DisplayCarsScreen.cpp" />
 		<Unit filename="src/LogInfoScreen.cpp" />
 		<Unit filename="src/LogScreen.cpp" />
 		<Unit filename="src/Magazin.cpp" />
 		<Unit filename="src/Masina.cpp" />
+		<Unit filename="src/MasinaManager.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/RegisterScreen.cpp" />
 		<Unit filename="src/Screen.cpp" />
 		<Unit filename="src/SplashScreen.cpp" />
 		<Unit filename="src/User.cpp" />
 		<Unit filename="src/UserManager.cpp" />
-		<Unit filename="utils.cpp" />
-		<Unit filename="utils.h" />
+		<Unit filename="src/utils.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
