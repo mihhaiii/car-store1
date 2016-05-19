@@ -5,6 +5,8 @@
 #include "SFML/Graphics.hpp"
 #include "utils.h"
 #include "Button.h"
+#include "Label.h"
+#include "FormField.h"
 
 using namespace std;
 class LogScreen
@@ -14,6 +16,7 @@ class LogScreen
         virtual ~LogScreen();
 
         ButtonAction show(sf::RenderWindow&);
+        void drawAll(sf::RenderWindow&);
 
     protected:
 
@@ -21,9 +24,9 @@ class LogScreen
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Button usernameField, parolaField, OKButton;
-        bool writingUsername, writingParola;
-        string usernameSoFar, parolaSoFar;
+        Button OKButton;
+        FormField username, parola;
+        Label parolaLabel, usernameLabel, logareLabel;
 };
 
 #endif // LOGSCREEN_H

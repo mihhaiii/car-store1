@@ -15,6 +15,10 @@ class Button
         bool isButtonPressedAt(int,int);
         void show(sf::RenderWindow&);
         void setPosition(int,int);
+        sf::Vector2i getPosition();
+        ButtonAction getAction();
+        void setAction(ButtonAction);
+
 
     protected:
 

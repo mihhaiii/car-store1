@@ -1,33 +1,52 @@
 #include "LogScreen.h"
 
 LogScreen::LogScreen() :
-    usernameField("images/field.png"), parolaField("images/field.png"), OKButton("images/okbutton.png")
+     OKButton("images/okbutton.png")
 {
     //ctor
-   // _texture.loadFromFile("images/logscreen.png");
-   // _sprite.setTexture(_texture);
+    _texture.loadFromFile("images/background.png");
+    _sprite.setTexture(_texture);
 
-    usernameField.setPosition(100,100);
-    parolaField.setPosition(100,200);
-    OKButton.setPosition(200,300);
+    username.setPosition(100,100);
+    parola.setPosition(100,130);
+    OKButton.setPosition(100,160);
+
+    logareLabel.setText("Logare");
+    logareLabel.setStyle("italic");
+    logareLabel.setCharacterSize(30);
+    logareLabel.setPosition(50,50);
+
+    usernameLabel.setText("Username:");
+    usernameLabel.setStyle("italic");
+    usernameLabel.setCharacterSize(12);
+    usernameLabel.setPosition(20,100);
+
+    parolaLabel.setText("Parola:");
+    parolaLabel.setStyle("italic");
+    parolaLabel.setCharacterSize(12);
+    parolaLabel.setPosition(20,130);
 }
 
-LogScreen::~LogScreen()
-{
+LogScreen::~LogScreen() {
     //dtor
+}
+
+void LogScreen::drawAll(sf::RenderWindow& window) {
+     window.draw(_sprite);
+     username.show(window);
+     parola.show(window);
+     OKButton.show(window);
+     logareLabel.show(window);
+     usernameLabel.show(window);
+     parolaLabel.show(window);
 }
 
 ButtonAction LogScreen::show(sf::RenderWindow& window) {
      window.clear();
-    window.draw(_sprite);
+    drawAll(window);
     window.display();
 
-    /*sf::Clock c;
-    sf::Time t = sf::seconds(2);
-    while (c.getElapsedTime() < t) {};*/
-    writingParola = writingUsername = false;
 
-    usernameSoFar  = parolaSoFar = "";
 
     sf::Event event;
     while (1)
@@ -40,34 +59,27 @@ ButtonAction LogScreen::show(sf::RenderWindow& window) {
                 return Exit;
                 break;
             case sf::Event::MouseButtonPressed:
-                if (usernameField.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                    writingUsername = true, writingParola = false;
-                else if (parolaField.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                    writingParola = true, writingUsername = false;
-                        else writingParola = writingUsername = false;
+                if (username.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                    username.setActive(true), parola.setActive(false);
+                else if (parola.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                    username.setActive(false), parola.setActive(true);
+                        else username.setActive(false), parola.setActive(false);
+                if (OKButton.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                        return ShowMenu;
                 break;
             case sf::Event::TextEntered:
                 if (event.text.unicode == 8) {
-                    if (writingParola) parolaSoFar = parolaSoFar.substr(0,parolaSoFar.size()-1);
-                            else if (writingUsername) usernameSoFar = usernameSoFar.substr(0,usernameSoFar.size()-1);
+                    if (parola.isActive())  parola.popLetter();
+                            else if (username.isActive()) username.popLetter();
                 } else {
-                    if (writingParola) parolaSoFar += (char)event.text.unicode;
-                        else if (writingUsername) usernameSoFar += (char)event.text.unicode;
+                    if (parola.isActive()) parola.addLetter((char)event.text.unicode);
+                        else if (username.isActive()) username.addLetter((char)event.text.unicode);
                 }
             }
         }
 
-        window.clear(sf::Color::Blue);
-
-        showText("Logare",window,50,50);
-
-        usernameField.show(window);
-        parolaField.show(window);
-        OKButton.show(window);
-        showText(usernameSoFar,window,100,100);
-        showText(parolaSoFar,window,100,200);
-
-
+        window.clear();
+        drawAll(window);
         window.display();
 
     }

@@ -6,34 +6,28 @@ LogInfoScreen::LogInfoScreen()
     _texture.loadFromFile("images/loginfo.png");
     _sprite.setTexture(_texture);
 
-
-    MenuItem button1;
-    button1.action = Login;
-    button1.rect.top = 165;
-    button1.rect.height = 254;
-    button1.rect.left = 28;
-    button1.rect.width = 344;
-
-    MenuItem button2;
-    button2.action = Register;
-    button2.rect.top = 164;
-    button2.rect.height = 253;
-    button2.rect.left = 394;
-    button2.rect.width = 334;
-
-    items.push_back(button1);
-    items.push_back(button2);
-
 }
 
 LogInfoScreen::~LogInfoScreen()
 {
     //dtor
 }
-LogInfoScreen::MenuResult LogInfoScreen::show(sf::RenderWindow& window)
+ButtonAction LogInfoScreen::show(sf::RenderWindow& window)
 {
+    Button b1("images/loginbutton.png");
+    b1.setPosition(264,245);
+    b1.setAction(ShowLogSreen);
+
+    Button b2("images/registerbutton.png");
+    b2.setPosition(264, 291);
+    b2.setAction(ShowRegisterScreen);
+
+    items.push_back(b1);
+    items.push_back(b2);
+
     window.clear();
     window.draw(_sprite);
+    for (auto b : items) b.show(window);
     window.display();
 
     sf::Event event;
@@ -48,21 +42,10 @@ LogInfoScreen::MenuResult LogInfoScreen::show(sf::RenderWindow& window)
                 return Nothing;
                 break;
             case sf::Event::MouseButtonPressed:
-                MenuResult result= HandleClick((int)event.mouseButton.x, (int)event.mouseButton.y);
-                if (result != Nothing) return  result;
+                for(auto b :items) if (b.isButtonPressedAt((int)event.mouseButton.x, (int)event.mouseButton.y))
+                    if (b.getAction() != Nothing) return b.getAction();
             }
         }
     }
 }
 
-
-LogInfoScreen::MenuResult LogInfoScreen::HandleClick(int x, int y)
-{
-    for(auto it : items)
-    {
-        sf::Rect<int> r = it.rect;
-        if (x>=r.left && x<=r.left+r.width && y>=r.top && y<=r.top+r.height)
-            return it.action;
-    }
-    return Nothing;
-}

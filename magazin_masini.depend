@@ -5,7 +5,7 @@
 	<map>
 	"magazin.h"
 
-1463673545 c:\users\mihai\desktop\magazin_masini\include\magazin.h
+1463677921 c:\users\mihai\desktop\magazin_masini\include\magazin.h
 	<iostream>
 	<string>
 	<map>
@@ -23,6 +23,9 @@
 	"MasinaManager.h"
 	"DisplayCarsScreen.h"
 	"User.h"
+	"Button.h"
+	"Label.h"
+	"FormField.h"
 
 1463673530 c:\users\mihai\desktop\magazin_masini\include\masina.h
 	<iostream>
@@ -40,7 +43,7 @@
 	<string>
 	"SFML/Graphics.hpp"
 
-1463226314 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
+1463682607 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
 	"Magazin.h"
 	"Masina.h"
 	<ctime>
@@ -71,24 +74,27 @@
 1463003798 source:c:\users\mihai\desktop\magazin_masini\src\splashscreen.cpp
 	"SplashScreen.h"
 
-1463007151 source:c:\users\mihai\desktop\magazin_masini\src\loginfoscreen.cpp
+1463679371 source:c:\users\mihai\desktop\magazin_masini\src\loginfoscreen.cpp
 	"LogInfoScreen.h"
 
-1463005386 c:\users\mihai\desktop\magazin_masini\include\loginfoscreen.h
+1463679375 c:\users\mihai\desktop\magazin_masini\include\loginfoscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
+	"Button.h"
 
-1463673553 c:\users\mihai\desktop\magazin_masini\include\logscreen.h
+1463684259 c:\users\mihai\desktop\magazin_masini\include\logscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Button.h"
+	"Label.h"
+	"FormField.h"
 
 1463008058 c:\users\mihai\desktop\magazin_masini\include\registerscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 
-1463234916 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
+1463684340 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
 	"LogScreen.h"
 
 1463008997 source:c:\users\mihai\desktop\magazin_masini\src\registerscreen.cpp
@@ -130,19 +136,36 @@
 
 1463077850 c:\users\mihai\desktop\magazin_masini\include\masinamanger.h
 
-1463673560 c:\users\mihai\desktop\magazin_masini\include\button.h
+1463677706 c:\users\mihai\desktop\magazin_masini\include\button.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 
-1463227838 source:c:\users\mihai\desktop\magazin_masini\src\button.cpp
+1463677734 source:c:\users\mihai\desktop\magazin_masini\src\button.cpp
 	"Button.h"
 
-1463673444 c:\users\mihai\desktop\magazin_masini\include\utils.h
+1463677654 c:\users\mihai\desktop\magazin_masini\include\utils.h
 	<string>
 	"SFML/Graphics.hpp"
 
-1463673459 source:c:\users\mihai\desktop\magazin_masini\src\utils.cpp
+1463674825 source:c:\users\mihai\desktop\magazin_masini\src\utils.cpp
 	<string>
 	"utils.h"
+
+1463683172 source:c:\users\mihai\desktop\magazin_masini\src\formfield.cpp
+	"FormField.h"
+
+1463684774 c:\users\mihai\desktop\magazin_masini\include\formfield.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+	"utils.h"
+	"Label.h"
+
+1463682151 c:\users\mihai\desktop\magazin_masini\include\label.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+	"utils.h"
+
+1463683210 source:c:\users\mihai\desktop\magazin_masini\src\label.cpp
+	"Label.h"
 

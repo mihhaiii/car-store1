@@ -94,13 +94,13 @@ void Magazin::showSplash()
 void Magazin::showLogInfo()
 {
     LogInfoScreen lis;
-    LogInfoScreen::MenuResult res = lis.show(_mainWindow);
+    ButtonAction res = lis.show(_mainWindow);
     switch(res)
     {
-    case LogInfoScreen::Login:
+    case ShowLogSreen:
         _state = logging;
         break;
-    case LogInfoScreen::Register:
+    case ShowRegisterScreen:
         _state = registering;
     }
 }
@@ -108,9 +108,9 @@ void Magazin::showLogScreen()
 {
 
     LogScreen ls;
-    ls.show(_mainWindow);
-
-    _state = showingMenu;
+    ButtonAction res = ls.show(_mainWindow);
+    if (res == ShowMenu)
+        _state = showingMenu;
 }
 void Magazin::showRegisterScreen()
 {

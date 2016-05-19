@@ -40,9 +40,9 @@ void showText(string str, sf::RenderWindow& window, int x, int y)
         sf::Text text;
         text.setFont(font);
         text.setString(str);
-        text.setCharacterSize(24);
+        text.setCharacterSize(20);
         text.setColor(sf::Color::Black);
-        text.setStyle(sf::Text::Bold);
+        text.setStyle(sf::Text::Italic);
 
         text.setPosition(x,y);
         window.draw(text);

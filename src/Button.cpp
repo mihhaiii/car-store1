@@ -34,3 +34,14 @@ void Button::setPosition(int x, int y)
     rect.width = _sprite.getLocalBounds().width;
     rect.height = _sprite.getLocalBounds().height;
 }
+
+sf::Vector2i Button::getPosition() {
+    return sf::Vector2i(rect.left, rect.top);
+}
+
+ButtonAction Button::getAction() {
+    return action;
+}
+void Button::setAction(ButtonAction g) {
+    action = g;
+}

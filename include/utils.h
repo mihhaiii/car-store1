@@ -11,7 +11,8 @@ enum Models {
 };
 
 enum ButtonAction {
-    ShowNextCar, ShowPrevCar, Back, Exit, ShowCars, ViewCar, ShowMenu, ShowSplash, ShowWarningWindow
+    ShowNextCar, ShowPrevCar, Back, Exit, ShowCars, ViewCar, ShowMenu, ShowSplash, ShowWarningWindow, Nothing,
+    ShowLogSreen, ShowRegisterScreen
 };
 
 extern const char* Brands2Str[];

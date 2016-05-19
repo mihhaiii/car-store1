@@ -18,6 +18,9 @@
 #include "MasinaManager.h"
 #include "DisplayCarsScreen.h"
 #include "User.h"
+#include "Button.h"
+#include "Label.h"
+#include "FormField.h"
 using namespace std;
 
 class Magazin
