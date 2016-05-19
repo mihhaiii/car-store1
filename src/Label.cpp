@@ -10,6 +10,19 @@ Label::Label()
     text.setFont(font);
     text.setStyle(sf::Text::Italic);
     text.setColor(sf::Color::Black);
+
+    visible = true;
+}
+
+void Label::setVisible(bool f) {
+    visible = f;
+}
+
+void Label::setColor(string c) {
+    if (c=="red") text.setColor(sf::Color::Red);
+    if (c=="blue") text.setColor(sf::Color::Blue);
+    if (c=="green") text.setColor(sf::Color::Green);
+    if (c=="yellow") text.setColor(sf::Color::Yellow);
 }
 
 void Label::setText(string x) {
@@ -29,6 +42,7 @@ void Label::setStyle(string st) {
    if (st == "italic") text.setStyle(sf::Text::Italic);
    if (st == "bold") text.setStyle(sf::Text::Bold);
    if (st == "underlined") text.setStyle(sf::Text::Underlined);
+   if (st == "normal") text.setStyle(sf::Text::Regular);
 }
 
 void Label::addLetter(char c) {
@@ -52,5 +66,5 @@ Label::~Label()
 }
 
 void Label::show(sf::RenderWindow& window) {
-    window.draw(text);
+   if (visible) window.draw(text);
 }

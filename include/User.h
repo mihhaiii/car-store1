@@ -13,12 +13,12 @@ class User
         User(string,string,string);
         virtual ~User();
 
-        static bool checkName(string);
-        static bool checkUsername(string, UserManager*);
-        static bool checkParola(string);
+
 
         string getUsername();
         string getName();
+
+        bool checkParola(string);
 
     protected:
 

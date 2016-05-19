@@ -7,7 +7,9 @@
 #include "Button.h"
 #include "Label.h"
 #include "FormField.h"
-
+#include "UserManager.h"
+#include "User.h"
+#include <Checker.h>
 using namespace std;
 class LogScreen
 {
@@ -15,7 +17,7 @@ class LogScreen
         LogScreen();
         virtual ~LogScreen();
 
-        ButtonAction show(sf::RenderWindow&);
+        ButtonAction show(sf::RenderWindow&,UserManager*);
         void drawAll(sf::RenderWindow&);
 
     protected:
@@ -26,7 +28,7 @@ class LogScreen
 
         Button OKButton;
         FormField username, parola;
-        Label parolaLabel, usernameLabel, logareLabel;
+        Label parolaLabel, usernameLabel, logareLabel, warningLabel;
 };
 
 #endif // LOGSCREEN_H

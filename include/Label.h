@@ -22,12 +22,15 @@ class Label
         void addLetter(char);
         int getLength();
         string getText();
+        void setVisible(bool);
+        void setColor(string);
 
     protected:
         string str;
         sf::Text text;
         sf::Font font;
     private:
+        bool visible;
 };
 
 #endif // LABEL_H

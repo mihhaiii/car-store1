@@ -15,6 +15,8 @@ class UserManager
         void DeleteUser(string);
         bool existsUser(string);
 
+        bool checkLogInfo(string,string);
+
     protected:
 
     private:

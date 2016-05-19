@@ -108,7 +108,7 @@ void Magazin::showLogScreen()
 {
 
     LogScreen ls;
-    ButtonAction res = ls.show(_mainWindow);
+    ButtonAction res = ls.show(_mainWindow,&_userManager);
     if (res == ShowMenu)
         _state = showingMenu;
 }

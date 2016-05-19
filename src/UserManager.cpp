@@ -22,3 +22,10 @@ bool UserManager::existsUser(string username) {
         if (user->getUsername() == username) return true;
     return false;
 }
+
+bool UserManager::checkLogInfo(string username, string parola) {
+    for(auto user:listaUseri) {
+        if (user->getUsername() == username)
+            return user->checkParola(parola);
+    }
+}

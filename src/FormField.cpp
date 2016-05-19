@@ -5,6 +5,8 @@ FormField::FormField()
     //ctor
     shape.setSize(sf::Vector2f(200,20));
     text.setCharacterSize(12);
+    text.setStyle("normal");
+    active = false;
 }
 
 void FormField::setPosition(int x, int y) {
@@ -13,10 +15,22 @@ void FormField::setPosition(int x, int y) {
 }
 
 void FormField::addLetter(char c)  {
-    if (text.getLength() + 10 > shape.getSize().x ) return;
+    if (text.getLength() + 15 > shape.getSize().x ) return;
+     string s = text.getText();
+    if (s[s.size() - 1] == '|') {
+        text.popLetter();
+        text.addLetter(c);
+        text.addLetter('|');
+    } else
     text.addLetter(c);
 }
 void FormField::popLetter() {
+    string s = text.getText();
+    if (s[s.size() - 1] == '|') {
+        text.popLetter();
+        text.popLetter();
+        text.addLetter('|');
+    } else
     text.popLetter();
 }
 void FormField::show(sf::RenderWindow& window) {
@@ -25,7 +39,17 @@ void FormField::show(sf::RenderWindow& window) {
     if (active) {
         sf::Time time = clock.getElapsedTime();
         if ((int)time.asSeconds() % 2 == 1) {
-            showCursor(window);
+            string s = text.getText();
+            if (s[s.size()-1] != '|')
+                text.addLetter('|');
+        }
+        else {
+                string s = text.getText();
+            if (s[s.size()-1] == '|')
+            {
+                s = s.substr(0,s.size()-1);
+                text.setText(s);
+            }
         }
     }
 }
@@ -43,6 +67,14 @@ bool FormField::isButtonPressedAt(int x, int y) {
 
 void FormField::setActive(bool f) {
     active = f;
+    if (!active) {
+         string s = text.getText();
+            if (s[s.size()-1] == '|')
+            {
+                s = s.substr(0,s.size()-1);
+                text.setText(s);
+            }
+    }
 }
 bool FormField::isActive(){
     return active;

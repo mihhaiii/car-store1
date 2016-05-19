@@ -25,6 +25,13 @@ LogScreen::LogScreen() :
     parolaLabel.setStyle("italic");
     parolaLabel.setCharacterSize(12);
     parolaLabel.setPosition(20,130);
+
+    warningLabel.setText("Combinatia user-parola nu este recunoscuta");
+    warningLabel.setStyle("italic");
+    warningLabel.setColor("red");
+    warningLabel.setCharacterSize(30);
+    warningLabel.setPosition(150,250);
+    warningLabel.setVisible(false);
 }
 
 LogScreen::~LogScreen() {
@@ -39,9 +46,10 @@ void LogScreen::drawAll(sf::RenderWindow& window) {
      logareLabel.show(window);
      usernameLabel.show(window);
      parolaLabel.show(window);
+     warningLabel.show(window);
 }
 
-ButtonAction LogScreen::show(sf::RenderWindow& window) {
+ButtonAction LogScreen::show(sf::RenderWindow& window, UserManager*  userManager) {
      window.clear();
     drawAll(window);
     window.display();
@@ -65,7 +73,10 @@ ButtonAction LogScreen::show(sf::RenderWindow& window) {
                     username.setActive(false), parola.setActive(true);
                         else username.setActive(false), parola.setActive(false);
                 if (OKButton.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                        return ShowMenu;
+                        if (Checker::check(username.getText(),parola.getText(), userManager))
+                            return ShowMenu;
+                        else warningLabel.setVisible(true);
+
                 break;
             case sf::Event::TextEntered:
                 if (event.text.unicode == 8) {
@@ -75,12 +86,20 @@ ButtonAction LogScreen::show(sf::RenderWindow& window) {
                     if (parola.isActive()) parola.addLetter((char)event.text.unicode);
                         else if (username.isActive()) username.addLetter((char)event.text.unicode);
                 }
+                break;
+            case sf::Event::KeyPressed:
+                if (event.key.code == sf::Keyboard::Tab) {
+                    if (username.isActive()) username.setActive(false), parola.setActive(true);
+                }
             }
         }
 
         window.clear();
         drawAll(window);
         window.display();
+
+
+
 
     }
 }
