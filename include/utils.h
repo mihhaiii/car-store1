@@ -12,7 +12,7 @@ enum Models {
 
 enum ButtonAction {
     ShowNextCar, ShowPrevCar, Back, Exit, ShowCars, ViewCar, ShowMenu, ShowSplash, ShowWarningWindow, Nothing,
-    ShowLogSreen, ShowRegisterScreen, ShowLogInfo, ShowDetails
+    ShowLogSreen, ShowRegisterScreen, ShowLogInfo, ShowDetails, ShowCarScreen
 };
 
 
@@ -25,7 +25,8 @@ extern string int2str(int x);
 extern void showText(string str, sf::RenderWindow& window, int x, int y);
 
 enum States {
-    uninitialized, showingSplash, showingMenu, showingLogInfo, logging, registering, displayingCars, exiting
+    uninitialized, showingSplash, showingMenu, showingLogInfo, logging, registering, displayingCars, exiting,
+    showingCarScreen
 };
 
 #endif // UTILS_H

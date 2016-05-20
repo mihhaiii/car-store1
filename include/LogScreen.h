@@ -10,6 +10,7 @@
 #include "UserManager.h"
 #include "User.h"
 #include <Checker.h>
+
 using namespace std;
 class LogScreen
 {
@@ -26,7 +27,7 @@ class LogScreen
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Button OKButton;
+        Button OKButton, backButton;
         FormField username, parola;
         Label parolaLabel, usernameLabel, logareLabel, warningLabel;
 };

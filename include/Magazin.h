@@ -21,6 +21,7 @@
 #include "Button.h"
 #include "Label.h"
 #include "FormField.h"
+#include "CarScreen.h"
 using namespace std;
 
 class Magazin
@@ -36,6 +37,7 @@ class Magazin
         void showLogScreen();
         void showRegisterScreen();
         void displayCars();
+        void showCarScreen();
 
     protected:
 

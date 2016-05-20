@@ -1,7 +1,8 @@
 #include "LogScreen.h"
 
 LogScreen::LogScreen() :
-     OKButton("images/okbutton.png")
+     OKButton("images/okbutton.png"),
+     backButton("images/backbutton.png")
 {
     //ctor
     _texture.loadFromFile("images/background.png");
@@ -10,6 +11,8 @@ LogScreen::LogScreen() :
     username.setPosition(100,100);
     parola.setPosition(100,130);
     OKButton.setPosition(100,160);
+    backButton.setPosition(10,540);
+
     parola.setPasswordType(true);
 
     logareLabel.setText("Logare");
@@ -48,6 +51,7 @@ void LogScreen::drawAll(sf::RenderWindow& window) {
      usernameLabel.show(window);
      parolaLabel.show(window);
      warningLabel.show(window);
+     backButton.show(window);
 }
 
 ButtonAction LogScreen::show(sf::RenderWindow& window, UserManager*  userManager) {
@@ -77,6 +81,8 @@ ButtonAction LogScreen::show(sf::RenderWindow& window, UserManager*  userManager
                         if (Checker::check(username.getText(),parola.getText(), userManager))
                             return ShowMenu;
                         else warningLabel.setVisible(true);
+                if (backButton.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                    return Back;
 
                 break;
             case sf::Event::TextEntered:

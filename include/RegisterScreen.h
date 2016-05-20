@@ -29,7 +29,7 @@ class RegisterScreen
         Label registerLabel, numeLabel, usernameLabel, parolaLabel, emailLabel, congratsLabel, pressKeyLabel,
          warningLabel, warningNume, warningParola, warningEmail, warningUsername;
 
-        Button registerButton;
+        Button registerButton, backButton;
 
         FormField nume, username, parola, email;
         void setActive(FormField*);

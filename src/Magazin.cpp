@@ -77,6 +77,9 @@ void Magazin::appLoop()
     case displayingCars:
         displayCars();
         break;
+    case showingCarScreen:
+        showCarScreen();
+        break;
     }
 }
 
@@ -125,20 +128,67 @@ void Magazin::showLogScreen()
     ButtonAction res = ls.show(_mainWindow,&_userManager);
     if (res == ShowMenu)
         _state = showingMenu;
+    switch(res)
+    {
+    case ShowMenu:
+        _state = showingMenu;
+        break;
+    case Back:
+        _state = showingLogInfo;
+        break;
+    case Exit:
+        _state = exiting;
+    }
 }
+
 void Magazin::showRegisterScreen()
 {
     RegisterScreen rs;
      ButtonAction res =  rs.show(_mainWindow, &_userManager);
-    if (res == ShowMenu)
+    switch(res)
+    {
+    case ShowMenu:
         _state = showingMenu;
+        break;
+    case Back:
+        _state = showingLogInfo;
+        break;
+    case Exit:
+        _state = exiting;
+    }
 }
 
 void Magazin::displayCars()
 {
     DisplayCarsScreen dcs;
 
-    dcs.show(_mainWindow,&_masinaManager);
+    ButtonAction res = dcs.show(_mainWindow,&_masinaManager);
+    switch(res)
+    {
+    case ShowCarScreen:
+        _state = showingCarScreen;
+        cout<<"show cars";
+        break;
+    case Back:
+        _state = showingMenu;
+        break;
+    case Exit:
+        _state = exiting;
+    }
+}
 
-    _state = showingMenu;
+void Magazin::showCarScreen()
+{
+    CarScreen cs;
+      ButtonAction res = cs.show(_mainWindow,
+                                 _masinaManager.getCurentMasina());
+    switch(res)
+    {
+    case Back:
+        _state = displayingCars;
+        break;
+    case Exit:
+        _state = exiting;
+        break;
+    }
 }

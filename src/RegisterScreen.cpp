@@ -1,7 +1,8 @@
 #include "RegisterScreen.h"
 
 RegisterScreen::RegisterScreen()
-: registerButton("images/registerbutton1.png")
+: registerButton("images/registerbutton1.png"),
+  backButton("images/backbutton.png")
 {
     //ctor
     _texture.loadFromFile("images/background.png");
@@ -13,6 +14,7 @@ RegisterScreen::RegisterScreen()
     parola.setPosition(300,360);
     email.setPosition(300,390);
     registerButton.setPosition(300,420);
+    backButton.setPosition(10,540);
     parola.setPasswordType(true);
 
     registerLabel.setText("Înregistrare");
@@ -67,6 +69,7 @@ void RegisterScreen::drawAll(sf::RenderWindow& window) {
     email.show(window);
 
     registerButton.show(window);
+    backButton.show(window);
 }
 
 
@@ -84,7 +87,6 @@ ButtonAction RegisterScreen::show(sf::RenderWindow& window, UserManager* userMan
             switch(event.type)
             {
                 case sf::Event::Closed:
-                    window.close();
                     return Exit;
                     break;
                 case sf::Event::MouseButtonPressed:
@@ -101,6 +103,9 @@ ButtonAction RegisterScreen::show(sf::RenderWindow& window, UserManager* userMan
                             if (Checker::checkRegisterInfo(nume.getText(),username.getText(),parola.getText(),email.getText(),userManager))
                                 return showSuccess(window), userManager->AddUser(new User(nume.getText(),username.getText(),parola.getText())), ShowMenu;
                                 else warningLabel.setVisible(true);
+                        }
+                        if (backButton.isButtonPressedAt(x,y)) {
+                            return Back;
                         }
                         break;
                    }

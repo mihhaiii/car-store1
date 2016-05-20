@@ -16,7 +16,7 @@ DisplayCarsScreen::DisplayCarsScreen() :
 
     leftButton.setAction(ShowPrevCar);
     rightButton.setAction(ShowNextCar);
-    afisDetaliiButton.setAction(ShowDetails);
+    afisDetaliiButton.setAction(ShowCarScreen);
     backButton.setAction(Back);
 }
 

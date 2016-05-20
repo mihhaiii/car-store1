@@ -5,7 +5,7 @@
 	<map>
 	"magazin.h"
 
-1463677921 c:\users\mihai\desktop\magazin_masini\include\magazin.h
+1463763310 c:\users\mihai\desktop\magazin_masini\include\magazin.h
 	<iostream>
 	<string>
 	<map>
@@ -26,6 +26,7 @@
 	"Button.h"
 	"Label.h"
 	"FormField.h"
+	"CarScreen.h"
 
 1463716502 c:\users\mihai\desktop\magazin_masini\include\masina.h
 	<iostream>
@@ -43,7 +44,7 @@
 	<string>
 	"SFML/Graphics.hpp"
 
-1463757541 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
+1463773641 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
 	"Magazin.h"
 	"Masina.h"
 	<ctime>
@@ -82,7 +83,7 @@
 	"SFML/Graphics.hpp"
 	"Button.h"
 
-1463695771 c:\users\mihai\desktop\magazin_masini\include\logscreen.h
+1463773124 c:\users\mihai\desktop\magazin_masini\include\logscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -93,7 +94,7 @@
 	"User.h"
 	<Checker.h>
 
-1463704992 c:\users\mihai\desktop\magazin_masini\include\registerscreen.h
+1463773666 c:\users\mihai\desktop\magazin_masini\include\registerscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"Button.h"
@@ -103,7 +104,7 @@
 	"UserManager.h"
 	"Checker.h"
 
-1463714167 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
+1463773302 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
 	"LogScreen.h"
 
 1463706363 source:c:\users\mihai\desktop\magazin_masini\src\registerscreen.cpp
@@ -134,7 +135,7 @@
 1463079950 source:c:\users\mihai\desktop\magazin_masini\src\screen.cpp
 	"Screen.h"
 
-1463717590 source:c:\users\mihai\desktop\magazin_masini\src\displaycarsscreen.cpp
+1463764002 source:c:\users\mihai\desktop\magazin_masini\src\displaycarsscreen.cpp
 	"DisplayCarsScreen.h"
 
 1463713921 c:\users\mihai\desktop\magazin_masini\include\displaycarsscreen.h
@@ -158,7 +159,7 @@
 1463677734 source:c:\users\mihai\desktop\magazin_masini\src\button.cpp
 	"Button.h"
 
-1463713537 c:\users\mihai\desktop\magazin_masini\include\utils.h
+1463760839 c:\users\mihai\desktop\magazin_masini\include\utils.h
 	<string>
 	"SFML/Graphics.hpp"
 
@@ -192,4 +193,16 @@
 	"utils.h"
 	"UserManager.h"
 	"User.h"
+
+1463763221 source:c:\users\mihai\desktop\magazin_masini\src\carscreen.cpp
+	"CarScreen.h"
+
+1463762891 c:\users\mihai\desktop\magazin_masini\include\carscreen.h
+	<bits/stdc++.h>
+	"SFML/Graphics.hpp"
+	"utils.h"
+	"Masina.h"
+	"MasinaManager.h"
+	"Button.h"
+	"Label.h"
 
