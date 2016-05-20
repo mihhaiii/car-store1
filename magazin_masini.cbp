@@ -34,7 +34,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="bazadedateuseri.txt" />
 		<Unit filename="include/Button.h" />
+		<Unit filename="include/CarScreen.h" />
 		<Unit filename="include/Checker.h" />
 		<Unit filename="include/DisplayCarsScreen.h" />
 		<Unit filename="include/FormField.h" />
@@ -53,6 +55,7 @@
 		<Unit filename="include/utils.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Button.cpp" />
+		<Unit filename="src/CarScreen.cpp" />
 		<Unit filename="src/Checker.cpp" />
 		<Unit filename="src/DisplayCarsScreen.cpp" />
 		<Unit filename="src/FormField.cpp" />

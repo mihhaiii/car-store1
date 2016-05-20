@@ -107,7 +107,7 @@
 1463773302 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
 	"LogScreen.h"
 
-1463706363 source:c:\users\mihai\desktop\magazin_masini\src\registerscreen.cpp
+1463773800 source:c:\users\mihai\desktop\magazin_masini\src\registerscreen.cpp
 	"RegisterScreen.h"
 
 1463709200 c:\users\mihai\desktop\magazin_masini\include\menu.h
@@ -197,7 +197,7 @@
 1463763221 source:c:\users\mihai\desktop\magazin_masini\src\carscreen.cpp
 	"CarScreen.h"
 
-1463762891 c:\users\mihai\desktop\magazin_masini\include\carscreen.h
+1463776448 c:\users\mihai\desktop\magazin_masini\include\carscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
