@@ -3,6 +3,12 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
+#include "Button.h"
+#include "utils.h"
+#include "Label.h"
+#include "FormField.h"
+#include "UserManager.h"
+#include "Checker.h"
 using namespace std;
 class RegisterScreen
 {
@@ -10,13 +16,23 @@ class RegisterScreen
         RegisterScreen();
         virtual ~RegisterScreen();
 
-        void show(sf::RenderWindow&);
+        ButtonAction show(sf::RenderWindow&, UserManager*);
+        void drawAll(sf::RenderWindow&);
+        void showSuccess(sf::RenderWindow&);
 
     protected:
 
     private:
         sf::Texture _texture;
         sf::Sprite _sprite;
+
+        Label registerLabel, numeLabel, usernameLabel, parolaLabel, emailLabel, congratsLabel, pressKeyLabel,
+         warningLabel, warningNume, warningParola, warningEmail, warningUsername;
+
+        Button registerButton;
+
+        FormField nume, username, parola, email;
+        void setActive(FormField*);
 };
 
 #endif // REGISTERSCREEN_H

@@ -43,7 +43,7 @@
 	<string>
 	"SFML/Graphics.hpp"
 
-1463693951 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
+1463699083 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
 	"Magazin.h"
 	"Masina.h"
 	<ctime>
@@ -93,14 +93,20 @@
 	"User.h"
 	<Checker.h>
 
-1463008058 c:\users\mihai\desktop\magazin_masini\include\registerscreen.h
+1463704992 c:\users\mihai\desktop\magazin_masini\include\registerscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
+	"Button.h"
+	"utils.h"
+	"Label.h"
+	"FormField.h"
+	"UserManager.h"
+	"Checker.h"
 
-1463695771 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
+1463696654 source:c:\users\mihai\desktop\magazin_masini\src\logscreen.cpp
 	"LogScreen.h"
 
-1463008997 source:c:\users\mihai\desktop\magazin_masini\src\registerscreen.cpp
+1463706363 source:c:\users\mihai\desktop\magazin_masini\src\registerscreen.cpp
 	"RegisterScreen.h"
 
 1463008983 c:\users\mihai\desktop\magazin_masini\include\menu.h
@@ -155,27 +161,27 @@
 	<string>
 	"utils.h"
 
-1463693165 source:c:\users\mihai\desktop\magazin_masini\src\formfield.cpp
+1463706014 source:c:\users\mihai\desktop\magazin_masini\src\formfield.cpp
 	"FormField.h"
 
-1463684774 c:\users\mihai\desktop\magazin_masini\include\formfield.h
+1463705993 c:\users\mihai\desktop\magazin_masini\include\formfield.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Label.h"
 
-1463696235 c:\users\mihai\desktop\magazin_masini\include\label.h
+1463705695 c:\users\mihai\desktop\magazin_masini\include\label.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 
-1463694677 source:c:\users\mihai\desktop\magazin_masini\src\label.cpp
+1463706563 source:c:\users\mihai\desktop\magazin_masini\src\label.cpp
 	"Label.h"
 
-1463695771 source:c:\users\mihai\desktop\magazin_masini\src\checker.cpp
+1463699610 source:c:\users\mihai\desktop\magazin_masini\src\checker.cpp
 	"Checker.h"
 
-1463695771 c:\users\mihai\desktop\magazin_masini\include\checker.h
+1463699371 c:\users\mihai\desktop\magazin_masini\include\checker.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"

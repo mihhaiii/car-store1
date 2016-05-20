@@ -15,6 +15,7 @@ class Checker
         virtual ~Checker();
 
         static bool check(string ,string,UserManager*);
+        static bool checkRegisterInfo(string,string,string,string,UserManager*);
 
     protected:
 

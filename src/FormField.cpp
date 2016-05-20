@@ -7,6 +7,7 @@ FormField::FormField()
     text.setCharacterSize(12);
     text.setStyle("normal");
     active = false;
+    passwordType = false;
 }
 
 void FormField::setPosition(int x, int y) {
@@ -35,7 +36,10 @@ void FormField::popLetter() {
 }
 void FormField::show(sf::RenderWindow& window) {
     window.draw(shape);
-    text.show(window);
+    if (passwordType) {
+        text.showPasswordType(window);
+    }
+        else text.show(window);
     if (active) {
         sf::Time time = clock.getElapsedTime();
         if ((int)time.asSeconds() % 2 == 1) {
@@ -78,6 +82,10 @@ void FormField::setActive(bool f) {
 }
 bool FormField::isActive(){
     return active;
+}
+
+void FormField::setPasswordType(bool f) {
+    passwordType = f;
 }
 FormField::~FormField()
 {

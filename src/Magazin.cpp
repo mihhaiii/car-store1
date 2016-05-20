@@ -115,9 +115,9 @@ void Magazin::showLogScreen()
 void Magazin::showRegisterScreen()
 {
     RegisterScreen rs;
-    rs.show(_mainWindow);
-
-    _state = showingMenu;
+     ButtonAction res =  rs.show(_mainWindow, &_userManager);
+    if (res == ShowMenu)
+        _state = showingMenu;
 }
 
 void Magazin::displayCars()

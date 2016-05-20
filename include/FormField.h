@@ -23,6 +23,7 @@ class FormField
         string getText();
         void setActive(bool);
         bool isActive();
+        void setPasswordType(bool);
 
     protected:
         sf::RectangleShape shape;
@@ -31,6 +32,7 @@ class FormField
         sf::Clock clock;
 
         void showCursor(sf::RenderWindow&);
+        bool passwordType;
 
     private:
 };

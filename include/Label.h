@@ -14,6 +14,7 @@ class Label
         virtual ~Label();
 
         void show(sf::RenderWindow&);
+        void showPasswordType(sf::RenderWindow&);
         void setText(string);
         void setPosition(int,int);
         void setStyle(string);

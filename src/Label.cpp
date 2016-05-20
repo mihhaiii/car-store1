@@ -30,6 +30,7 @@ void Label::setText(string x) {
     text.setString(str);
 }
 string Label::getText() {
+  //  if (str[str.size()-1] == '|') return str.substr(0,str.size()-1);
     return str;
 }
 void Label::setPosition(int x, int y) {
@@ -67,4 +68,14 @@ Label::~Label()
 
 void Label::show(sf::RenderWindow& window) {
    if (visible) window.draw(text);
+}
+void Label::showPasswordType(sf::RenderWindow& window) {
+    if (visible) {
+        string encrypted_string = str;
+        for(int i=0;i<encrypted_string.size();i++)
+            if (encrypted_string[i]!='|') encrypted_string[i] = '*';
+        text.setString(encrypted_string);
+        window.draw(text);
+        text.setString(str);
+    }
 }
