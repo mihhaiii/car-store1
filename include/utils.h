@@ -4,16 +4,19 @@
 #include "SFML/Graphics.hpp"
 using namespace std;
 enum Brands {
-    FIAT, BMW, FORD, DACIA, AUDI
+    FIAT, BMW, FORD, DACIA, AUDI, TOYOTA, FERARRI, VOLKSWAGEN, MERCEDES, OPEL
 };
 enum Models {
-    a32, f5, h1100, j3r3, lk90
+    a32, f5, h1100, j3r3, lk90, xb44, hu35, ui100,xb330, hwt4500
 };
 
 enum ButtonAction {
     ShowNextCar, ShowPrevCar, Back, Exit, ShowCars, ViewCar, ShowMenu, ShowSplash, ShowWarningWindow, Nothing,
-    ShowLogSreen, ShowRegisterScreen
+    ShowLogSreen, ShowRegisterScreen, ShowLogInfo, ShowDetails
 };
+
+
+extern const string CarFiles[];
 
 extern const char* Brands2Str[];
 extern const char* Models2Str[];

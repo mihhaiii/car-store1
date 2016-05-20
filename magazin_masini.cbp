@@ -35,7 +35,10 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Button.h" />
+		<Unit filename="include/Checker.h" />
 		<Unit filename="include/DisplayCarsScreen.h" />
+		<Unit filename="include/FormField.h" />
+		<Unit filename="include/Label.h" />
 		<Unit filename="include/LogInfoScreen.h" />
 		<Unit filename="include/LogScreen.h" />
 		<Unit filename="include/Magazin.h" />
@@ -50,7 +53,10 @@
 		<Unit filename="include/utils.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Button.cpp" />
+		<Unit filename="src/Checker.cpp" />
 		<Unit filename="src/DisplayCarsScreen.cpp" />
+		<Unit filename="src/FormField.cpp" />
+		<Unit filename="src/Label.cpp" />
 		<Unit filename="src/LogInfoScreen.cpp" />
 		<Unit filename="src/LogScreen.cpp" />
 		<Unit filename="src/Magazin.cpp" />

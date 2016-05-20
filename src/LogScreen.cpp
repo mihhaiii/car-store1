@@ -10,6 +10,7 @@ LogScreen::LogScreen() :
     username.setPosition(100,100);
     parola.setPosition(100,130);
     OKButton.setPosition(100,160);
+    parola.setPasswordType(true);
 
     logareLabel.setText("Logare");
     logareLabel.setStyle("italic");

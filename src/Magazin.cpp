@@ -29,6 +29,11 @@ Magazin::~Magazin()
 
 void  Magazin::startApp()
 {
+    for (int i=0;i<10;i++)
+    {
+        _masinaManager.addMasina(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%20 + 1995));
+    }
+
     cout << "----------------Bine ati Venit!!!-----------------"<<endl;
     if (_state != uninitialized)
         return;
@@ -73,14 +78,18 @@ void Magazin::appLoop()
 void Magazin::showMenu()
 {
     Menu m;
-    Menu::MenuResult res = m.show(_mainWindow);
+    ButtonAction res = m.show(_mainWindow);
     switch(res)
     {
-    case Menu::AfiseazaMasini:
+    case ShowCars:
         _state = displayingCars;
         break;
-    case Menu::Iesire:
+    case Exit:
         _state = exiting;
+        break;
+    case ShowLogInfo:
+        _state = showingLogInfo;
+        break;
     }
 
 }

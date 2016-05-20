@@ -1,28 +1,29 @@
 #include "Menu.h"
 
-Menu::Menu()
+Menu::Menu() :
+    listaMasiniButton("images/listamasinibutton.png"),
+    iesireButton("images/iesirebutton.png"),
+    cosulMeuButton("images/cosulmeubutton.png"),
+    logoutButton("images/logoutbutton.png")
 {
     //ctor
-    _texture.loadFromFile("images/menu.png");
+    _texture.loadFromFile("images/meniu.png");
     _sprite.setTexture(_texture);
 
-    MenuItem m1;
-    m1.action = AfiseazaMasini;
-    m1.rect.top = 78;
-    m1.rect.height = 38;
-    m1.rect.left = 82;
-    m1.rect.width = 248;
+    listaMasiniButton.setPosition(300,70);
+    cosulMeuButton.setPosition(300,105);
+    logoutButton.setPosition(300,140);
+    iesireButton.setPosition(300,175);
 
-    MenuItem m2;
-    m2.action = Iesire;
-    m2.rect.top = 132;
-    m2.rect.height = 38;
-    m2.rect.left = 84;
-    m2.rect.width = 244;
+    listaMasiniButton.setAction(ShowCars);
+    cosulMeuButton.setAction(Nothing);
+    logoutButton.setAction(ShowLogInfo);
+    iesireButton.setAction(Exit);
 
-
-    items.push_back(m1);
-    items.push_back(m2);
+    meniu.setPosition(370,40);
+    meniu.setText("Meniu");
+    meniu.setCharacterSize(24);
+    meniu.setStyle("normal");
 }
 
 Menu::~Menu()
@@ -30,38 +31,47 @@ Menu::~Menu()
     //dtor
 }
 
-Menu::MenuResult Menu::show(sf::RenderWindow& window)
+ButtonAction Menu::show(sf::RenderWindow& window)
 {
     window.clear();
     window.draw(_sprite);
+    listaMasiniButton.show(window);
+    cosulMeuButton.show(window);
+    logoutButton.show(window);
+    iesireButton.show(window);
+    meniu.show(window);
     window.display();
 
-    sf::Event e;
+    vector<Button*> buttons;
+    buttons.push_back(&listaMasiniButton);
+    buttons.push_back(&iesireButton);
+    buttons.push_back(&logoutButton);
+    buttons.push_back(&cosulMeuButton);
+
+    sf::Event event;
     while (1)
     {
-        while (window.pollEvent(e))
+        while (window.pollEvent(event))
         {
-            switch(e.type)
+            switch(event.type)
             {
             case sf::Event::Closed:
                 window.close();
                 return Nothing;
                 break;
             case sf::Event::MouseButtonPressed:
-                MenuResult res=HandleClick((int)e.mouseButton.x,(int)e.mouseButton.y);
-                if (res != Nothing) return res;
+                {
+                    int x=event.mouseButton.x, y=event.mouseButton.y;
+                    for(auto button:buttons) {
+                        if (button->isButtonPressedAt(x,y)) {
+                            if (button->getAction() != Nothing) {
+                                return button->getAction();
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-Menu::MenuResult Menu::HandleClick(int x, int y)
-{
-    for(auto it : items)
-    {
-        sf::Rect<int> r = it.rect;
-        if (x>=r.left && x<=r.left+r.width &&y>=r.top && y<=r.top+r.height)
-            return it.action;
-    }
-    return Nothing;
-}

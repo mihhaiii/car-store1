@@ -3,16 +3,21 @@
 #include <random>
 Masina::Masina()
 {
-    //ctor
      nrMasini++;
     id  = nrMasini;
-
-    if (id%2)
-    _texture.loadFromFile("images/car11.png");
-    else _texture.loadFromFile("images/car22.png");
+    _filename = CarFiles[rand()%10];
+    _texture.loadFromFile(_filename);
+    _sprite.setTexture(_texture);
+    _sprite.setPosition(sf::Vector2f(150,200));
+}
+string Masina::getFilename() {
+    return _filename;
+}
+void Masina::setFilename(string s) {
+    _filename = s;
+    _texture.loadFromFile(s);
     _sprite.setTexture(_texture);
 }
-
 
 Masina::~Masina()
 {
@@ -23,21 +28,21 @@ Masina::Masina(Brands s, Models t, int a, int b) :
     nrMasini++;
     id  = nrMasini;
 
-    if (id%2)
-    _texture.loadFromFile("images/car11.png");
-    else _texture.loadFromFile("images/car22.png");
+    string filename = CarFiles[rand()%10];
+    _texture.loadFromFile(filename);
     _sprite.setTexture(_texture);
-   }
+    _sprite.setPosition(sf::Vector2f(150,200));
+}
 
 
 Brands Masina::getRandBrand()
 {
-    return (Brands)(rand() % 5);
+    return (Brands)(rand() % 10);
 }
 
 Models Masina::getRandModel()
 {
-    return Models(rand() % 5);
+    return Models(rand() % 10);
 }
 
 Brands Masina::getMarca() {
@@ -55,7 +60,6 @@ int Masina::getAn() {
 
 void Masina::showImage(sf::RenderWindow& window)
 {
-        _sprite.setPosition(sf::Vector2f(300,250));
         window.draw(_sprite);
 }
 
@@ -86,14 +90,12 @@ void Masina::showInfo(sf::RenderWindow& window)
         sf::Text text;
         text.setFont(font);
         text.setString(str);
-        text.setCharacterSize(24);
+        text.setCharacterSize(12);
         text.setColor(sf::Color::Black);
-        text.setStyle(sf::Text::Bold);
+        text.setStyle(sf::Text::Italic);
 
-        text.setPosition(100,100);
+        text.setPosition(sf::Vector2f(350,20));
         window.draw(text);
-
-
 }
 
 

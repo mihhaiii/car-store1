@@ -10,19 +10,24 @@ using namespace std;
 #include "MasinaManager.h"
 #include "Screen.h"
 #include "Button.h"
-
-class DisplayCarsScreen : public Screen
+#include "utils.h"
+#include "Label.h"
+class DisplayCarsScreen
 {
     public:
         DisplayCarsScreen();
         virtual ~DisplayCarsScreen();
 
-        void show(sf::RenderWindow&,MasinaManager*);
+        ButtonAction show(sf::RenderWindow&,MasinaManager*);
 
     protected:
 
     private:
-        Button leftButton, rightButton, afisDetaliiButton;// backButton;
+        sf::Texture _texture;
+        sf::Sprite _sprite;
+
+        Button leftButton, rightButton, afisDetaliiButton, backButton;
+
 };
 
 #endif // DISPLAYCARSSCREEN_H

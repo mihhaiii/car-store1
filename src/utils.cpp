@@ -2,13 +2,31 @@
 #include "utils.h"
 
 
+const string CarFiles[] = {
+    "images/car1.png",
+    "images/car2.png",
+    "images/car3.png",
+    "images/car4.png",
+    "images/car5.png",
+    "images/car6.png",
+    "images/car7.png",
+    "images/car8.png",
+    "images/car9.png",
+    "images/car10.png"
+};
+
 const char* Brands2Str[] =
 {
     "FIAT",
     "BMW",
     "FORD",
     "DACIA",
-    "AUDI"
+    "AUDI",
+    "TOYOTA",
+    "FERARRI",
+    "VOLKSWAGEN",
+    "MERCEDES",
+    "OPEL"
 };
 
 const char* Models2Str[] =
@@ -17,8 +35,14 @@ const char* Models2Str[] =
     "f5",
     "h1100",
     "j3r3",
-    "lk90"
+    "lk90",
+    "xb44",
+    "hu35",
+    "ui100",
+    "xb330",
+    "hwt4500"
 };
+
 
 string int2str(int x){
     string s("");

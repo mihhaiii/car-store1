@@ -23,6 +23,8 @@ class Masina
         Models getModel();
         int getPret();
         int getAn();
+        string getFilename();
+        void setFilename(string);
 
         void showImage(sf::RenderWindow&);
         void showInfo(sf::RenderWindow&);
@@ -40,7 +42,7 @@ class Masina
 
         sf::Sprite _sprite;
         sf::Texture _texture;
-
+        string _filename;
 };
 
 #endif // MASINA_H

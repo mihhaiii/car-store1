@@ -3,6 +3,10 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
+#include "utils.h"
+#include "Label.h"
+#include "Button.h"
+
 using namespace std;
 class Menu
 {
@@ -10,15 +14,8 @@ class Menu
         Menu();
         virtual ~Menu();
 
-        enum MenuResult { AfiseazaMasini, Iesire, Nothing };
 
-        struct MenuItem
-        {
-            sf::Rect<int> rect;
-            MenuResult action;
-        };
-
-        MenuResult show(sf::RenderWindow&);
+        ButtonAction show(sf::RenderWindow&);
 
     protected:
 
@@ -26,9 +23,8 @@ class Menu
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        vector<MenuItem> items;
-
-        MenuResult HandleClick(int,int);
+        Button listaMasiniButton, iesireButton, cosulMeuButton, logoutButton;
+        Label meniu;
 };
 
 #endif // MENU_H
