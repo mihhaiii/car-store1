@@ -19,12 +19,17 @@ Magazin::Magazin()
         cout << Brands2Str[m->getMarca()] << ' ' << Models2Str[m->getModel()] << ' ' << m->getPret() << ' ' << m->getAn() << endl;
     }*/
 
-    _userManager.AddUser(new User("mihai","admin","admin"));
+    freopen("bazadedateuseri.txt","r",stdin);
+    string a, b, c;
+    while (cin>>a>>b>>c) {
+        _userManager.AddUser(new User(a,b,c));
+    }
 }
 
 Magazin::~Magazin()
 {
-    //dtor
+    //dtorf
+    _userManager.writeData("bazadedateuseri.txt");
 }
 
 void  Magazin::startApp()

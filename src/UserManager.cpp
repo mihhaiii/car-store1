@@ -29,3 +29,10 @@ bool UserManager::checkLogInfo(string username, string parola) {
             return user->checkParola(parola);
     }
 }
+
+void UserManager::writeData(const char* filename) {
+    freopen(filename,"w",stdout);
+    for(auto user:listaUseri) {
+        cout << user->getName() << "\n" << user->getUsername() << "\n" << user->getParola() << "\n\n";
+    }
+}

@@ -20,7 +20,9 @@ string User::getName(){
 string User::getUsername(){
     return username;
 }
-
+string User::getParola() {
+    return parola;
+}
 
 bool User::checkParola(string parola) {
     return this->parola == parola;

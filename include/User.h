@@ -17,6 +17,7 @@ class User
 
         string getUsername();
         string getName();
+        string getParola();
 
         bool checkParola(string);
 

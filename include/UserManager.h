@@ -16,6 +16,7 @@ class UserManager
         bool existsUser(string);
 
         bool checkLogInfo(string,string);
+        void writeData(const char*);
 
     protected:
 

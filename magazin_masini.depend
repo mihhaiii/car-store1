@@ -34,7 +34,7 @@
 	"SFML/Graphics.hpp"
 	"utils.h"
 
-1463716545 source:c:\users\mihai\desktop\magazin_masini\src\masina.cpp
+1463717671 source:c:\users\mihai\desktop\magazin_masini\src\masina.cpp
 	"Masina.h"
 	<ctime>
 	<random>
@@ -43,7 +43,7 @@
 	<string>
 	"SFML/Graphics.hpp"
 
-1463716033 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
+1463757541 source:c:\users\mihai\desktop\magazin_masini\src\magazin.cpp
 	"Magazin.h"
 	"Masina.h"
 	<ctime>
@@ -53,18 +53,18 @@
 	<string>
 	"utils.h"
 
-1463695823 source:c:\users\mihai\desktop\magazin_masini\src\user.cpp
+1463757174 source:c:\users\mihai\desktop\magazin_masini\src\user.cpp
 	"User.h"
 
-1463695255 c:\users\mihai\desktop\magazin_masini\include\user.h
+1463757154 c:\users\mihai\desktop\magazin_masini\include\user.h
 	<string>
 	"UserManager.h"
 
-1463695035 c:\users\mihai\desktop\magazin_masini\include\usermanager.h
+1463757633 c:\users\mihai\desktop\magazin_masini\include\usermanager.h
 	"User.h"
 	<bits/stdc++.h>
 
-1463695843 source:c:\users\mihai\desktop\magazin_masini\src\usermanager.cpp
+1463757731 source:c:\users\mihai\desktop\magazin_masini\src\usermanager.cpp
 	"UserManager.h"
 
 1463003606 c:\users\mihai\desktop\magazin_masini\include\splashscreen.h
