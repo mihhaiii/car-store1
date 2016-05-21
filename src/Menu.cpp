@@ -16,7 +16,7 @@ Menu::Menu() :
     iesireButton.setPosition(300,175);
 
     listaMasiniButton.setAction(ShowCars);
-    cosulMeuButton.setAction(Nothing);
+    cosulMeuButton.setAction(ShowMyCart);
     logoutButton.setAction(ShowLogInfo);
     iesireButton.setAction(Exit);
 

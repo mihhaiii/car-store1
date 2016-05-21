@@ -27,5 +27,4 @@ class CarScreen
 
         Button backButton;
 };
-// ce vrei tu
 #endif // CARSCREEN_H

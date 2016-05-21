@@ -20,20 +20,21 @@ DisplayCarsScreen::DisplayCarsScreen() :
     backButton.setAction(Back);
 }
 
-DisplayCarsScreen::~DisplayCarsScreen(){}
-
-ButtonAction DisplayCarsScreen::show(sf::RenderWindow& window, MasinaManager* mm)
+DisplayCarsScreen::~DisplayCarsScreen()
 {
-    int curr=0;
+    //dtor
+}
+
+ButtonAction DisplayCarsScreen::show(sf::RenderWindow& window, MasinaManager *mm)
+{
+    int curr = 0;
     int nr = mm->getMasinaCount();
 
-
-
-   vector<Button*> buttons;
-   buttons.push_back(&leftButton);
-   buttons.push_back(&rightButton);
-   buttons.push_back(&afisDetaliiButton);
-   buttons.push_back(&backButton);
+   vector<Button*> shopButtons;
+   shopButtons.push_back(&leftButton);
+   shopButtons.push_back(&rightButton);
+   shopButtons.push_back(&afisDetaliiButton);
+   shopButtons.push_back(&backButton);
 
     while (1)
     {
@@ -52,7 +53,7 @@ ButtonAction DisplayCarsScreen::show(sf::RenderWindow& window, MasinaManager* mm
             }
             if (event.type == sf::Event::MouseButtonPressed)
             {
-                for(auto button:buttons) {
+                for(auto button:shopButtons) {
                     if (button->isButtonPressedAt(event.mouseButton.x,event.mouseButton.y)) {
                         if (button->getAction() == ShowPrevCar) {mm->MoveBackward(); curr--; if (curr==-1) curr=nr-1;}
                          else
@@ -65,8 +66,8 @@ ButtonAction DisplayCarsScreen::show(sf::RenderWindow& window, MasinaManager* mm
         }
         window.clear();
         window.draw(_sprite);
-        mm->getCurentMasina()->showImage(window);
-        mm->getCurentMasina()->showInfo(window);
+        mm->getCurrentMasina()->showImage(window);
+        mm->getCurrentMasina()->showInfo(window);
         leftButton.show(window);
         rightButton.show(window);
         afisDetaliiButton.show(window);

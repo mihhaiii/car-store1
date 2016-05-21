@@ -8,6 +8,7 @@ User::User()
 User::User(string a, string b, string c) :
     name(a), username(b), parola(c)
     {
+        //ctor
     }
 User::~User()
 {

@@ -22,6 +22,7 @@
 #include "Label.h"
 #include "FormField.h"
 #include "CarScreen.h"
+#include "MyCartScreen.h"
 using namespace std;
 
 class Magazin
@@ -38,6 +39,7 @@ class Magazin
         void showRegisterScreen();
         void displayCars();
         void showCarScreen();
+        void showMyCartScreen();
 
     protected:
 
@@ -47,6 +49,7 @@ class Magazin
 
         UserManager _userManager;
         MasinaManager _masinaManager;
+
 
         void appLoop();
 };

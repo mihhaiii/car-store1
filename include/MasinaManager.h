@@ -3,8 +3,10 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-using namespace std;
 #include "Masina.h"
+
+using namespace std;
+
 class MasinaManager
 {
     public:
@@ -14,7 +16,7 @@ class MasinaManager
         void addMasina(Masina*);
         void deleteMasina(int id);
 
-        Masina* getCurentMasina();
+        Masina* getCurrentMasina();
         void MoveForward();
         void MoveBackward();
 
@@ -24,9 +26,7 @@ class MasinaManager
 
     private:
         vector<Masina*> listaMasini;
-        int curentMasinaIndex;
-
-
+        int currentMasinaIndex;
 
 };
 

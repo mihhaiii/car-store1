@@ -3,7 +3,7 @@
 MasinaManager::MasinaManager()
 {
     //ctor
-    curentMasinaIndex = 0;
+    currentMasinaIndex = 0;
 }
 
 MasinaManager::~MasinaManager()
@@ -18,17 +18,17 @@ void MasinaManager::deleteMasina(int id) {
 
 }
 
-Masina* MasinaManager::getCurentMasina() {
-    return listaMasini[curentMasinaIndex];
+Masina* MasinaManager::getCurrentMasina() {
+    return listaMasini[currentMasinaIndex];
 }
 
 void MasinaManager::MoveForward() {
-    curentMasinaIndex++;
-    if (curentMasinaIndex == listaMasini.size()) curentMasinaIndex = 0;
+    currentMasinaIndex++;
+    if (currentMasinaIndex == listaMasini.size()) currentMasinaIndex = 0;
 }
 void MasinaManager::MoveBackward() {
-    curentMasinaIndex--;
-    if (curentMasinaIndex == -1) curentMasinaIndex = listaMasini.size() - 1;
+    currentMasinaIndex--;
+    if (currentMasinaIndex == -1) currentMasinaIndex = listaMasini.size() - 1;
 }
 
 int MasinaManager::getMasinaCount(){

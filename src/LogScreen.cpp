@@ -96,7 +96,7 @@ ButtonAction LogScreen::show(sf::RenderWindow& window, UserManager*  userManager
                 break;
             case sf::Event::KeyPressed:
                 if (event.key.code == sf::Keyboard::Tab) {
-                    if (username.isActive()) username.setActive(false), parola.setActive(true);
+                    if (username.isActive()) username.setActive(false), parola.setActive(true), parola.popLetter();
                 }
             }
         }

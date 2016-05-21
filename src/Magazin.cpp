@@ -1,6 +1,5 @@
 #include "Magazin.h"
 #include "Masina.h"
-
 #include <ctime>
 #include <random>
 Magazin::Magazin()
@@ -32,14 +31,14 @@ Magazin::~Magazin()
     _userManager.writeData("bazadedateuseri.txt");
 }
 
-void  Magazin::startApp()
+void Magazin::startApp()
 {
     for (int i=0;i<10;i++)
     {
         _masinaManager.addMasina(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%20 + 1995));
     }
 
-    cout << "----------------Bine ati Venit!!!-----------------"<<endl;
+    cout << "----------------Start aplicatie!-----------------"<<endl;
     if (_state != uninitialized)
         return;
 
@@ -80,6 +79,9 @@ void Magazin::appLoop()
     case showingCarScreen:
         showCarScreen();
         break;
+    case showingMyCart:
+        showMyCartScreen();
+        break;
     }
 }
 
@@ -97,6 +99,9 @@ void Magazin::showMenu()
         break;
     case ShowLogInfo:
         _state = showingLogInfo;
+        break;
+    case ShowMyCart:
+        _state = showingMyCart;
         break;
     }
 
@@ -125,9 +130,8 @@ void Magazin::showLogScreen()
 {
 
     LogScreen ls;
-    ButtonAction res = ls.show(_mainWindow,&_userManager);
-    if (res == ShowMenu)
-        _state = showingMenu;
+    ButtonAction res = ls.show(_mainWindow,
+                               &_userManager);
     switch(res)
     {
     case ShowMenu:
@@ -144,7 +148,8 @@ void Magazin::showLogScreen()
 void Magazin::showRegisterScreen()
 {
     RegisterScreen rs;
-     ButtonAction res =  rs.show(_mainWindow, &_userManager);
+     ButtonAction res =  rs.show(_mainWindow,
+                                 &_userManager);
     switch(res)
     {
     case ShowMenu:
@@ -162,7 +167,8 @@ void Magazin::displayCars()
 {
     DisplayCarsScreen dcs;
 
-    ButtonAction res = dcs.show(_mainWindow,&_masinaManager);
+    ButtonAction res = dcs.show(_mainWindow,
+                                &_masinaManager);
     switch(res)
     {
     case ShowCarScreen:
@@ -181,11 +187,27 @@ void Magazin::showCarScreen()
 {
     CarScreen cs;
       ButtonAction res = cs.show(_mainWindow,
-                                 _masinaManager.getCurentMasina());
+                                 _masinaManager.getCurrentMasina());
     switch(res)
     {
     case Back:
         _state = displayingCars;
+        break;
+    case Exit:
+        _state = exiting;
+        break;
+    }
+}
+
+void Magazin::showMyCartScreen()
+{
+    MyCartScreen mcs;
+    ButtonAction res = mcs.show(_mainWindow,
+                                &_masinaManager);
+    switch(res)
+    {
+    case Back:
+        _state = showingMenu;
         break;
     case Exit:
         _state = exiting;

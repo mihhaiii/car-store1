@@ -12,8 +12,8 @@ Screen::~Screen()
     //dtor
 }
 
-void Screen::show(sf::RenderWindow&w)
+void Screen::show(sf::RenderWindow& window)
 {
-    w.draw(_sprite);
+    window.draw(_sprite);
 }
 
