@@ -8,6 +8,7 @@
 #include "MasinaManager.h"
 #include "Button.h"
 #include "Label.h"
+
 using namespace std;
 
 class CarScreen
@@ -17,7 +18,7 @@ class CarScreen
         virtual ~CarScreen();
 
         ButtonAction show(sf::RenderWindow&, Masina*);
-        void drawAll(sf::RenderWindow&,Masina*);
+        void drawAll(sf::RenderWindow&, Masina*);
 
     protected:
 
@@ -27,5 +28,5 @@ class CarScreen
 
         Button backButton;
 };
-// ce vrei tu
+
 #endif // CARSCREEN_H

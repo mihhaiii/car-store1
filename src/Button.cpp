@@ -4,7 +4,7 @@ Button::Button(string filename)
 : _filename(filename)
 {
     //ctor
-    _texture.loadFromFile(filename);
+    _texture.loadFromFile(_filename);
     _sprite.setTexture(_texture);
 
     rect.left = 0;

@@ -7,7 +7,10 @@ CarScreen::CarScreen() : backButton("images/backbutton.png")
     _sprite.setTexture(_texture);
     backButton.setPosition(10,540);
 }
-CarScreen::~CarScreen(){}
+CarScreen::~CarScreen()
+{
+    //dtor
+}
 void CarScreen::drawAll(sf::RenderWindow& window, Masina* masina) {
     window.draw(_sprite);
     masina->showImage(window);

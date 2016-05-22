@@ -3,8 +3,9 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-using namespace std;
 #include "utils.h"
+
+using namespace std;
 
 class Button
 {
