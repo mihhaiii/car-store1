@@ -37,18 +37,19 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
    buttons.push_back(&rightButtonObj);
    buttons.push_back(&detailsButtonObj);
    buttons.push_back(&backButtonObj);
-   for(int i=0;i<4;i++)
+   for(int i=0;i<5;i++)
    {
        boxes.push_back(new CheckBox());
    }
-   for(int i=0;i<4;i++)
+   for(int i=0;i<5;i++)
    {
-       boxes[i]->setPosition(sf::Vector2f(i*100+20,100));
+       boxes[i]->setPosition(sf::Vector2f(i*150+20,120));
    }
    boxes[0]->setText("Toate");
    boxes[1]->setText("Limuzine");
-   boxes[2]->setText("Camioane");
-   boxes[3]->setText("Masini\nobisnuite");
+   boxes[2]->setText("Masini\nsport");
+   boxes[3]->setText("Masini\nde\ncurse");
+   boxes[4]->setText("SUV");
    boxes[0]->setCheck(true);
 
     while (1)
@@ -100,12 +101,12 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
                             return button->GetAction();
                     }
                 }
-                for (int i=0;i<4;i++)
+                for (int i=0;i<5;i++)
 
                 {
                     if (boxes[i]->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                     {
-                        for(int j=0;j<4;j++)
+                        for(int j=0;j<5;j++)
                         {
                             boxes[j]->setCheck(false);
                         }
@@ -122,7 +123,7 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
         rightButtonObj.Show(window);
         detailsButtonObj.Show(window);
         backButtonObj.Show(window);
-        for(int i=0;i<4;i++)
+        for(int i=0;i<5;i++)
         {
             boxes[i]->show(window);
         }

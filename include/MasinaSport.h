@@ -12,7 +12,9 @@ class MasinaSport : public Masina
 {
     public:
         MasinaSport();
+        MasinaSport(Brands,Models,int,int);
         virtual ~MasinaSport();
+
 
         virtual void showImage(sf::RenderWindow&);
         virtual void showInfo(sf::RenderWindow&);

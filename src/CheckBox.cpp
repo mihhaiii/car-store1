@@ -9,13 +9,17 @@ CheckBox::CheckBox(){
     box.setOutlineThickness(3);
     box.setOutlineColor(sf::Color::Black);
 
+    text.SetCharacterSize(14);
+    text.SetStyle("normal");
+    text.SetColor("blue");
+
     isChecked = false;
 }
 
 void CheckBox::setPosition(sf::Vector2f v) {
     sprite.setPosition(v);
     box.setPosition(v);
-    text.SetPosition((int)v.x+32,(int)v.y);
+    text.SetPosition((int)v.x+35,(int)v.y);
 }
 void CheckBox::setText(string s) {
     text.SetText(s);

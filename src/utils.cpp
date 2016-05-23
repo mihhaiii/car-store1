@@ -12,7 +12,32 @@ const string CarFiles[] = {
     "images/car7.png",
     "images/car8.png",
     "images/car9.png",
-    "images/car10.png"
+    "images/car10.png",
+    "images/curse1.png",
+    "images/curse2.png",
+    "images/curse3.png",
+    "images/curse4.png",
+    "images/curse5.png",
+    "images/curse6.png",
+    "images/curse7.png",
+    "images/lim1.png",
+    "images/lim2.png",
+    "images/lim3.png",
+    "images/lim4.png",
+    "images/sport1.png",
+    "images/sport2.png",
+    "images/sport3.png",
+    "images/sport4.png",
+    "images/sport5.png",
+    "images/sport6.png",
+    "images/sport7.png",
+    "images/suv1.png",
+    "images/suv2.png",
+    "images/suv3.png",
+    "images/suv4.png",
+    "images/suv5.png",
+    "images/suv6.png",
+    "images/suv7.png"
 };
 
 const char* Brands2Str[] =

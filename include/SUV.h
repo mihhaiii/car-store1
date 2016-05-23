@@ -12,6 +12,7 @@ class SUV : public Masina
 {
     public:
         SUV();
+        SUV(Brands,Models,int,int);
         virtual ~SUV();
 
         virtual void showImage(sf::RenderWindow&);

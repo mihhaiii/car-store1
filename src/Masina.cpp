@@ -5,9 +5,6 @@ Masina::Masina()
 {
      nrMasini++;
     id  = nrMasini;
-    _filename = CarFiles[rand()%10];
-    _texture.loadFromFile(_filename);
-    _sprite.setTexture(_texture);
     _sprite.setPosition(sf::Vector2f(150,200));
 }
 string Masina::getFilename() {
@@ -27,11 +24,6 @@ Masina::Masina(Brands s, Models t, int a, int b) :
    marca(s), model(t), pret(a), an(b)  {
     nrMasini++;
     id  = nrMasini;
-
-    string filename = CarFiles[rand()%10];
-    _texture.loadFromFile(filename);
-    _sprite.setTexture(_texture);
-    _sprite.setPosition(sf::Vector2f(150,200));
 }
 
 
@@ -98,8 +90,7 @@ void Masina::showInfo(sf::RenderWindow& window)
         window.draw(text);
 }
 void Masina::setImage(string file) {
-    _filename = CarFiles[rand()%10];
-    _texture.loadFromFile(_filename);
+    _texture.loadFromFile(file);
     _sprite.setTexture(_texture);
     _sprite.setPosition(sf::Vector2f(150,200));
 }

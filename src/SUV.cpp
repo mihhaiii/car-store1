@@ -4,7 +4,11 @@ SUV::SUV()
 {
     //ctor
 }
+SUV::SUV(Brands b, Models m, int x ,int y)
+: Masina(b,m,x,y)
+{
 
+}
 
 SUV::~SUV()
 {

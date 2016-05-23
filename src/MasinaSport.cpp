@@ -5,7 +5,11 @@ MasinaSport::MasinaSport()
     //ctor
 }
 
+MasinaSport::MasinaSport(Brands b, Models m, int x ,int y)
+: Masina(b,m,x,y)
+{
 
+}
 MasinaSport::~MasinaSport()
 {
     //dtor

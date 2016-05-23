@@ -9,16 +9,37 @@ Magazin::Magazin()
     // incarc 10 masini random in _carList
     for (int i=0;i<10;i++)
     {
-        _carManager.AddCar(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950));
+        Masina* m  = new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950);
+        m->setImage(CarFiles[i]);
+        _carManager.AddCar(m);
+    }
+    for (int i=10;i<17;i++)
+    {
+        Masina* m  = new MasinaDeCurse(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950);
+        m->setImage(CarFiles[i]);
+        _carManager.AddCar(m);
+    }
+    for (int i=17;i<21;i++)
+    {
+        Masina* m  = new Limuzina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950);
+        m->setImage(CarFiles[i]);
+        _carManager.AddCar(m);
+    }
+    for (int i=21;i<28;i++)
+    {
+        Masina* m  = new MasinaSport(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950);
+        m->setImage(CarFiles[i]);
+        _carManager.AddCar(m);
+    }
+    for (int i=28;i<35;i++)
+    {
+        Masina* m  = new SUV(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950);
+        m->setImage(CarFiles[i]);
+        _carManager.AddCar(m);
     }
 
+
     _state = uninitialized;
-
-   /* for (auto m:listaMasini)
-    {
-        cout << Brands2Str[m->getMarca()] << ' ' << Models2Str[m->getModel()] << ' ' << m->getPret() << ' ' << m->getAn() << endl;
-    }*/
-
     freopen("bazadedateuseri.txt","r",stdin);
     string a, b, c;
     while (cin>>a>>b>>c) {
@@ -33,11 +54,6 @@ Magazin::~Magazin()
 
 void  Magazin::startApp()
 {
-    for (int i=0;i<10;i++)
-    {
-        _carManager.AddCar(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%20 + 1995));
-    }
-
     cout << "----------------Bine ati Venit!!!-----------------"<<endl;
     if (_state != uninitialized)
         return;

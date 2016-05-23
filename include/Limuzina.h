@@ -12,6 +12,7 @@ class Limuzina : public Masina
 {
     public:
         Limuzina();
+        Limuzina(Brands,Models,int,int);
         virtual ~Limuzina();
 
         virtual void showImage(sf::RenderWindow&);

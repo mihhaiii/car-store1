@@ -4,7 +4,11 @@ Limuzina::Limuzina()
 {
     //ctor
 }
+Limuzina::Limuzina(Brands b, Models m, int x ,int y)
+: Masina(b,m,x,y)
+{
 
+}
 
 Limuzina::~Limuzina()
 {

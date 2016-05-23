@@ -24,6 +24,7 @@ class MasinaManager
 
     private:
         vector<Masina*> _carList;
+
         int _currentCarIndex;
 
 

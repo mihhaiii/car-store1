@@ -12,6 +12,7 @@ class MasinaDeCurse : public Masina
 {
     public:
         MasinaDeCurse();
+        MasinaDeCurse(Brands,Models,int,int);
         virtual ~MasinaDeCurse();
 
         virtual void showImage(sf::RenderWindow&);

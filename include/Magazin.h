@@ -23,6 +23,10 @@
 #include "FormField.h"
 #include "CarScreen.h"
 #include "MyCartScreen.h"
+#include "MasinaDeCurse.h"
+#include "MasinaSport.h"
+#include "SUV.h"
+#include "Limuzina.h"
 
 using namespace std;
 
