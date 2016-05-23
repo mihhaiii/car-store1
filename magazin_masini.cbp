@@ -56,6 +56,7 @@
 		<Unit filename="include/Masina.h" />
 		<Unit filename="include/MasinaManager.h" />
 		<Unit filename="include/Menu.h" />
+		<Unit filename="include/MyCartScreen.h" />
 		<Unit filename="include/RegisterScreen.h" />
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/SplashScreen.h" />
@@ -75,6 +76,7 @@
 		<Unit filename="src/Masina.cpp" />
 		<Unit filename="src/MasinaManager.cpp" />
 		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/MyCartScreen.cpp" />
 		<Unit filename="src/RegisterScreen.cpp" />
 		<Unit filename="src/Screen.cpp" />
 		<Unit filename="src/SplashScreen.cpp" />
