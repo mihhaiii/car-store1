@@ -25,9 +25,10 @@ class Masina
         int getAn();
         string getFilename();
         void setFilename(string);
+        void setImage(string);
 
-        void showImage(sf::RenderWindow&);
-        void showInfo(sf::RenderWindow&);
+        virtual void showImage(sf::RenderWindow&);
+        virtual void showInfo(sf::RenderWindow&);
 
     protected:
 

@@ -97,6 +97,13 @@ void Masina::showInfo(sf::RenderWindow& window)
         text.setPosition(sf::Vector2f(350,20));
         window.draw(text);
 }
+void Masina::setImage(string file) {
+    _filename = CarFiles[rand()%10];
+    _texture.loadFromFile(_filename);
+    _sprite.setTexture(_texture);
+    _sprite.setPosition(sf::Vector2f(150,200));
+}
+
 
 
 int Masina::nrMasini = 0;
