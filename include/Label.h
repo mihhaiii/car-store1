@@ -14,15 +14,17 @@ class Label
         virtual ~Label();
 
         void Show(sf::RenderWindow&);
-        void ShowPasswordType(sf::RenderWindow&);
         void SetText(string);
         void SetPosition(int,int);
+        void SetPositionX(int);
+        void SetPositionY(int);
         void SetStyle(string);
         void SetCharacterSize(int);
         void PopLetter();
         void AddLetter(char);
-        int GetLength();
+        int GetWidth();
         string GetText();
+        sf::Vector2f getPosition();
         void SetVisible(bool);
         void SetColor(string);
 

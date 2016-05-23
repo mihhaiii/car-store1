@@ -35,12 +35,26 @@ void Label::SetText(string x) {
     text.setString(_str);
 }
 string Label::GetText() {
-  //  if (str[str.size()-1] == '|') return str.substr(0,str.size()-1);
+    //if (_str[_str.size()-1] == '|') return _str.substr(0,_str.size()-1);
     return _str;
 }
+
+
 void Label::SetPosition(int x, int y) {
     text.setPosition(sf::Vector2f(x,y));
 }
+
+
+void Label::SetPositionX(int x) {
+    text.setPosition(sf::Vector2f(x,text.getPosition().y));
+}
+
+
+void Label::SetPositionY(int y) {
+    text.setPosition(sf::Vector2f(text.getPosition().x,y));
+}
+
+
 void Label::SetCharacterSize(int sz)  {
     text.setCharacterSize(sz);
 }
@@ -62,21 +76,14 @@ void Label::PopLetter() {
     }
 }
 
-int Label::GetLength() {
+int Label::GetWidth() {
     return text.getLocalBounds().width;
+}
+sf::Vector2f Label::getPosition() {
+    return text.getPosition();
 }
 
 void Label::Show(sf::RenderWindow& window) {
    if (_visible)
         window.draw(text);
-}
-void Label::ShowPasswordType(sf::RenderWindow& window) {
-    if (_visible) {
-        string encrypted_string = _str;
-        for(int i = 0;i < encrypted_string.size(); i++)
-            if (encrypted_string[i]!='|') encrypted_string[i] = '*';
-        text.setString(encrypted_string);
-        window.draw(text);
-        text.setString(_str);
-    }
 }

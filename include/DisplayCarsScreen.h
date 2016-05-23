@@ -11,7 +11,8 @@
 #include "Button.h"
 #include "utils.h"
 #include "Label.h"
-
+#include "CheckBox.h"
+#include "CheckBoxManager.h"
 using namespace std;
 
 class DisplayCarsScreen
@@ -29,7 +30,7 @@ class DisplayCarsScreen
         sf::Sprite _sprite;
 
         Button leftButtonObj, rightButtonObj, detailsButtonObj, backButtonObj;
-
+        vector<CheckBox*> boxes;
 };
 
 #endif // DISPLAYCARSSCREEN_H

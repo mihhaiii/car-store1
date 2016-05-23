@@ -26,13 +26,13 @@ class FormField
 
     protected:
         sf::RectangleShape shape;
-        Label textLabelObj;
+        Label textLabelObj, encryptedLabel, cursor;
         bool _active, _passwordType;
         sf::Clock clock;
 
-        void ShowCursor(sf::RenderWindow&);
-
     private:
+        void UpdateCursor();
+
 };
 
 #endif // FORMFIELD_H
