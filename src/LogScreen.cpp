@@ -33,7 +33,7 @@ LogScreen::LogScreen() :
     warningLabelObj.SetStyle("italic");
     warningLabelObj.SetColor("red");
     warningLabelObj.SetCharacterSize(30);
-    warningLabelObj.SetPosition(150,250);
+    warningLabelObj.SetPosition(150,450);
     warningLabelObj.SetVisible(false);
 }
 

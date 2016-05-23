@@ -1,16 +1,16 @@
 #include "DisplayCarsScreen.h"
 
 DisplayCarsScreen::DisplayCarsScreen() :
-    leftButtonObj("images/leftbutton.gif"),
-    rightButtonObj("images/rightbutton.gif"),
+    leftButtonObj("images/leftbutton.png"),
+    rightButtonObj("images/rightbutton.png"),
     detailsButtonObj("images/afisdetalii.png"),
     backButtonObj("images/backButton.png")
 {
     _texture.loadFromFile("images/background1.png");
     _sprite.setTexture(_texture);
 
-    leftButtonObj.SetPosition(100,300);
-    rightButtonObj.SetPosition(700,300);
+    leftButtonObj.SetPosition(50,300);
+    rightButtonObj.SetPosition(720,300);
     detailsButtonObj.SetPosition(300,500);
     backButtonObj.SetPosition(10,540);
 
