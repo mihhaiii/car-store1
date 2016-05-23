@@ -12,22 +12,24 @@ LogInfoScreen::~LogInfoScreen()
 {
     //dtor
 }
-ButtonAction LogInfoScreen::show(sf::RenderWindow& window)
+ButtonAction LogInfoScreen::Show(sf::RenderWindow& window)
 {
-    Button b1("images/loginbutton.png");
-    b1.setPosition(264,245);
-    b1.setAction(ShowLogSreen);
+    Button logInButtonObj("images/loginbutton.png");
+    logInButtonObj.SetPosition(264,245);
+    logInButtonObj.SetAction(ShowLogSreenAction);
 
-    Button b2("images/registerbutton.png");
-    b2.setPosition(264, 291);
-    b2.setAction(ShowRegisterScreen);
+    Button registerButtonObj("images/registerbutton.png");
+    registerButtonObj.SetPosition(264, 291);
+    registerButtonObj.SetAction(ShowRegisterScreenAction);
 
-    items.push_back(b1);
-    items.push_back(b2);
+    buttons.push_back(logInButtonObj);
+    buttons.push_back(registerButtonObj);
 
     window.clear();
     window.draw(_sprite);
-    for (auto b : items) b.show(window);
+    for (auto button : buttons)
+        button.Show(window);
+
     window.display();
 
     sf::Event event;
@@ -39,11 +41,13 @@ ButtonAction LogInfoScreen::show(sf::RenderWindow& window)
             {
             case sf::Event::Closed:
                 window.close();
-                return Nothing;
+                return NothingAction;
                 break;
             case sf::Event::MouseButtonPressed:
-                for(auto b :items) if (b.isButtonPressedAt((int)event.mouseButton.x, (int)event.mouseButton.y))
-                    if (b.getAction() != Nothing) return b.getAction();
+                for(auto button : buttons)
+                    if (button.IsButtonPressedAt((int)event.mouseButton.x, (int)event.mouseButton.y))
+                        if (button.GetAction() != NothingAction)
+                            return button.GetAction();
             }
         }
     }

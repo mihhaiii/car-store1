@@ -22,6 +22,8 @@
 #include "Label.h"
 #include "FormField.h"
 #include "CarScreen.h"
+#include "MyCartScreen.h"
+
 using namespace std;
 
 class Magazin
@@ -31,13 +33,14 @@ class Magazin
         virtual ~Magazin();
         void startApp();
 
-        void showMenu();
-        void showSplash();
-        void showLogInfo();
-        void showLogScreen();
-        void showRegisterScreen();
-        void displayCars();
-        void showCarScreen();
+        void ShowMenu();
+        void ShowSplash();
+        void ShowLogInfo();
+        void ShowLogScreen();
+        void ShowRegisterScreen();
+        void DisplayCars();
+        void ShowCarScreen();
+        void ShowMyCartScreen();
 
     protected:
 
@@ -46,7 +49,7 @@ class Magazin
         sf::RenderWindow _mainWindow;
 
         UserManager _userManager;
-        MasinaManager _masinaManager;
+        MasinaManager _carManager;
 
         void appLoop();
 };

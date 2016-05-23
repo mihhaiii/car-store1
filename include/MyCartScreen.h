@@ -7,13 +7,15 @@
 #include "Button.h"
 #include "MasinaManager.h"
 
+using namespace std;
+
 class MyCartScreen
 {
     public:
         MyCartScreen();
         virtual ~MyCartScreen();
 
-        ButtonAction show(sf::RenderWindow& , MasinaManager*);
+        ButtonAction Show(sf::RenderWindow& , MasinaManager*);
 
     protected:
 
@@ -21,8 +23,7 @@ class MyCartScreen
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Button backButton;
-        MasinaManager _MyCartCars;
+        Button backButtonObj;
 };
 
 #endif // MYCARTSCREEN_H

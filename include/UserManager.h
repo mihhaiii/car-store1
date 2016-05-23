@@ -3,7 +3,9 @@
 
 #include "User.h"
 #include <bits/stdc++.h>
+
 using namespace std;
+
 class User;
 class UserManager
 {
@@ -13,15 +15,15 @@ class UserManager
 
         void AddUser(User*);
         void DeleteUser(string);
-        bool existsUser(string);
+        bool ExistsUser(string);
 
-        bool checkLogInfo(string,string);
-        void writeData(const char*);
+        bool CheckLogInfo(string,string);
+        void WriteData(const char*);
 
     protected:
 
     private:
-        vector<User*> listaUseri;
+        vector<User*> _usersList;
 };
 
 #endif // USERMANAGER_H

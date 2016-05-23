@@ -1,52 +1,52 @@
 #include "RegisterScreen.h"
 
 RegisterScreen::RegisterScreen()
-: registerButton("images/registerbutton1.png"),
-  backButton("images/backbutton.png")
+: registerButtonObj("images/registerbutton1.png"),
+  backButtonObj("images/backbutton.png")
 {
     //ctor
     _texture.loadFromFile("images/background.png");
     _sprite.setTexture(_texture);
 
 
-    nume.setPosition(300,300);
-    username.setPosition(300,330);
-    parola.setPosition(300,360);
-    email.setPosition(300,390);
-    registerButton.setPosition(300,420);
-    backButton.setPosition(10,540);
-    parola.setPasswordType(true);
+    nameFormObj.SetPosition(300,300);
+    usernameFormObj.SetPosition(300,330);
+    passwordFormObj.SetPosition(300,360);
+    emailFormObj.SetPosition(300,390);
+    registerButtonObj.SetPosition(300,420);
+    backButtonObj.SetPosition(10,540);
+    passwordFormObj.SetPasswordType(true);
 
-    registerLabel.setText("Înregistrare");
-    registerLabel.setStyle("italic");
-    registerLabel.setCharacterSize(30);
-    registerLabel.setPosition(50,50);
+    registerLabelObj.SetText("Înregistrare");
+    registerLabelObj.SetStyle("italic");
+    registerLabelObj.SetCharacterSize(30);
+    registerLabelObj.SetPosition(50,50);
 
-    numeLabel.setText("Nume:");
-    usernameLabel.setText("Username:");
-    parolaLabel.setText("Parola:");
-    emailLabel.setText("Email:");
+    nameLabelObj.SetText("Nume:");
+    usernameLabelObj.SetText("Username:");
+    passwordLabelObj.SetText("Parola:");
+    emailLabelObj.SetText("Email:");
 
-    numeLabel.setPosition(150,300);
-    usernameLabel.setPosition(150,330);
-    parolaLabel.setPosition(150,360);
-    emailLabel.setPosition(150,390);
+    nameLabelObj.SetPosition(150,300);
+    usernameLabelObj.SetPosition(150,330);
+    passwordLabelObj.SetPosition(150,360);
+    emailLabelObj.SetPosition(150,390);
 
-    warningLabel.setText("Date incomplete sau incorecte");
-    warningLabel.setCharacterSize(30);
-    warningLabel.setColor("red");
-    warningLabel.setPosition(300, 500);
-    warningLabel.setVisible(false);
+    warningLabelObj.SetText("Date incomplete sau incorecte");
+    warningLabelObj.SetCharacterSize(30);
+    warningLabelObj.SetColor("red");
+    warningLabelObj.SetPosition(300, 500);
+    warningLabelObj.SetVisible(false);
 
-    congratsLabel.setPosition(300,300);
-    congratsLabel.setText("Înregistrare reusita!");
-    congratsLabel.setCharacterSize(24);
-    congratsLabel.setColor("green");
+    congratsLabelObj.SetPosition(300,300);
+    congratsLabelObj.SetText("Înregistrare reusita!");
+    congratsLabelObj.SetCharacterSize(24);
+    congratsLabelObj.SetColor("green");
 
-    pressKeyLabel.setPosition(300,400);
-    pressKeyLabel.setStyle("italic");
-    pressKeyLabel.setCharacterSize(12);
-    pressKeyLabel.setText("Apasati orice tasta pentru continuare...");
+    pressKeyLabelObj.SetPosition(300,400);
+    pressKeyLabelObj.SetStyle("italic");
+    pressKeyLabelObj.SetCharacterSize(12);
+    pressKeyLabelObj.SetText("Apasati orice tasta pentru continuare...");
 
 }
 
@@ -54,28 +54,28 @@ RegisterScreen::~RegisterScreen()
 {
     //dtor
 }
-void RegisterScreen::drawAll(sf::RenderWindow& window) {
+void RegisterScreen::DrawAll(sf::RenderWindow& window) {
     window.draw(_sprite);
-    registerLabel.show(window);
-    parolaLabel.show(window);
-    usernameLabel.show(window);
-    emailLabel.show(window);
-    numeLabel.show(window);
-    warningLabel.show(window);
+    registerLabelObj.Show(window);
+    passwordLabelObj.Show(window);
+    usernameLabelObj.Show(window);
+    emailLabelObj.Show(window);
+    nameLabelObj.Show(window);
+    warningLabelObj.Show(window);
 
-    nume.show(window);
-    username.show(window);
-    parola.show(window);
-    email.show(window);
+    nameFormObj.Show(window);
+    usernameFormObj.Show(window);
+    passwordFormObj.Show(window);
+    emailFormObj.Show(window);
 
-    registerButton.show(window);
-    backButton.show(window);
+    registerButtonObj.Show(window);
+    backButtonObj.Show(window);
 }
 
 
-ButtonAction RegisterScreen::show(sf::RenderWindow& window, UserManager* userManager) {
+ButtonAction RegisterScreen::Show(sf::RenderWindow& window, UserManager* userManager) {
     window.clear();
-    drawAll(window);
+    DrawAll(window);
     window.display();
 
 
@@ -87,63 +87,70 @@ ButtonAction RegisterScreen::show(sf::RenderWindow& window, UserManager* userMan
             switch(event.type)
             {
                 case sf::Event::Closed:
-                    return Exit;
+                    return ExitAction;
                     break;
                 case sf::Event::MouseButtonPressed:
                    {
                         int x = event.mouseButton.x, y = event.mouseButton.y;
-                        if (nume.isButtonPressedAt(x,y)) setActive(&nume); else
-                        if (username.isButtonPressedAt(x,y)) setActive(&username); else
-                        if (parola.isButtonPressedAt(x,y)) setActive(&parola); else
-                        if (email.isButtonPressedAt(x,y)) setActive(&email); else
-                            setActive(NULL);
+                        if (nameFormObj.IsButtonPressedAt(x,y)) SetActive(&nameFormObj);
+                        else if (usernameFormObj.IsButtonPressedAt(x,y)) SetActive(&usernameFormObj);
+                        else if (passwordFormObj.IsButtonPressedAt(x,y)) SetActive(&passwordFormObj);
+                        else if (emailFormObj.IsButtonPressedAt(x,y)) SetActive(&emailFormObj);
+                        else SetActive(NULL);
 
-                        if (registerButton.isButtonPressedAt(x,y)) {
+                        if (registerButtonObj.IsButtonPressedAt(x,y)) {
                             // verifica corectitudinea datelor
-                            if (Checker::checkRegisterInfo(nume.getText(),username.getText(),parola.getText(),email.getText(),userManager))
-                                return showSuccess(window), userManager->AddUser(new User(nume.getText(),username.getText(),parola.getText())), ShowMenu;
-                                else warningLabel.setVisible(true);
+                            if (Checker::CheckRegister(nameFormObj.GetText(),usernameFormObj.GetText(),passwordFormObj.GetText(),emailFormObj.GetText(),userManager))
+                                return ShowSuccess(window), userManager->AddUser(new User(nameFormObj.GetText(),usernameFormObj.GetText(),passwordFormObj.GetText())), ShowMenuAction;
+                            else warningLabelObj.SetVisible(true);
                         }
-                        if (backButton.isButtonPressedAt(x,y)) {
-                            return Back;
+                        if (backButtonObj.IsButtonPressedAt(x,y)) {
+                            return BackAction;
                         }
                         break;
                    }
                 case sf::Event::TextEntered:
                     if (event.text.unicode == 8) {
-                        if (nume.isActive()) nume.popLetter();
-                        if (username.isActive()) username.popLetter();
-                        if (parola.isActive()) parola.popLetter();
-                        if (email.isActive()) email.popLetter();
-                    } else {
+                        if (nameFormObj.IsActive()) nameFormObj.PopLetter();
+                        if (usernameFormObj.IsActive()) usernameFormObj.PopLetter();
+                        if (passwordFormObj.IsActive()) passwordFormObj.PopLetter();
+                        if (emailFormObj.IsActive()) emailFormObj.PopLetter();
+                    }
+                    else if (event.text.unicode == 9) {
+                        if (nameFormObj.IsActive()) SetActive(&usernameFormObj);
+                        else if (usernameFormObj.IsActive()) SetActive(&passwordFormObj);
+                        else if (passwordFormObj.IsActive()) SetActive(&emailFormObj);
+                    }
+                    else if (event.text.unicode == 13) {
+                        if (Checker::CheckRegister(nameFormObj.GetText(),usernameFormObj.GetText(),passwordFormObj.GetText(),emailFormObj.GetText(),userManager))
+                                return ShowSuccess(window), userManager->AddUser(new User(nameFormObj.GetText(),usernameFormObj.GetText(),passwordFormObj.GetText())), ShowMenuAction;
+                        else warningLabelObj.SetVisible(true);
+                    }
+                    else {
                         char ch = (char)event.text.unicode;
-                       // if ((ch>='a'&&ch<='z') || (ch>='A' && ch<='Z'))
-                        {
-                            if (nume.isActive()) nume.addLetter(ch);
-                            if (username.isActive()) username.addLetter(ch);
-                            if (parola.isActive()) parola.addLetter(ch);
-                            if (email.isActive()) email.addLetter(ch);
-                        }
+                        if (nameFormObj.IsActive()) nameFormObj.AddLetter(ch);
+                        else if (usernameFormObj.IsActive()) usernameFormObj.AddLetter(ch);
+                        else if (passwordFormObj.IsActive()) passwordFormObj.AddLetter(ch);
+                        else if (emailFormObj.IsActive()) emailFormObj.AddLetter(ch);
                     }
                     break;
             }
         }
 
-
         window.clear();
-        drawAll(window);
+        DrawAll(window);
         window.display();
     }
 
 }
 
 
-void RegisterScreen::showSuccess(sf::RenderWindow& window) {
+void RegisterScreen::ShowSuccess(sf::RenderWindow& window) {
     window.clear();
     window.draw(_sprite);
-    registerLabel.show(window);
-    congratsLabel.show(window);
-    pressKeyLabel.show(window);
+    registerLabelObj.Show(window);
+    congratsLabelObj.Show(window);
+    pressKeyLabelObj.Show(window);
 
     window.display();
 
@@ -165,10 +172,10 @@ void RegisterScreen::showSuccess(sf::RenderWindow& window) {
     }
 }
 
-void RegisterScreen::setActive(FormField* l) {
-    nume.setActive(false);
-    username.setActive(false);
-    parola.setActive(false);
-    email.setActive(false);
-    if (l!=NULL) l->setActive(true);
+void RegisterScreen::SetActive(FormField* l) {
+    nameFormObj.SetActive(false);
+    usernameFormObj.SetActive(false);
+    passwordFormObj.SetActive(false);
+    emailFormObj.SetActive(false);
+    if (l!=NULL) l->SetActive(true);
 }

@@ -3,7 +3,6 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-using namespace std;
 #include "utils.h"
 
 #include "Masina.h"
@@ -12,13 +11,16 @@ using namespace std;
 #include "Button.h"
 #include "utils.h"
 #include "Label.h"
+
+using namespace std;
+
 class DisplayCarsScreen
 {
     public:
         DisplayCarsScreen();
         virtual ~DisplayCarsScreen();
 
-        ButtonAction show(sf::RenderWindow&,MasinaManager*);
+        ButtonAction Show(sf::RenderWindow&,MasinaManager*);
 
     protected:
 
@@ -26,7 +28,7 @@ class DisplayCarsScreen
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Button leftButton, rightButton, afisDetaliiButton, backButton;
+        Button leftButtonObj, rightButtonObj, detailsButtonObj, backButtonObj;
 
 };
 

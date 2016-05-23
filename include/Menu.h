@@ -8,14 +8,14 @@
 #include "Button.h"
 
 using namespace std;
+
 class Menu
 {
     public:
         Menu();
         virtual ~Menu();
 
-
-        ButtonAction show(sf::RenderWindow&);
+        ButtonAction Show(sf::RenderWindow&);
 
     protected:
 
@@ -23,8 +23,8 @@ class Menu
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Button listaMasiniButton, iesireButton, cosulMeuButton, logoutButton;
-        Label meniu;
+        Button carListButtonObj, exitButtonObj, myCartButtonObj, logOutButtonObj;
+        Label menu;
 };
 
 #endif // MENU_H

@@ -6,26 +6,30 @@ User::User()
 }
 
 User::User(string a, string b, string c) :
-    name(a), username(b), parola(c)
-    {
-    }
+    _name(a), _username(b), _password(c)
+{
+
+}
 User::~User()
 {
     //dtor
 }
 
-string User::getName(){
-    return name;
+string User::GetName()
+{
+    return _name;
 }
-string User::getUsername(){
-    return username;
+string User::GetUsername()
+{
+    return _username;
 }
-string User::getParola() {
-    return parola;
+string User::GetPassword()
+{
+    return _password;
 }
-
-bool User::checkParola(string parola) {
-    return this->parola == parola;
+bool User::CheckPassword(string password)
+{
+    return this->_password == password;
 }
-int noUsers = 0;
+int noUsers = 0; //?? TODO
 

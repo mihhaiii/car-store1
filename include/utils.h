@@ -11,8 +11,9 @@ enum Models {
 };
 
 enum ButtonAction {
-    ShowNextCar, ShowPrevCar, Back, Exit, ShowCars, ViewCar, ShowMenu, ShowSplash, ShowWarningWindow, Nothing,
-    ShowLogSreen, ShowRegisterScreen, ShowLogInfo, ShowDetails, ShowCarScreen
+    ShowNextCarAction, ShowPrevCarAction, BackAction, ExitAction, ShowCarsAction, ViewCarAction, ShowMenuAction, ShowSplashAction,
+    ShowWarningWindowAction, NothingAction, ShowLogSreenAction, ShowRegisterScreenAction, ShowLogInfoAction, ShowDetailsAction, ShowCarScreenAction,
+    ShowMyCartAction
 };
 
 
@@ -25,8 +26,8 @@ extern string int2str(int x);
 extern void showText(string str, sf::RenderWindow& window, int x, int y);
 
 enum States {
-    uninitialized, showingSplash, showingMenu, showingLogInfo, logging, registering, displayingCars, exiting,
-    showingCarScreen
+    uninitialized, showingSplashState, showingMenuState, showingLogInfoState, loggingState, registeringState, displayingCarsState, exitingState,
+    showingCarScreenState, showingMyCartState
 };
 
 #endif // UTILS_H

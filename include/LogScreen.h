@@ -12,14 +12,15 @@
 #include <Checker.h>
 
 using namespace std;
+
 class LogScreen
 {
     public:
         LogScreen();
         virtual ~LogScreen();
 
-        ButtonAction show(sf::RenderWindow&,UserManager*);
-        void drawAll(sf::RenderWindow&);
+        ButtonAction Show(sf::RenderWindow&, UserManager*);
+        void DrawAll(sf::RenderWindow&);
 
     protected:
 
@@ -27,9 +28,9 @@ class LogScreen
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Button OKButton, backButton;
-        FormField username, parola;
-        Label parolaLabel, usernameLabel, logareLabel, warningLabel;
+        Button okButtonObj, backButtonObj;
+        FormField usernameFormObj, passwordFormObj;
+        Label passwordLabelObj, usernameLabelObj, logInLabelObj, warningLabelObj;
 };
 
 #endif // LOGSCREEN_H

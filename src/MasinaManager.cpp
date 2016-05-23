@@ -2,8 +2,7 @@
 
 MasinaManager::MasinaManager()
 {
-    //ctor
-    curentMasinaIndex = 0;
+    _currentCarIndex = 0;
 }
 
 MasinaManager::~MasinaManager()
@@ -11,26 +10,26 @@ MasinaManager::~MasinaManager()
     //dtor
 }
 
-void MasinaManager::addMasina(Masina* m) {
-    listaMasini.push_back(m);
+void MasinaManager::AddCar(Masina* m) {
+    _carList.push_back(m);
 }
-void MasinaManager::deleteMasina(int id) {
+void MasinaManager::DeleteCar(int id) {
 
 }
 
-Masina* MasinaManager::getCurentMasina() {
-    return listaMasini[curentMasinaIndex];
+Masina* MasinaManager::GetCurrentCar() {
+    return _carList[_currentCarIndex];
 }
 
 void MasinaManager::MoveForward() {
-    curentMasinaIndex++;
-    if (curentMasinaIndex == listaMasini.size()) curentMasinaIndex = 0;
+    _currentCarIndex++;
+    if (_currentCarIndex == _carList.size()) _currentCarIndex = 0;
 }
 void MasinaManager::MoveBackward() {
-    curentMasinaIndex--;
-    if (curentMasinaIndex == -1) curentMasinaIndex = listaMasini.size() - 1;
+    _currentCarIndex--;
+    if (_currentCarIndex == -1) _currentCarIndex = _carList.size() - 1;
 }
 
-int MasinaManager::getMasinaCount(){
-    return listaMasini.size();
+int MasinaManager::GetCarsCount(){
+    return _carList.size();
 }

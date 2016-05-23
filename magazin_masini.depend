@@ -212,7 +212,7 @@
 	<map>
 	"magazin.h"
 
-1463956604 c:\users\vladoots\documents\github\car-store1\include\magazin.h
+1463972956 c:\users\vladoots\documents\github\car-store1\include\magazin.h
 	<iostream>
 	<string>
 	<map>
@@ -234,6 +234,7 @@
 	"Label.h"
 	"FormField.h"
 	"CarScreen.h"
+	"MyCartScreen.h"
 
 1463843046 c:\users\vladoots\documents\github\car-store1\include\masina.h
 	<iostream>
@@ -629,7 +630,7 @@
 	<string>
 	<vector>
 
-1463956604 c:\users\vladoots\documents\github\car-store1\include\utils.h
+1463973715 c:\users\vladoots\documents\github\car-store1\include\utils.h
 	<string>
 	"SFML/Graphics.hpp"
 
@@ -637,17 +638,17 @@
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\loginfoscreen.h
+1463967666 c:\users\vladoots\documents\github\car-store1\include\loginfoscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"Button.h"
 
-1463958371 c:\users\vladoots\documents\github\car-store1\include\button.h
+1463964436 c:\users\vladoots\documents\github\car-store1\include\button.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\logscreen.h
+1463969519 c:\users\vladoots\documents\github\car-store1\include\logscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -658,33 +659,33 @@
 	"User.h"
 	<Checker.h>
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\label.h
+1463970381 c:\users\vladoots\documents\github\car-store1\include\label.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\formfield.h
+1463970381 c:\users\vladoots\documents\github\car-store1\include\formfield.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Label.h"
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\usermanager.h
+1463965481 c:\users\vladoots\documents\github\car-store1\include\usermanager.h
 	"User.h"
 	<bits/stdc++.h>
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\user.h
+1463977109 c:\users\vladoots\documents\github\car-store1\include\user.h
 	<string>
 	"UserManager.h"
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\checker.h
+1463965431 c:\users\vladoots\documents\github\car-store1\include\checker.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"UserManager.h"
 	"User.h"
 
-1463843046 c:\users\vladoots\documents\github\car-store1\include\registerscreen.h
+1463976516 c:\users\vladoots\documents\github\car-store1\include\registerscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"Button.h"
@@ -694,7 +695,7 @@
 	"UserManager.h"
 	"Checker.h"
 
-1463956604 c:\users\vladoots\documents\github\car-store1\include\menu.h
+1463974505 c:\users\vladoots\documents\github\car-store1\include\menu.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -705,12 +706,12 @@
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 
-1463956604 c:\users\vladoots\documents\github\car-store1\include\masinamanager.h
+1463977851 c:\users\vladoots\documents\github\car-store1\include\masinamanager.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"Masina.h"
 
-1463956604 c:\users\vladoots\documents\github\car-store1\include\displaycarsscreen.h
+1463966440 c:\users\vladoots\documents\github\car-store1\include\displaycarsscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -721,7 +722,7 @@
 	"utils.h"
 	"Label.h"
 
-1463958472 c:\users\vladoots\documents\github\car-store1\include\carscreen.h
+1463964436 c:\users\vladoots\documents\github\car-store1\include\carscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -730,31 +731,31 @@
 	"Button.h"
 	"Label.h"
 
-1463958406 source:c:\users\vladoots\documents\github\car-store1\src\button.cpp
+1463964436 source:c:\users\vladoots\documents\github\car-store1\src\button.cpp
 	"Button.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\carscreen.cpp
+1463973819 source:c:\users\vladoots\documents\github\car-store1\src\carscreen.cpp
 	"CarScreen.h"
 
-1463843046 source:c:\users\vladoots\documents\github\car-store1\src\checker.cpp
+1463965490 source:c:\users\vladoots\documents\github\car-store1\src\checker.cpp
 	"Checker.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\displaycarsscreen.cpp
+1463977803 source:c:\users\vladoots\documents\github\car-store1\src\displaycarsscreen.cpp
 	"DisplayCarsScreen.h"
 
-1463843046 source:c:\users\vladoots\documents\github\car-store1\src\formfield.cpp
+1463970400 source:c:\users\vladoots\documents\github\car-store1\src\formfield.cpp
 	"FormField.h"
 
-1463843046 source:c:\users\vladoots\documents\github\car-store1\src\label.cpp
+1463971330 source:c:\users\vladoots\documents\github\car-store1\src\label.cpp
 	"Label.h"
 
-1463843046 source:c:\users\vladoots\documents\github\car-store1\src\loginfoscreen.cpp
+1463973934 source:c:\users\vladoots\documents\github\car-store1\src\loginfoscreen.cpp
 	"LogInfoScreen.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\logscreen.cpp
+1463977518 source:c:\users\vladoots\documents\github\car-store1\src\logscreen.cpp
 	"LogScreen.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\magazin.cpp
+1463976495 source:c:\users\vladoots\documents\github\car-store1\src\magazin.cpp
 	"Magazin.h"
 	"Masina.h"
 	<ctime>
@@ -765,35 +766,35 @@
 	<ctime>
 	<random>
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\masinamanager.cpp
+1463977803 source:c:\users\vladoots\documents\github\car-store1\src\masinamanager.cpp
 	"MasinaManager.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\menu.cpp
+1463974577 source:c:\users\vladoots\documents\github\car-store1\src\menu.cpp
 	"Menu.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\registerscreen.cpp
+1463977022 source:c:\users\vladoots\documents\github\car-store1\src\registerscreen.cpp
 	"RegisterScreen.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\screen.cpp
+1463972765 source:c:\users\vladoots\documents\github\car-store1\src\screen.cpp
 	"Screen.h"
 
 1463843046 source:c:\users\vladoots\documents\github\car-store1\src\splashscreen.cpp
 	"SplashScreen.h"
 
-1463956604 source:c:\users\vladoots\documents\github\car-store1\src\user.cpp
+1463977257 source:c:\users\vladoots\documents\github\car-store1\src\user.cpp
 	"User.h"
 
-1463843046 source:c:\users\vladoots\documents\github\car-store1\src\usermanager.cpp
+1463965432 source:c:\users\vladoots\documents\github\car-store1\src\usermanager.cpp
 	"UserManager.h"
 
 1463843046 source:c:\users\vladoots\documents\github\car-store1\src\utils.cpp
 	<string>
 	"utils.h"
 
-1463956730 source:c:\users\vladoots\documents\github\car-store1\src\mycartscreen.cpp
+1463975021 source:c:\users\vladoots\documents\github\car-store1\src\mycartscreen.cpp
 	"MyCartScreen.h"
 
-1463956730 c:\users\vladoots\documents\github\car-store1\include\mycartscreen.h
+1463974977 c:\users\vladoots\documents\github\car-store1\include\mycartscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"

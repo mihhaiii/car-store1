@@ -13,18 +13,18 @@ class Button
         Button(string);
         virtual ~Button();
 
-        bool isButtonPressedAt(int,int);
-        void show(sf::RenderWindow&);
-        void setPosition(int,int);
-        sf::Vector2i getPosition();
-        ButtonAction getAction();
-        void setAction(ButtonAction);
+        bool IsButtonPressedAt(int,int);
+        void Show(sf::RenderWindow&);
+        void SetPosition(int,int);
+        sf::Vector2i GetPosition();
+        ButtonAction GetAction();
+        void SetAction(ButtonAction);
 
 
     protected:
 
-        sf::Rect<int> rect;
-        ButtonAction action;
+        sf::Rect<int> _rect;
+        ButtonAction actionObj;
 
     private:
         sf::Sprite _sprite;

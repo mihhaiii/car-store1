@@ -1,112 +1,125 @@
 #include "LogScreen.h"
 
 LogScreen::LogScreen() :
-     OKButton("images/okbutton.png"),
-     backButton("images/backbutton.png")
+     okButtonObj("images/okbutton.png"),
+     backButtonObj("images/backbutton.png")
 {
-    //ctor
     _texture.loadFromFile("images/background.png");
     _sprite.setTexture(_texture);
 
-    username.setPosition(100,100);
-    parola.setPosition(100,130);
-    OKButton.setPosition(100,160);
-    backButton.setPosition(10,540);
+    usernameFormObj.SetPosition(100,100);
+    passwordFormObj.SetPosition(100,130);
+    okButtonObj.SetPosition(100,160);
+    backButtonObj.SetPosition(10,540);
 
-    parola.setPasswordType(true);
+    passwordFormObj.SetPasswordType(true);
 
-    logareLabel.setText("Logare");
-    logareLabel.setStyle("italic");
-    logareLabel.setCharacterSize(30);
-    logareLabel.setPosition(50,50);
+    logInLabelObj.SetText("Logare");
+    logInLabelObj.SetStyle("italic");
+    logInLabelObj.SetCharacterSize(30);
+    logInLabelObj.SetPosition(50,50);
 
-    usernameLabel.setText("Username:");
-    usernameLabel.setStyle("italic");
-    usernameLabel.setCharacterSize(12);
-    usernameLabel.setPosition(20,100);
+    usernameLabelObj.SetText("Username:");
+    usernameLabelObj.SetStyle("italic");
+    usernameLabelObj.SetCharacterSize(12);
+    usernameLabelObj.SetPosition(20,100);
 
-    parolaLabel.setText("Parola:");
-    parolaLabel.setStyle("italic");
-    parolaLabel.setCharacterSize(12);
-    parolaLabel.setPosition(20,130);
+    passwordLabelObj.SetText("Parola:");
+    passwordLabelObj.SetStyle("italic");
+    passwordLabelObj.SetCharacterSize(12);
+    passwordLabelObj.SetPosition(20,130);
 
-    warningLabel.setText("Combinatia user-parola nu este recunoscuta");
-    warningLabel.setStyle("italic");
-    warningLabel.setColor("red");
-    warningLabel.setCharacterSize(30);
-    warningLabel.setPosition(150,250);
-    warningLabel.setVisible(false);
+    warningLabelObj.SetText("Combinatia user-parola nu este recunoscuta");
+    warningLabelObj.SetStyle("italic");
+    warningLabelObj.SetColor("red");
+    warningLabelObj.SetCharacterSize(30);
+    warningLabelObj.SetPosition(150,250);
+    warningLabelObj.SetVisible(false);
 }
 
-LogScreen::~LogScreen() {
+LogScreen::~LogScreen()
+{
     //dtor
 }
 
-void LogScreen::drawAll(sf::RenderWindow& window) {
+void LogScreen::DrawAll(sf::RenderWindow& window) {
      window.draw(_sprite);
-     username.show(window);
-     parola.show(window);
-     OKButton.show(window);
-     logareLabel.show(window);
-     usernameLabel.show(window);
-     parolaLabel.show(window);
-     warningLabel.show(window);
-     backButton.show(window);
+     usernameFormObj.Show(window);
+     passwordFormObj.Show(window);
+     okButtonObj.Show(window);
+     logInLabelObj.Show(window);
+     usernameLabelObj.Show(window);
+     passwordLabelObj.Show(window);
+     warningLabelObj.Show(window);
+     backButtonObj.Show(window);
 }
 
-ButtonAction LogScreen::show(sf::RenderWindow& window, UserManager*  userManager) {
-     window.clear();
-    drawAll(window);
+ButtonAction LogScreen::Show(sf::RenderWindow& window, UserManager* userManager) {
+    window.clear();
+    DrawAll(window);
     window.display();
 
-
-
     sf::Event event;
+    usernameFormObj.SetActive(true);
     while (1)
     {
         while (window.pollEvent(event))
         {
             switch(event.type)
             {
-            case sf::Event::Closed:
-                return Exit;
-                break;
-            case sf::Event::MouseButtonPressed:
-                if (username.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                    username.setActive(true), parola.setActive(false);
-                else if (parola.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                    username.setActive(false), parola.setActive(true);
-                        else username.setActive(false), parola.setActive(false);
-                if (OKButton.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                        if (Checker::check(username.getText(),parola.getText(), userManager))
-                            return ShowMenu;
-                        else warningLabel.setVisible(true);
-                if (backButton.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                    return Back;
+                case sf::Event::Closed:
+                    return ExitAction;
+                    break;
 
+                case sf::Event::MouseButtonPressed:
+                    if (usernameFormObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                        usernameFormObj.SetActive(true), passwordFormObj.SetActive(false);
+
+                    else if (passwordFormObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                        usernameFormObj.SetActive(false), passwordFormObj.SetActive(true);
+
+                    else
+                        usernameFormObj.SetActive(false), passwordFormObj.SetActive(false);
+
+                    if (okButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                            if (Checker::CheckLogIn(usernameFormObj.GetText(), passwordFormObj.GetText(), userManager))
+                                return ShowMenuAction;
+                            else warningLabelObj.SetVisible(true);
+                    else if (backButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                        return BackAction;
+                    break;
+
+                case sf::Event::TextEntered:
+                    if (event.text.unicode == 13) {
+                        if (Checker::CheckLogIn(usernameFormObj.GetText(), passwordFormObj.GetText(), userManager))
+                            return ShowMenuAction;
+                        else warningLabelObj.SetVisible(true);
+                    }
+                    else if (event.text.unicode == 8) {
+                        if (passwordFormObj.IsActive())
+                            passwordFormObj.PopLetter();
+                        else if (usernameFormObj.IsActive())
+                            usernameFormObj.PopLetter();
+                    }
+                    else if (event.text.unicode == 9) {
+                        if (usernameFormObj.IsActive()) {
+                            usernameFormObj.SetActive(false);
+                            passwordFormObj.SetActive(true);
+                        }
+                    }
+                    else {
+                        if (passwordFormObj.IsActive())
+                            passwordFormObj.AddLetter((char)event.text.unicode);
+                        else if (usernameFormObj.IsActive())
+                            usernameFormObj.AddLetter((char)event.text.unicode);
+                    }
                 break;
-            case sf::Event::TextEntered:
-                if (event.text.unicode == 8) {
-                    if (parola.isActive())  parola.popLetter();
-                            else if (username.isActive()) username.popLetter();
-                } else {
-                    if (parola.isActive()) parola.addLetter((char)event.text.unicode);
-                        else if (username.isActive()) username.addLetter((char)event.text.unicode);
-                }
-                break;
-            case sf::Event::KeyPressed:
-                if (event.key.code == sf::Keyboard::Tab) {
-                    if (username.isActive()) username.setActive(false), parola.setActive(true);
-                }
             }
         }
 
         window.clear();
-        drawAll(window);
+        DrawAll(window);
         window.display();
-
-
-
 
     }
 }

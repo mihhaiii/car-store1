@@ -11,20 +11,20 @@ class MasinaManager
         MasinaManager();
         virtual ~MasinaManager();
 
-        void addMasina(Masina*);
-        void deleteMasina(int id);
+        void AddCar(Masina*);
+        void DeleteCar(int id);
 
-        Masina* getCurentMasina();
+        Masina* GetCurrentCar();
         void MoveForward();
         void MoveBackward();
 
-        int getMasinaCount();
+        int GetCarsCount();
 
     protected:
 
     private:
-        vector<Masina*> listaMasini;
-        int curentMasinaIndex;
+        vector<Masina*> _carList;
+        int _currentCarIndex;
 
 
 

@@ -1,13 +1,12 @@
 #ifndef FORMFIELD_H
 #define FORMFIELD_H
 
-
-
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-using namespace std;
 #include "utils.h"
 #include "Label.h"
+
+using namespace std;
 
 class FormField
 {
@@ -15,24 +14,23 @@ class FormField
         FormField();
         virtual ~FormField();
 
-        void addLetter(char);
-        void popLetter();
-        void setPosition(int,int);
-        void show(sf::RenderWindow&);
-        bool isButtonPressedAt(int,int);
-        string getText();
-        void setActive(bool);
-        bool isActive();
-        void setPasswordType(bool);
+        void AddLetter(char);
+        void PopLetter();
+        void SetPosition(int, int);
+        void Show(sf::RenderWindow&);
+        bool IsButtonPressedAt(int, int);
+        string GetText();
+        void SetActive(bool);
+        bool IsActive();
+        void SetPasswordType(bool);
 
     protected:
         sf::RectangleShape shape;
-        Label text;
-        bool active;
+        Label textLabelObj;
+        bool _active, _passwordType;
         sf::Clock clock;
 
-        void showCursor(sf::RenderWindow&);
-        bool passwordType;
+        void ShowCursor(sf::RenderWindow&);
 
     private:
 };

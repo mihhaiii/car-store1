@@ -1,26 +1,26 @@
 
 #include "CarScreen.h"
 
-CarScreen::CarScreen() : backButton("images/backbutton.png")
+CarScreen::CarScreen() : backButtonObj("images/backbutton.png")
 {
     _texture.loadFromFile("images/background1.png");
     _sprite.setTexture(_texture);
-    backButton.setPosition(10,540);
+    backButtonObj.SetPosition(10,540);
 }
 CarScreen::~CarScreen()
 {
     //dtor
 }
-void CarScreen::drawAll(sf::RenderWindow& window, Masina* masina) {
+void CarScreen::DrawAll(sf::RenderWindow& window, Masina* masina) {
     window.draw(_sprite);
     masina->showImage(window);
     masina->showInfo(window);
-    backButton.show(window);
+    backButtonObj.Show(window);
 }
-ButtonAction CarScreen::show(sf::RenderWindow& window, Masina* masina)
+ButtonAction CarScreen::Show(sf::RenderWindow& window, Masina* masina)
 {
     window.clear();
-    drawAll(window,masina);
+    DrawAll(window,masina);
     window.display();
 
     sf::Event event;
@@ -32,16 +32,16 @@ ButtonAction CarScreen::show(sf::RenderWindow& window, Masina* masina)
             {
             case sf::Event::Closed:
                 window.close();
-                return Nothing;
+                return NothingAction;
                 break;
             case sf::Event::MouseButtonPressed:
-                if (backButton.isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                        return Back;
+                if (backButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                        return BackAction;
             }
         }
 
         window.clear();
-        drawAll(window,masina);
+        DrawAll(window,masina);
         window.display();
 
     }

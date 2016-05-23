@@ -17,8 +17,8 @@ class CarScreen
         CarScreen();
         virtual ~CarScreen();
 
-        ButtonAction show(sf::RenderWindow&, Masina*);
-        void drawAll(sf::RenderWindow&, Masina*);
+        ButtonAction Show(sf::RenderWindow&, Masina*);
+        void DrawAll(sf::RenderWindow&, Masina*);
 
     protected:
 
@@ -26,7 +26,7 @@ class CarScreen
         sf::Sprite _sprite;
         sf::Texture _texture;
 
-        Button backButton;
+        Button backButtonObj;
 };
 
 #endif // CARSCREEN_H

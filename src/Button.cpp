@@ -7,10 +7,10 @@ Button::Button(string filename)
     _texture.loadFromFile(_filename);
     _sprite.setTexture(_texture);
 
-    rect.left = 0;
-    rect.width = 0;
-    rect.top = 0;
-    rect.height = 0;
+    _rect.left = 0;
+    _rect.width = 0;
+    _rect.top = 0;
+    _rect.height = 0;
 }
 
 Button::~Button()
@@ -18,30 +18,30 @@ Button::~Button()
     //dtor
 }
 
-bool Button::isButtonPressedAt(int x, int y){
-    return x >= rect.left && x <= rect.left + rect.width && y >= rect.top && y <= rect.top + rect.height;
+bool Button::IsButtonPressedAt(int x, int y){
+    return x >= _rect.left && x <= _rect.left + _rect.width && y >= _rect.top && y <= _rect.top + _rect.height;
 }
 
-void Button::show(sf::RenderWindow& window) {
+void Button::Show(sf::RenderWindow& window) {
 
     window.draw(_sprite);
 }
-void Button::setPosition(int x, int y)
+void Button::SetPosition(int x, int y)
 {
     _sprite.setPosition(x,y);
-    rect.left = x;
-    rect.top = y;
-    rect.width = _sprite.getLocalBounds().width;
-    rect.height = _sprite.getLocalBounds().height;
+    _rect.left = x;
+    _rect.top = y;
+    _rect.width = _sprite.getLocalBounds().width;
+    _rect.height = _sprite.getLocalBounds().height;
 }
 
-sf::Vector2i Button::getPosition() {
-    return sf::Vector2i(rect.left, rect.top);
+sf::Vector2i Button::GetPosition() {
+    return sf::Vector2i(_rect.left, _rect.top);
 }
 
-ButtonAction Button::getAction() {
-    return action;
+ButtonAction Button::GetAction() {
+    return actionObj;
 }
-void Button::setAction(ButtonAction g) {
-    action = g;
+void Button::SetAction(ButtonAction action) {
+    actionObj = action;
 }

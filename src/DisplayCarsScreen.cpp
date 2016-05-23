@@ -1,39 +1,42 @@
 #include "DisplayCarsScreen.h"
 
 DisplayCarsScreen::DisplayCarsScreen() :
-    leftButton("images/leftbutton.gif"),
-    rightButton("images/rightbutton.gif"),
-    afisDetaliiButton("images/afisdetalii.png"),
-    backButton("images/backButton.png")
+    leftButtonObj("images/leftbutton.gif"),
+    rightButtonObj("images/rightbutton.gif"),
+    detailsButtonObj("images/afisdetalii.png"),
+    backButtonObj("images/backButton.png")
 {
     _texture.loadFromFile("images/background1.png");
     _sprite.setTexture(_texture);
 
-    leftButton.setPosition(100,300);
-    rightButton.setPosition(700,300);
-    afisDetaliiButton.setPosition(300,500);
-    backButton.setPosition(10,540);
+    leftButtonObj.SetPosition(100,300);
+    rightButtonObj.SetPosition(700,300);
+    detailsButtonObj.SetPosition(300,500);
+    backButtonObj.SetPosition(10,540);
 
-    leftButton.setAction(ShowPrevCar);
-    rightButton.setAction(ShowNextCar);
-    afisDetaliiButton.setAction(ShowCarScreen);
-    backButton.setAction(Back);
+    leftButtonObj.SetAction(ShowPrevCarAction);
+    rightButtonObj.SetAction(ShowNextCarAction);
+    detailsButtonObj.SetAction(ShowCarScreenAction);
+    backButtonObj.SetAction(BackAction);
 }
 
-DisplayCarsScreen::~DisplayCarsScreen(){}
-
-ButtonAction DisplayCarsScreen::show(sf::RenderWindow& window, MasinaManager* mm)
+DisplayCarsScreen::~DisplayCarsScreen()
 {
-    int curr=0;
-    int nr = mm->getMasinaCount();
+    //dtor
+}
+
+ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm)
+{
+    int currentCarIndex = 0;
+    int carsNumber = mm->GetCarsCount();
 
 
 
    vector<Button*> buttons;
-   buttons.push_back(&leftButton);
-   buttons.push_back(&rightButton);
-   buttons.push_back(&afisDetaliiButton);
-   buttons.push_back(&backButton);
+   buttons.push_back(&leftButtonObj);
+   buttons.push_back(&rightButtonObj);
+   buttons.push_back(&detailsButtonObj);
+   buttons.push_back(&backButtonObj);
 
     while (1)
     {
@@ -45,34 +48,57 @@ ButtonAction DisplayCarsScreen::show(sf::RenderWindow& window, MasinaManager* mm
             if (event.type == sf::Event::KeyPressed)
             {
                 if (event.key.code == sf::Keyboard::Left)
-                    {mm->MoveBackward(); curr--; if (curr==-1) curr=nr-1; }
+                    {
+                        mm->MoveBackward();
+                        currentCarIndex--;
+                        if (currentCarIndex == -1)
+                            currentCarIndex = carsNumber - 1;
+                    }
                 if (event.key.code == sf::Keyboard::Right)
-                   { mm->MoveForward(); curr++; if (curr==nr) curr=0; }
+                   {
+                       mm->MoveForward();
+                       currentCarIndex++;
+                       if (currentCarIndex == carsNumber)
+                            currentCarIndex = 0;
+                   }
 
             }
             if (event.type == sf::Event::MouseButtonPressed)
             {
-                for(auto button:buttons) {
-                    if (button->isButtonPressedAt(event.mouseButton.x,event.mouseButton.y)) {
-                        if (button->getAction() == ShowPrevCar) {mm->MoveBackward(); curr--; if (curr==-1) curr=nr-1;}
-                         else
-                        if (button->getAction() == ShowNextCar) {mm->MoveForward(); curr++; if (curr==nr) curr=0; }
-                         else
-                            return button->getAction();
+                for(auto button : buttons)
+                {
+                    if (button->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                    {
+                        if (button->GetAction() == ShowPrevCarAction)
+                        {
+                            mm->MoveBackward();
+                            currentCarIndex--;
+                            if (currentCarIndex == -1)
+                                currentCarIndex = carsNumber - 1;
+                        }
+                        else if (button->GetAction() == ShowNextCarAction)
+                        {
+                            mm->MoveForward();
+                            currentCarIndex++;
+                            if (currentCarIndex == carsNumber)
+                                currentCarIndex = 0;
+                        }
+                        else
+                            return button->GetAction();
                     }
                 }
             }
         }
         window.clear();
         window.draw(_sprite);
-        mm->getCurentMasina()->showImage(window);
-        mm->getCurentMasina()->showInfo(window);
-        leftButton.show(window);
-        rightButton.show(window);
-        afisDetaliiButton.show(window);
-        backButton.show(window);
+        mm->GetCurrentCar()->showImage(window);
+        mm->GetCurrentCar()->showInfo(window);
+        leftButtonObj.Show(window);
+        rightButtonObj.Show(window);
+        detailsButtonObj.Show(window);
+        backButtonObj.Show(window);
 
-        showText(int2str(curr+1), window, 25,25);
+        showText(int2str(currentCarIndex+1), window, 25,25);
 
         window.display();
     }

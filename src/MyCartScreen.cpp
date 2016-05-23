@@ -1,13 +1,12 @@
 #include "MyCartScreen.h"
 
-MyCartScreen::MyCartScreen() : backButton("images/backbutton.png")
+MyCartScreen::MyCartScreen() : backButtonObj("images/backbutton.png")
 {
     //ctor
     _texture.loadFromFile("images/background.png");
     _sprite.setTexture(_texture);
-    backButton.setPosition(10,540);
-
-    backButton.setAction(Back);
+    backButtonObj.SetPosition(10,540);
+    backButtonObj.SetAction(BackAction);
 }
 
 MyCartScreen::~MyCartScreen()
@@ -15,18 +14,18 @@ MyCartScreen::~MyCartScreen()
     //dtor
 }
 
-ButtonAction MyCartScreen::show(sf::RenderWindow& window, MasinaManager* mm)
+ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MasinaManager* mm)
 {
     window.clear();
     window.draw(_sprite);
-    backButton.show(window);
+    backButtonObj.Show(window);
     window.display();
 
-    int currentCar = 0;
-    int cartCarsNumber = mm->getMasinaCount();
+    int currentCarIndex = 0;
+    int cartCarsNumber = mm->GetCarsCount();
 
     vector<Button*> cartButtons;
-    cartButtons.push_back(&backButton);
+    cartButtons.push_back(&backButtonObj);
 
     while(1)
     {
@@ -36,27 +35,27 @@ ButtonAction MyCartScreen::show(sf::RenderWindow& window, MasinaManager* mm)
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
             {
                 window.close();
-                return Exit;
+                return ExitAction;
             }
             else if (event.type == sf::Event::MouseButtonPressed)
             {
                 for(auto button : cartButtons)
                 {
-                    if (button->isButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                    if (button->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                     {
-                        return button->getAction();
+                        return button->GetAction();
                     }
                 }
             }
             else if (event.type == sf::Event::MouseWheelMoved)
             {
-                currentCar += event.mouseWheel.delta;
-                cout<<currentCar<<"\n";
+                currentCarIndex += event.mouseWheel.delta;
+                cout << currentCarIndex << "\n";
             }
 
         }
     }
-    backButton.show(window);
+    backButtonObj.Show(window);
     window.display();
 
 }

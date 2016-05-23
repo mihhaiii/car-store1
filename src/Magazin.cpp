@@ -3,13 +3,13 @@
 
 #include <ctime>
 #include <random>
+
 Magazin::Magazin()
 {
-    //ctor
-    // incarc 10 masini random in listaMasini
+    // incarc 10 masini random in _carList
     for (int i=0;i<10;i++)
     {
-        _masinaManager.addMasina(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950));
+        _carManager.AddCar(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%60 + 1950));
     }
 
     _state = uninitialized;
@@ -28,15 +28,14 @@ Magazin::Magazin()
 
 Magazin::~Magazin()
 {
-    //dtorf
-    _userManager.writeData("bazadedateuseri.txt");
+    _userManager.WriteData("bazadedateuseri.txt");
 }
 
 void  Magazin::startApp()
 {
     for (int i=0;i<10;i++)
     {
-        _masinaManager.addMasina(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%20 + 1995));
+        _carManager.AddCar(new Masina(Masina::getRandBrand(), Masina::getRandModel(), rand() % 1000 + 10000, rand()%20 + 1995));
     }
 
     cout << "----------------Bine ati Venit!!!-----------------"<<endl;
@@ -44,7 +43,7 @@ void  Magazin::startApp()
         return;
 
     _mainWindow.create(sf::VideoMode(800,600),"Magazin de masini");
-    _state=showingSplash;
+    _state=showingSplashState;
 
     while (_mainWindow.isOpen())
     {
@@ -56,139 +55,157 @@ void Magazin::appLoop()
 {
     switch(_state)
     {
-    case exiting:
+    case exitingState:
         _mainWindow.close();
         break;
-    case showingSplash:
-        showSplash();
+    case showingSplashState:
+        ShowSplash();
         break;
-    case showingMenu:
-        showMenu();
+    case showingMenuState:
+        ShowMenu();
         break;
-    case showingLogInfo:
-        showLogInfo();
+    case showingLogInfoState:
+        ShowLogInfo();
         break;
-    case logging:
-        showLogScreen();
+    case loggingState:
+        ShowLogScreen();
         break;
-    case registering:
-        showRegisterScreen();
+    case registeringState:
+        ShowRegisterScreen();
         break;
-    case displayingCars:
-        displayCars();
+    case displayingCarsState:
+        DisplayCars();
         break;
-    case showingCarScreen:
-        showCarScreen();
+    case showingCarScreenState:
+        ShowCarScreen();
+        break;
+    case showingMyCartState:
+        ShowMyCartScreen();
         break;
     }
 }
 
-void Magazin::showMenu()
+void Magazin::ShowMenu()
 {
     Menu m;
-    ButtonAction res = m.show(_mainWindow);
+    ButtonAction res = m.Show(_mainWindow);
     switch(res)
     {
-    case ShowCars:
-        _state = displayingCars;
-        break;
-    case Exit:
-        _state = exiting;
-        break;
-    case ShowLogInfo:
-        _state = showingLogInfo;
-        break;
+        case ShowCarsAction:
+            _state = displayingCarsState;
+            break;
+        case ExitAction:
+            _state = exitingState;
+            break;
+        case ShowLogInfoAction:
+            _state = showingLogInfoState;
+            break;
+        case ShowMyCartAction:
+            _state = showingMyCartState;
+            break;
     }
 
 }
-void Magazin::showSplash()
+void Magazin::ShowSplash()
 {
     SplashScreen ss;
     ss.show(_mainWindow);
-    _state=showingLogInfo;
+    _state=showingLogInfoState;
 }
 
-void Magazin::showLogInfo()
+void Magazin::ShowLogInfo()
 {
     LogInfoScreen lis;
-    ButtonAction res = lis.show(_mainWindow);
+    ButtonAction res = lis.Show(_mainWindow);
     switch(res)
     {
-    case ShowLogSreen:
-        _state = logging;
-        break;
-    case ShowRegisterScreen:
-        _state = registering;
+        case ShowLogSreenAction:
+            _state = loggingState;
+            break;
+        case ShowRegisterScreenAction:
+            _state = registeringState;
     }
 }
-void Magazin::showLogScreen()
+void Magazin::ShowLogScreen()
 {
 
     LogScreen ls;
-    ButtonAction res = ls.show(_mainWindow,&_userManager);
-    if (res == ShowMenu)
-        _state = showingMenu;
+    ButtonAction res = ls.Show(_mainWindow, &_userManager);
+
     switch(res)
     {
-    case ShowMenu:
-        _state = showingMenu;
-        break;
-    case Back:
-        _state = showingLogInfo;
-        break;
-    case Exit:
-        _state = exiting;
+        case ShowMenuAction:
+            _state = showingMenuState;
+            break;
+        case BackAction:
+            _state = showingLogInfoState;
+            break;
+        case ExitAction:
+            _state = exitingState;
     }
 }
 
-void Magazin::showRegisterScreen()
+void Magazin::ShowRegisterScreen()
 {
     RegisterScreen rs;
-     ButtonAction res =  rs.show(_mainWindow, &_userManager);
+    ButtonAction res =  rs.Show(_mainWindow, &_userManager);
     switch(res)
     {
-    case ShowMenu:
-        _state = showingMenu;
+    case ShowMenuAction:
+        _state = showingMenuState;
         break;
-    case Back:
-        _state = showingLogInfo;
+    case BackAction:
+        _state = showingLogInfoState;
         break;
-    case Exit:
-        _state = exiting;
+    case ExitAction:
+        _state = exitingState;
     }
 }
 
-void Magazin::displayCars()
+void Magazin::DisplayCars()
 {
     DisplayCarsScreen dcs;
 
-    ButtonAction res = dcs.show(_mainWindow,&_masinaManager);
+    ButtonAction res = dcs.Show(_mainWindow,&_carManager);
     switch(res)
     {
-    case ShowCarScreen:
-        _state = showingCarScreen;
-        cout<<"show cars";
+    case ShowCarScreenAction:
+        _state = showingCarScreenState;
         break;
-    case Back:
-        _state = showingMenu;
+    case BackAction:
+        _state = showingMenuState;
         break;
-    case Exit:
-        _state = exiting;
+    case ExitAction:
+        _state = exitingState;
     }
 }
 
-void Magazin::showCarScreen()
+void Magazin::ShowCarScreen()
 {
     CarScreen cs;
-      ButtonAction res = cs.show(_mainWindow,
-                                 _masinaManager.getCurentMasina());
+    ButtonAction res = cs.Show(_mainWindow, _carManager.GetCurrentCar());
     switch(res)
     {
-    case Back:
-        _state = displayingCars;
+    case BackAction:
+        _state = displayingCarsState;
         break;
-    case Exit:
-        _state = exiting;
+    case ExitAction:
+        _state = exitingState;
         break;
     }
 }
+
+void Magazin::ShowMyCartScreen()
+ {
+    MyCartScreen mcs;
+    ButtonAction res = mcs.Show(_mainWindow, &_carManager);
+    switch(res)
+    {
+        case BackAction:
+            _state = showingMenuState;
+            break;
+        case ExitAction:
+            _state = exitingState;
+            break;
+    }
+ }

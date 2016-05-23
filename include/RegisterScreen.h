@@ -9,16 +9,18 @@
 #include "FormField.h"
 #include "UserManager.h"
 #include "Checker.h"
+
 using namespace std;
+
 class RegisterScreen
 {
     public:
         RegisterScreen();
         virtual ~RegisterScreen();
 
-        ButtonAction show(sf::RenderWindow&, UserManager*);
-        void drawAll(sf::RenderWindow&);
-        void showSuccess(sf::RenderWindow&);
+        ButtonAction Show(sf::RenderWindow&, UserManager*);
+        void DrawAll(sf::RenderWindow&);
+        void ShowSuccess(sf::RenderWindow&);
 
     protected:
 
@@ -26,13 +28,12 @@ class RegisterScreen
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Label registerLabel, numeLabel, usernameLabel, parolaLabel, emailLabel, congratsLabel, pressKeyLabel,
-         warningLabel, warningNume, warningParola, warningEmail, warningUsername;
+        Label registerLabelObj, nameLabelObj, usernameLabelObj, passwordLabelObj, emailLabelObj, congratsLabelObj, pressKeyLabelObj, warningLabelObj;
 
-        Button registerButton, backButton;
+        Button registerButtonObj, backButtonObj;
 
-        FormField nume, username, parola, email;
-        void setActive(FormField*);
+        FormField nameFormObj, usernameFormObj, passwordFormObj, emailFormObj;
+        void SetActive(FormField*);
 };
 
 #endif // REGISTERSCREEN_H

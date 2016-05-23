@@ -3,8 +3,10 @@
 
 #include <string>
 #include "UserManager.h"
-class UserManager;
+
 using namespace std;
+
+class UserManager;
 
 class User
 {
@@ -13,21 +15,19 @@ class User
         User(string,string,string);
         virtual ~User();
 
+        string GetUsername();
+        string GetName();
+        string GetPassword();
 
-
-        string getUsername();
-        string getName();
-        string getParola();
-
-        bool checkParola(string);
+        bool CheckPassword(string);
 
     protected:
 
     private:
-        int id;
-        string name;
-        string username;
-        string parola;
+        int _id;
+        string _name;
+        string _username;
+        string _password;
 
         static int noUsers;
 };

@@ -10,29 +10,33 @@ UserManager::~UserManager()
     //dtor
 }
 
-void UserManager::AddUser(User* u) {
-    listaUseri.push_back(u);
+void UserManager::AddUser(User* u)
+{
+    _usersList.push_back(u);
 }
-void UserManager::DeleteUser(string username){
+void UserManager::DeleteUser(string username)
+{
 
 }
 
-bool UserManager::existsUser(string username) {
-    for (auto user:listaUseri)
-        if (user->getUsername() == username) return true;
+bool UserManager::ExistsUser(string username)
+{
+    for (auto user:_usersList)
+        if (user->GetUsername() == username) return true;
     return false;
 }
 
-bool UserManager::checkLogInfo(string username, string parola) {
-    for(auto user:listaUseri) {
-        if (user->getUsername() == username)
-            return user->checkParola(parola);
+bool UserManager::CheckLogInfo(string username, string password)
+{
+    for(auto user : _usersList) {
+        if (user->GetUsername() == username)
+            return user->CheckPassword(password);
     }
 }
 
-void UserManager::writeData(const char* filename) {
+void UserManager::WriteData(const char* filename) {
     freopen(filename,"w",stdout);
-    for(auto user:listaUseri) {
-        cout << user->getName() << "\n" << user->getUsername() << "\n" << user->getParola() << "\n\n";
+    for(auto user : _usersList) {
+        cout << user->GetName() << "\n" << user->GetUsername() << "\n" << user->GetPassword() << "\n\n";
     }
 }

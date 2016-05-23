@@ -1,11 +1,11 @@
 #ifndef LABEL_H
 #define LABEL_H
 
-
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-using namespace std;
 #include "utils.h"
+
+using namespace std;
 
 class Label
 {
@@ -13,25 +13,25 @@ class Label
         Label();
         virtual ~Label();
 
-        void show(sf::RenderWindow&);
-        void showPasswordType(sf::RenderWindow&);
-        void setText(string);
-        void setPosition(int,int);
-        void setStyle(string);
-        void setCharacterSize(int);
-        void popLetter();
-        void addLetter(char);
-        int getLength();
-        string getText();
-        void setVisible(bool);
-        void setColor(string);
+        void Show(sf::RenderWindow&);
+        void ShowPasswordType(sf::RenderWindow&);
+        void SetText(string);
+        void SetPosition(int,int);
+        void SetStyle(string);
+        void SetCharacterSize(int);
+        void PopLetter();
+        void AddLetter(char);
+        int GetLength();
+        string GetText();
+        void SetVisible(bool);
+        void SetColor(string);
 
     protected:
-        string str;
+        string _str;
         sf::Text text;
         sf::Font font;
     private:
-        bool visible;
+        bool _visible;
 };
 
 #endif // LABEL_H

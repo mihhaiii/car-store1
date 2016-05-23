@@ -1,29 +1,29 @@
 #include "Menu.h"
 
 Menu::Menu() :
-    listaMasiniButton("images/listamasinibutton.png"),
-    iesireButton("images/iesirebutton.png"),
-    cosulMeuButton("images/cosulmeubutton.png"),
-    logoutButton("images/logoutbutton.png")
+    carListButtonObj("images/listamasinibutton.png"),
+    exitButtonObj("images/iesirebutton.png"),
+    myCartButtonObj("images/cosulmeubutton.png"),
+    logOutButtonObj("images/logoutbutton.png")
 {
     //ctor
     _texture.loadFromFile("images/meniu.png");
     _sprite.setTexture(_texture);
 
-    listaMasiniButton.setPosition(300,70);
-    cosulMeuButton.setPosition(300,105);
-    logoutButton.setPosition(300,140);
-    iesireButton.setPosition(300,175);
+    carListButtonObj.SetPosition(300,70);
+    myCartButtonObj.SetPosition(300,105);
+    logOutButtonObj.SetPosition(300,140);
+    exitButtonObj.SetPosition(300,175);
 
-    listaMasiniButton.setAction(ShowCars);
-    cosulMeuButton.setAction(Nothing);
-    logoutButton.setAction(ShowLogInfo);
-    iesireButton.setAction(Exit);
+    carListButtonObj.SetAction(ShowCarsAction);
+    myCartButtonObj.SetAction(ShowMyCartAction);
+    logOutButtonObj.SetAction(ShowLogInfoAction);
+    exitButtonObj.SetAction(ExitAction);
 
-    meniu.setPosition(370,40);
-    meniu.setText("Meniu");
-    meniu.setCharacterSize(24);
-    meniu.setStyle("normal");
+    menu.SetPosition(370,40);
+    menu.SetText("Meniu");
+    menu.SetCharacterSize(24);
+    menu.SetStyle("normal");
 }
 
 Menu::~Menu()
@@ -31,22 +31,22 @@ Menu::~Menu()
     //dtor
 }
 
-ButtonAction Menu::show(sf::RenderWindow& window)
+ButtonAction Menu::Show(sf::RenderWindow& window)
 {
     window.clear();
     window.draw(_sprite);
-    listaMasiniButton.show(window);
-    cosulMeuButton.show(window);
-    logoutButton.show(window);
-    iesireButton.show(window);
-    meniu.show(window);
+    carListButtonObj.Show(window);
+    myCartButtonObj.Show(window);
+    logOutButtonObj.Show(window);
+    exitButtonObj.Show(window);
+    menu.Show(window);
     window.display();
 
     vector<Button*> buttons;
-    buttons.push_back(&listaMasiniButton);
-    buttons.push_back(&iesireButton);
-    buttons.push_back(&logoutButton);
-    buttons.push_back(&cosulMeuButton);
+    buttons.push_back(&carListButtonObj);
+    buttons.push_back(&exitButtonObj);
+    buttons.push_back(&logOutButtonObj);
+    buttons.push_back(&myCartButtonObj);
 
     sf::Event event;
     while (1)
@@ -55,21 +55,21 @@ ButtonAction Menu::show(sf::RenderWindow& window)
         {
             switch(event.type)
             {
-            case sf::Event::Closed:
-                window.close();
-                return Nothing;
-                break;
-            case sf::Event::MouseButtonPressed:
-                {
-                    int x=event.mouseButton.x, y=event.mouseButton.y;
-                    for(auto button:buttons) {
-                        if (button->isButtonPressedAt(x,y)) {
-                            if (button->getAction() != Nothing) {
-                                return button->getAction();
+                case sf::Event::Closed:
+                    window.close();
+                    return NothingAction;
+                    break;
+                case sf::Event::MouseButtonPressed:
+                    {
+                        int x=event.mouseButton.x, y=event.mouseButton.y;
+                        for(auto button : buttons) {
+                            if (button->IsButtonPressedAt(x,y)) {
+                                if (button->GetAction() != NothingAction) {
+                                    return button->GetAction();
+                                }
                             }
                         }
                     }
-                }
             }
         }
     }
