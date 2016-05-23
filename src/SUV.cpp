@@ -21,6 +21,8 @@ void SUV::showImage(sf::RenderWindow& window) {
 void SUV::showInfo(sf::RenderWindow& window) {
     Masina::showInfo(window);
 }
-
+string SUV::toName() {
+    return "SUV";
+}
 
 

@@ -18,14 +18,24 @@ class MasinaManager
         void MoveForward();
         void MoveBackward();
 
+        void moveNext_MasinaSport();
+        void moveNext_Limuzina();
+        void moveNext_SUV();
+        void moveNext_MasinaDeCurse();
+
+        void movePrev_MasinaSport();
+        void movePrev_Limuzina();
+        void movePrev_SUV();
+        void movePrev_MasinaDeCurse();
+        int getCurrentCarIndex();
         int GetCarsCount();
 
     protected:
 
     private:
-        vector<Masina*> _carList;
+        vector<Masina*> carList;
 
-        int _currentCarIndex;
+        int currentCarIndex;
 
 
 

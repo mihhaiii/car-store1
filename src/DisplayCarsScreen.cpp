@@ -63,17 +63,19 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
             {
                 if (event.key.code == sf::Keyboard::Left)
                     {
-                        mm->MoveBackward();
-                        currentCarIndex--;
-                        if (currentCarIndex == -1)
-                            currentCarIndex = carsNumber - 1;
+                        if (boxes[0]->getCheck()) mm->MoveBackward();
+                        if (boxes[1]->getCheck()) mm->movePrev_Limuzina();
+                        if (boxes[2]->getCheck()) mm->movePrev_MasinaSport();
+                        if (boxes[3]->getCheck()) mm->movePrev_MasinaDeCurse();
+                        if (boxes[4]->getCheck()) mm->movePrev_SUV();
                     }
                 if (event.key.code == sf::Keyboard::Right)
                    {
-                       mm->MoveForward();
-                       currentCarIndex++;
-                       if (currentCarIndex == carsNumber)
-                            currentCarIndex = 0;
+                        if (boxes[0]->getCheck()) mm->MoveForward();
+                        if (boxes[1]->getCheck()) mm->moveNext_Limuzina();
+                        if (boxes[2]->getCheck()) mm->moveNext_MasinaSport();
+                        if (boxes[3]->getCheck()) mm->moveNext_MasinaDeCurse();
+                        if (boxes[4]->getCheck()) mm->moveNext_SUV();
                    }
 
             }
@@ -85,17 +87,19 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
                     {
                         if (button->GetAction() == ShowPrevCarAction)
                         {
-                            mm->MoveBackward();
-                            currentCarIndex--;
-                            if (currentCarIndex == -1)
-                                currentCarIndex = carsNumber - 1;
+                            if (boxes[0]->getCheck()) mm->MoveBackward();
+                            if (boxes[1]->getCheck()) mm->movePrev_Limuzina();
+                            if (boxes[2]->getCheck()) mm->movePrev_MasinaSport();
+                            if (boxes[3]->getCheck()) mm->movePrev_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) mm->movePrev_SUV();
                         }
                         else if (button->GetAction() == ShowNextCarAction)
                         {
-                            mm->MoveForward();
-                            currentCarIndex++;
-                            if (currentCarIndex == carsNumber)
-                                currentCarIndex = 0;
+                            if (boxes[0]->getCheck()) mm->MoveForward();
+                            if (boxes[1]->getCheck()) mm->moveNext_Limuzina();
+                            if (boxes[2]->getCheck()) mm->moveNext_MasinaSport();
+                            if (boxes[3]->getCheck()) mm->moveNext_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) mm->moveNext_SUV();
                         }
                         else
                             return button->GetAction();
@@ -111,6 +115,10 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
                             boxes[j]->setCheck(false);
                         }
                         boxes[i]->setCheck(true);
+                        if (i==1) mm->moveNext_Limuzina();
+                        if (i==2) mm->moveNext_MasinaSport();
+                        if (i==3) mm->moveNext_MasinaDeCurse();
+                        if (i==4) mm->moveNext_SUV();
                     }
                 }
             }
@@ -128,7 +136,7 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
             boxes[i]->show(window);
         }
 
-        showText(int2str(currentCarIndex+1), window, 25,25);
+        showText(int2str(mm->getCurrentCarIndex()), window, 25,25);
 
         window.display();
     }

@@ -95,6 +95,8 @@ void Masina::setImage(string file) {
     _sprite.setPosition(sf::Vector2f(150,200));
 }
 
-
+string Masina::toName() {
+    return "Masina";
+}
 
 int Masina::nrMasini = 0;

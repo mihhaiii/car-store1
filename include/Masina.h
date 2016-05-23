@@ -26,6 +26,7 @@ class Masina
         string getFilename();
         void setFilename(string);
         void setImage(string);
+        virtual string toName();
 
         virtual void showImage(sf::RenderWindow&);
         virtual void showInfo(sf::RenderWindow&);

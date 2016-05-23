@@ -801,11 +801,12 @@
 	"Button.h"
 	"MasinaManager.h"
 
-1464012209 source:c:\users\mihai\desktop\project\car-store1\main.cpp
+1464040794 source:c:\users\mihai\desktop\project\car-store1\main.cpp
 	<iostream>
 	<string>
 	<map>
 	"magazin.h"
+	<typeinfo>
 
 1464037412 c:\users\mihai\desktop\project\car-store1\include\magazin.h
 	<iostream>
@@ -835,7 +836,7 @@
 	"SUV.h"
 	"Limuzina.h"
 
-1464035178 c:\users\mihai\desktop\project\car-store1\include\masina.h
+1464040587 c:\users\mihai\desktop\project\car-store1\include\masina.h
 	<iostream>
 	<string>
 	<map>
@@ -1305,7 +1306,7 @@
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 
-1464036201 c:\users\mihai\desktop\project\car-store1\include\masinamanager.h
+1464044186 c:\users\mihai\desktop\project\car-store1\include\masinamanager.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"Masina.h"
@@ -1348,7 +1349,7 @@
 1464012209 source:c:\users\mihai\desktop\project\car-store1\src\checker.cpp
 	"Checker.h"
 
-1464030298 source:c:\users\mihai\desktop\project\car-store1\src\displaycarsscreen.cpp
+1464038559 source:c:\users\mihai\desktop\project\car-store1\src\displaycarsscreen.cpp
 	"DisplayCarsScreen.h"
 
 1464016675 source:c:\users\mihai\desktop\project\car-store1\src\formfield.cpp
@@ -1369,12 +1370,12 @@
 	<ctime>
 	<random>
 
-1464037983 source:c:\users\mihai\desktop\project\car-store1\src\masina.cpp
+1464040699 source:c:\users\mihai\desktop\project\car-store1\src\masina.cpp
 	"Masina.h"
 	<ctime>
 	<random>
 
-1464012209 source:c:\users\mihai\desktop\project\car-store1\src\masinamanager.cpp
+1464040983 source:c:\users\mihai\desktop\project\car-store1\src\masinamanager.cpp
 	"MasinaManager.h"
 
 1464012209 source:c:\users\mihai\desktop\project\car-store1\src\menu.cpp
@@ -1402,7 +1403,7 @@
 	<string>
 	"utils.h"
 
-1464030337 source:c:\users\mihai\desktop\project\car-store1\src\checkbox.cpp
+1464038697 source:c:\users\mihai\desktop\project\car-store1\src\checkbox.cpp
 	"CheckBox.h"
 
 1464030112 c:\users\mihai\desktop\project\car-store1\include\checkbox.h
@@ -1420,37 +1421,37 @@
 1464018244 source:c:\users\mihai\desktop\project\car-store1\src\checkboxmanager.cpp
 	"CheckBoxManager.h"
 
-1464037550 source:c:\users\mihai\desktop\project\car-store1\src\masinadecurse.cpp
+1464040757 source:c:\users\mihai\desktop\project\car-store1\src\masinadecurse.cpp
 	"MasinaDeCurse.h"
 
-1464037541 c:\users\mihai\desktop\project\car-store1\include\masinadecurse.h
+1464040786 c:\users\mihai\desktop\project\car-store1\include\masinadecurse.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464037483 source:c:\users\mihai\desktop\project\car-store1\src\masinasport.cpp
+1464040746 source:c:\users\mihai\desktop\project\car-store1\src\masinasport.cpp
 	"MasinaSport.h"
 
-1464037466 c:\users\mihai\desktop\project\car-store1\include\masinasport.h
+1464040786 c:\users\mihai\desktop\project\car-store1\include\masinasport.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464037277 source:c:\users\mihai\desktop\project\car-store1\src\limuzina.cpp
+1464040734 source:c:\users\mihai\desktop\project\car-store1\src\limuzina.cpp
 	"Limuzina.h"
 
-1464037213 c:\users\mihai\desktop\project\car-store1\include\limuzina.h
+1464040786 c:\users\mihai\desktop\project\car-store1\include\limuzina.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464037516 source:c:\users\mihai\desktop\project\car-store1\src\suv.cpp
+1464040771 source:c:\users\mihai\desktop\project\car-store1\src\suv.cpp
 	"SUV.h"
 
-1464037501 c:\users\mihai\desktop\project\car-store1\include\suv.h
+1464040665 c:\users\mihai\desktop\project\car-store1\include\suv.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"

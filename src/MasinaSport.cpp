@@ -21,6 +21,8 @@ void MasinaSport::showImage(sf::RenderWindow& window) {
 void MasinaSport::showInfo(sf::RenderWindow& window) {
     Masina::showInfo(window);
 }
-
+string MasinaSport::toName() {
+    return "MasinaSport";
+}
 
 

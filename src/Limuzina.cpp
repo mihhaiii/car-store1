@@ -21,6 +21,9 @@ void Limuzina::showImage(sf::RenderWindow& window) {
 void Limuzina::showInfo(sf::RenderWindow& window) {
     Masina::showInfo(window);
 }
+string Limuzina::toName() {
+    return "Limuzina";
+}
 
 
 

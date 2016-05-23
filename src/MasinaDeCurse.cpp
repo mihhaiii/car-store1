@@ -22,5 +22,7 @@ void MasinaDeCurse::showInfo(sf::RenderWindow& window) {
     Masina::showInfo(window);
 }
 
-
+string MasinaDeCurse::toName() {
+    return "MasinaDeCurse";
+}
 

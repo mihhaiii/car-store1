@@ -17,6 +17,8 @@ class MasinaDeCurse : public Masina
 
         virtual void showImage(sf::RenderWindow&);
         virtual void showInfo(sf::RenderWindow&);
+                virtual string toName();
+
 
     protected:
         int viteza_maxima;
