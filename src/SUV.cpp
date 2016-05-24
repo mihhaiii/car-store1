@@ -7,7 +7,7 @@ SUV::SUV()
 SUV::SUV(Brands b, Models m, int x ,int y)
 : Masina(b,m,x,y)
 {
-
+    weight = 2 + (rand() % 10) / 10.f;
 }
 
 SUV::~SUV()

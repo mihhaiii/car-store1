@@ -22,8 +22,8 @@ class MasinaDeCurse : public Masina
         virtual void ShowDetail(sf::RenderWindow&);
 
     protected:
-        int viteza_maxima;
-        int acceleratie;
+        int horsePower;
+        float acceleration;
 
     private:
 };

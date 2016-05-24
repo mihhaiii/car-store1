@@ -2029,25 +2029,25 @@
 	"CheckBox.h"
 	"CheckBoxManager.h"
 
-1464111973 e:\github\car-store1\include\masinadecurse.h
+1464114755 e:\github\car-store1\include\masinadecurse.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464111972 e:\github\car-store1\include\masinasport.h
+1464114792 e:\github\car-store1\include\masinasport.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464112020 e:\github\car-store1\include\suv.h
+1464114868 e:\github\car-store1\include\suv.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464111971 e:\github\car-store1\include\limuzina.h
+1464114541 e:\github\car-store1\include\limuzina.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -2077,7 +2077,7 @@
 1464046767 source:e:\github\car-store1\src\label.cpp
 	"Label.h"
 
-1464113450 source:e:\github\car-store1\src\limuzina.cpp
+1464114879 source:e:\github\car-store1\src\limuzina.cpp
 	"Limuzina.h"
 
 1464046767 source:e:\github\car-store1\src\loginfoscreen.cpp
@@ -2092,18 +2092,18 @@
 	<ctime>
 	<random>
 
-1464046767 source:e:\github\car-store1\src\masina.cpp
+1464113697 source:e:\github\car-store1\src\masina.cpp
 	"Masina.h"
 	<ctime>
 	<random>
 
-1464113450 source:e:\github\car-store1\src\masinadecurse.cpp
+1464114753 source:e:\github\car-store1\src\masinadecurse.cpp
 	"MasinaDeCurse.h"
 
 1464046767 source:e:\github\car-store1\src\masinamanager.cpp
 	"MasinaManager.h"
 
-1464113450 source:e:\github\car-store1\src\masinasport.cpp
+1464114819 source:e:\github\car-store1\src\masinasport.cpp
 	"MasinaSport.h"
 
 1464046767 source:e:\github\car-store1\src\menu.cpp
@@ -2121,7 +2121,7 @@
 1463843079 source:e:\github\car-store1\src\splashscreen.cpp
 	"SplashScreen.h"
 
-1464113450 source:e:\github\car-store1\src\suv.cpp
+1464114868 source:e:\github\car-store1\src\suv.cpp
 	"SUV.h"
 
 1464092203 source:e:\github\car-store1\src\user.cpp

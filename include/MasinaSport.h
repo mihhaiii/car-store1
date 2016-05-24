@@ -25,7 +25,7 @@ class MasinaSport : public Masina
     protected:
 
     private:
-        int rating;
+        int torque;
 };
 
 #endif // MASINA_SPORT_H

@@ -24,7 +24,7 @@ class SUV : public Masina
     protected:
 
     private:
-        int greutate;
+        float weight;
 };
 
 #endif // SUV_H

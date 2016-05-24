@@ -24,8 +24,8 @@ class Limuzina : public Masina
     protected:
 
     private:
-        int maximPasageri;
-        int lungime;
+        int passangerCapacity;
+        float length;
 };
 
 #endif // LIMUZINA_H
