@@ -3,7 +3,6 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-#include "utils.h"
 
 #include "Masina.h"
 #include "MasinaManager.h"
@@ -13,6 +12,7 @@
 #include "Label.h"
 #include "CheckBox.h"
 #include "CheckBoxManager.h"
+
 using namespace std;
 
 class DisplayCarsScreen

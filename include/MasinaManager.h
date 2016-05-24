@@ -3,8 +3,10 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-using namespace std;
 #include "Masina.h"
+
+using namespace std;
+
 class MasinaManager
 {
     public:

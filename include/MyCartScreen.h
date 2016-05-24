@@ -3,9 +3,14 @@
 
 #include <bits/stdc++.h>
 #include "SFML/Graphics.hpp"
-#include "utils.h"
-#include "Button.h"
+#include "Masina.h"
 #include "MasinaManager.h"
+#include "Screen.h"
+#include "Button.h"
+#include "utils.h"
+#include "Label.h"
+#include "CheckBox.h"
+#include "CheckBoxManager.h"
 
 using namespace std;
 
@@ -23,7 +28,9 @@ class MyCartScreen
         sf::Texture _texture;
         sf::Sprite _sprite;
 
-        Button backButtonObj;
+        Button backButtonObj, upButtonObj, downButtonObj;
+
+        vector<CheckBox*> boxes;
 };
 
 #endif // MYCARTSCREEN_H

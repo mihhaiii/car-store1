@@ -59,7 +59,7 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::KeyPressed)
+            else if (event.type == sf::Event::KeyPressed)
             {
                 if (event.key.code == sf::Keyboard::Left)
                     {
@@ -79,7 +79,7 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
                    }
 
             }
-            if (event.type == sf::Event::MouseButtonPressed)
+            else if (event.type == sf::Event::MouseButtonPressed)
             {
                 for(auto button : buttons)
                 {
@@ -106,14 +106,11 @@ ButtonAction DisplayCarsScreen::Show(sf::RenderWindow& window, MasinaManager* mm
                     }
                 }
                 for (int i=0;i<5;i++)
-
                 {
                     if (boxes[i]->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                     {
                         for(int j=0;j<5;j++)
-                        {
                             boxes[j]->setCheck(false);
-                        }
                         boxes[i]->setCheck(true);
                         if (i==1) mm->moveNext_Limuzina();
                         if (i==2) mm->moveNext_MasinaSport();
