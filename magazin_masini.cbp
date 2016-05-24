@@ -62,10 +62,14 @@
 		<Unit filename="include/MasinaSport.h" />
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/MyCartScreen.h" />
+		<Unit filename="include/RandomEvent.h" />
 		<Unit filename="include/RegisterScreen.h" />
 		<Unit filename="include/SUV.h" />
+		<Unit filename="include/SatisfiedClientEvent.cpp" />
+		<Unit filename="include/SatisfiedClientEvent.h" />
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/SplashScreen.h" />
+		<Unit filename="include/StolenCarEvent.h" />
 		<Unit filename="include/User.h" />
 		<Unit filename="include/UserManager.h" />
 		<Unit filename="include/utils.h" />
@@ -88,10 +92,12 @@
 		<Unit filename="src/MasinaSport.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/MyCartScreen.cpp" />
+		<Unit filename="src/RandomEvent.cpp" />
 		<Unit filename="src/RegisterScreen.cpp" />
 		<Unit filename="src/SUV.cpp" />
 		<Unit filename="src/Screen.cpp" />
 		<Unit filename="src/SplashScreen.cpp" />
+		<Unit filename="src/StolenCarEvent.cpp" />
 		<Unit filename="src/User.cpp" />
 		<Unit filename="src/UserManager.cpp" />
 		<Unit filename="src/utils.cpp" />
