@@ -199,7 +199,7 @@ void Magazin::DisplayCars()
 void Magazin::ShowCarScreen()
 {
     CarScreen cs;
-    ButtonAction res = cs.Show(_mainWindow, _carManager.GetCurrentCar());
+    ButtonAction res = cs.Show(_mainWindow, _carManager.GetCurrentCar(), _userManager);
     switch(res)
     {
     case BackAction:
@@ -225,3 +225,4 @@ void Magazin::ShowMyCartScreen()
             break;
     }
  }
+

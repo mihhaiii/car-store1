@@ -3,6 +3,7 @@
 
 #include <string>
 #include "UserManager.h"
+#include "MyCart.h"
 
 using namespace std;
 
@@ -19,7 +20,13 @@ class User
         string GetName();
         string GetPassword();
 
+        void LogIn();
+        void LogOut();
+        bool IsLoggedIn();
+
         bool CheckPassword(string);
+
+        void AddCarToCart(Masina* masina);
 
     protected:
 
@@ -28,8 +35,10 @@ class User
         string _name;
         string _username;
         string _password;
+        bool _loggedIn;
 
         static int noUsers;
+        MyCart myCart;
 };
 
 #endif // USER_H

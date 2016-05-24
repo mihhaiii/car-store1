@@ -33,3 +33,22 @@ bool User::CheckPassword(string password)
 }
 int noUsers = 0; //?? TODO
 
+void User::AddCarToCart(Masina* masina)
+{
+    myCart.addMasina(masina);
+}
+
+void User::LogIn()
+{
+    _loggedIn = true;
+}
+
+void User::LogOut()
+{
+    _loggedIn = false;
+}
+
+bool User::IsLoggedIn()
+{
+    return _loggedIn;
+}

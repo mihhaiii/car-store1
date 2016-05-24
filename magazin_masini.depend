@@ -1464,7 +1464,7 @@
 	"magazin.h"
 	<typeinfo>
 
-1464086184 e:\github\car-store1\include\magazin.h
+1464089615 e:\github\car-store1\include\magazin.h
 	<iostream>
 	<string>
 	<map>
@@ -1927,13 +1927,14 @@
 	"utils.h"
 	"Label.h"
 
-1464046767 e:\github\car-store1\include\usermanager.h
+1464093900 e:\github\car-store1\include\usermanager.h
 	"User.h"
 	<bits/stdc++.h>
 
-1464046767 e:\github\car-store1\include\user.h
+1464092407 e:\github\car-store1\include\user.h
 	<string>
 	"UserManager.h"
+	"MyCart.h"
 
 1464046767 e:\github\car-store1\include\checker.h
 	<bits/stdc++.h>
@@ -1993,7 +1994,7 @@
 	"utils.h"
 	"CheckBox.h"
 
-1464085027 e:\github\car-store1\include\carscreen.h
+1464091878 e:\github\car-store1\include\carscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -2001,6 +2002,7 @@
 	"MasinaManager.h"
 	"Button.h"
 	"Label.h"
+	"User.h"
 
 1464046767 e:\github\car-store1\include\mycartscreen.h
 	<bits/stdc++.h>
@@ -2036,7 +2038,7 @@
 1464046767 source:e:\github\car-store1\src\button.cpp
 	"Button.h"
 
-1464086604 source:e:\github\car-store1\src\carscreen.cpp
+1464092513 source:e:\github\car-store1\src\carscreen.cpp
 	"CarScreen.h"
 
 1464046767 source:e:\github\car-store1\src\checkbox.cpp
@@ -2063,10 +2065,10 @@
 1464046767 source:e:\github\car-store1\src\loginfoscreen.cpp
 	"LogInfoScreen.h"
 
-1464046767 source:e:\github\car-store1\src\logscreen.cpp
+1464094024 source:e:\github\car-store1\src\logscreen.cpp
 	"LogScreen.h"
 
-1464046767 source:e:\github\car-store1\src\magazin.cpp
+1464091771 source:e:\github\car-store1\src\magazin.cpp
 	"Magazin.h"
 	"Masina.h"
 	<ctime>
@@ -2104,10 +2106,10 @@
 1464046767 source:e:\github\car-store1\src\suv.cpp
 	"SUV.h"
 
-1464046767 source:e:\github\car-store1\src\user.cpp
+1464092203 source:e:\github\car-store1\src\user.cpp
 	"User.h"
 
-1464046767 source:e:\github\car-store1\src\usermanager.cpp
+1464094053 source:e:\github\car-store1\src\usermanager.cpp
 	"UserManager.h"
 
 1464046767 source:e:\github\car-store1\src\utils.cpp
@@ -2144,4 +2146,8 @@
 1464086624 e:\github\car-store1\include\mycart.h
 	<vector>
 	"Masina.h"
+
+1464086647 source:e:\github\car-store1\src\mycart.cpp
+	<iostream>
+	"MyCart.h"
 

@@ -83,7 +83,11 @@ ButtonAction LogScreen::Show(sf::RenderWindow& window, UserManager* userManager)
 
                     if (okButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                             if (Checker::CheckLogIn(usernameFormObj.GetText(), passwordFormObj.GetText(), userManager))
+                            {
+                                User* user = userManager->UserToLogIn(usernameFormObj.GetText());
+                                user->LogIn();
                                 return ShowMenuAction;
+                            }
                             else warningLabelObj.SetVisible(true);
                     else if (backButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                         return BackAction;
@@ -92,7 +96,11 @@ ButtonAction LogScreen::Show(sf::RenderWindow& window, UserManager* userManager)
                 case sf::Event::TextEntered:
                     if (event.text.unicode == 13) {
                         if (Checker::CheckLogIn(usernameFormObj.GetText(), passwordFormObj.GetText(), userManager))
+                        {
+                            User* user = userManager->UserToLogIn(usernameFormObj.GetText());
+                            user->LogIn();
                             return ShowMenuAction;
+                        }
                         else warningLabelObj.SetVisible(true);
                     }
                     else if (event.text.unicode == 8) {

@@ -21,7 +21,7 @@ void CarScreen::DrawAll(sf::RenderWindow& window, Masina* masina) {
     backButtonObj.Show(window);
     buyCarButtonObj.Show(window);
 }
-ButtonAction CarScreen::Show(sf::RenderWindow& window, Masina* masina)
+ButtonAction CarScreen::Show(sf::RenderWindow& window, Masina* masina, UserManager& userManager)
 {
 
     sf::Event event;
@@ -39,7 +39,7 @@ ButtonAction CarScreen::Show(sf::RenderWindow& window, Masina* masina)
                 if (backButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y)) return BackAction;
                 if (buyCarButtonObj.IsButtonPressedAt(event.mouseButton.x, event.mouseButton.y))
                 {
-                    //myCart.addMasina(masina);
+                    userManager.LoggedInUser()->AddCarToCart(masina);
                     return BackAction;
                 }
             }

@@ -26,6 +26,12 @@ bool UserManager::ExistsUser(string username)
     return false;
 }
 
+User* UserManager::UserToLogIn(string username)
+{
+    for (auto user:_usersList)
+        if (user->GetUsername() == username) return user;
+}
+
 bool UserManager::CheckLogInfo(string username, string password)
 {
     for(auto user : _usersList) {
@@ -39,4 +45,11 @@ void UserManager::WriteData(const char* filename) {
     for(auto user : _usersList) {
         cout << user->GetName() << "\n" << user->GetUsername() << "\n" << user->GetPassword() << "\n\n";
     }
+}
+
+User* UserManager::LoggedInUser()
+{
+    for (auto user: _usersList)
+        if (user->IsLoggedIn())
+            return user;
 }

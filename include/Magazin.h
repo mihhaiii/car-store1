@@ -55,7 +55,6 @@ class Magazin
 
         UserManager _userManager;
         MasinaManager _carManager;
-        MyCart myCart;
 
         void appLoop();
 };
