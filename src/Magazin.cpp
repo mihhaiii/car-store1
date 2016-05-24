@@ -6,6 +6,7 @@
 
 Magazin::Magazin()
 {
+    srand(time(NULL));
     // incarc 10 masini random in _carList
     for (int i=0;i<10;i++)
     {

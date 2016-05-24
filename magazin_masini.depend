@@ -1471,7 +1471,7 @@
 	"utils.h"
 	"Masina.h"
 
-1464046767 source:e:\github\car-store1\main.cpp
+1464115246 source:e:\github\car-store1\main.cpp
 	<iostream>
 	<string>
 	<map>
@@ -2086,7 +2086,7 @@
 1464094024 source:e:\github\car-store1\src\logscreen.cpp
 	"LogScreen.h"
 
-1464091771 source:e:\github\car-store1\src\magazin.cpp
+1464115246 source:e:\github\car-store1\src\magazin.cpp
 	"Magazin.h"
 	"Masina.h"
 	<ctime>
@@ -2121,7 +2121,7 @@
 1463843079 source:e:\github\car-store1\src\splashscreen.cpp
 	"SplashScreen.h"
 
-1464114868 source:e:\github\car-store1\src\suv.cpp
+1464115195 source:e:\github\car-store1\src\suv.cpp
 	"SUV.h"
 
 1464092203 source:e:\github\car-store1\src\user.cpp
