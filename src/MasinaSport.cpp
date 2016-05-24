@@ -8,7 +8,7 @@ MasinaSport::MasinaSport()
 MasinaSport::MasinaSport(Brands b, Models m, int x ,int y)
 : Masina(b,m,x,y)
 {
-
+    torque = 200 + rand() % 500;
 }
 MasinaSport::~MasinaSport()
 {
@@ -24,5 +24,12 @@ void MasinaSport::showInfo(sf::RenderWindow& window) {
 string MasinaSport::toName() {
     return "MasinaSport";
 }
+
+void MasinaSport::ShowDetail(sf::RenderWindow&)
+{
+
+}
+
+
 
 

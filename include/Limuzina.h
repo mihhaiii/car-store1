@@ -17,14 +17,15 @@ class Limuzina : public Masina
 
         virtual void showImage(sf::RenderWindow&);
         virtual void showInfo(sf::RenderWindow&);
-                virtual string toName();
+        virtual string toName();
 
+        virtual void ShowDetail(sf::RenderWindow&);
 
     protected:
 
     private:
-        int maximPasageri;
-        int lungime;
+        int passangerCapacity;
+        float length;
 };
 
 #endif // LIMUZINA_H
