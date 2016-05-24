@@ -25,5 +25,8 @@ string Limuzina::toName() {
     return "Limuzina";
 }
 
+void Limuzina::ShowDetail(sf::RenderWindow&)
+{
 
+}
 

@@ -25,4 +25,11 @@ string MasinaSport::toName() {
     return "MasinaSport";
 }
 
+void MasinaSport::ShowDetail(sf::RenderWindow&)
+{
+
+}
+
+
+
 

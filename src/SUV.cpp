@@ -25,4 +25,7 @@ string SUV::toName() {
     return "SUV";
 }
 
+void SUV::ShowDetail(sf::RenderWindow&)
+{
 
+}

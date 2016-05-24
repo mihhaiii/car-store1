@@ -1,15 +1,25 @@
 #include "Masina.h"
 #include <ctime>
 #include <random>
+
 Masina::Masina()
 {
+    int typeOfFuel = rand() % 2;
+    switch (typeOfFuel)
+    {
+        case 0: fuel = Gasoline; break;
+        case 1: fuel = Diesel; break;
+        default: fuel = Diesel; break;
+    }
      nrMasini++;
     id  = nrMasini;
     _sprite.setPosition(sf::Vector2f(150,200));
 }
+
 string Masina::getFilename() {
     return _filename;
 }
+
 void Masina::setFilename(string s) {
     _filename = s;
     _texture.loadFromFile(s);
@@ -98,5 +108,12 @@ void Masina::setImage(string file) {
 string Masina::toName() {
     return "Masina";
 }
+
+void Masina::ShowDetail(sf::RenderWindow&)
+{
+
+}
+
+
 
 int Masina::nrMasini = 0;

@@ -6,6 +6,7 @@ using namespace std;
 enum Brands {
     FIAT, BMW, FORD, DACIA, AUDI, TOYOTA, FERARRI, VOLKSWAGEN, MERCEDES, OPEL
 };
+
 enum Models {
     a32, f5, h1100, j3r3, lk90, xb44, hu35, ui100,xb330, hwt4500
 };
@@ -16,6 +17,11 @@ enum ButtonAction {
     ShowMyCartAction
 };
 
+enum Fuel
+{
+    Gasoline,
+    Diesel
+};
 
 extern const string CarFiles[];
 

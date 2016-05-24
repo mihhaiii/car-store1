@@ -31,6 +31,8 @@ class Masina
         virtual void showImage(sf::RenderWindow&);
         virtual void showInfo(sf::RenderWindow&);
 
+        virtual void ShowDetail(sf::RenderWindow&);
+
     protected:
 
     private:
@@ -45,6 +47,7 @@ class Masina
         sf::Sprite _sprite;
         sf::Texture _texture;
         string _filename;
+        Fuel fuel;
 };
 
 #endif // MASINA_H

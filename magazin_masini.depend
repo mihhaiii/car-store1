@@ -1507,7 +1507,7 @@
 	"Limuzina.h"
 	"MyCart.h"
 
-1464046767 e:\github\car-store1\include\masina.h
+1464113405 e:\github\car-store1\include\masina.h
 	<iostream>
 	<string>
 	<map>
@@ -1901,7 +1901,7 @@
 	<string>
 	<vector>
 
-1464046767 e:\github\car-store1\include\utils.h
+1464113003 e:\github\car-store1\include\utils.h
 	<string>
 	"SFML/Graphics.hpp"
 
@@ -1978,15 +1978,14 @@
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 
-1464046767 e:\github\car-store1\include\masinamanager.h
+1464100270 e:\github\car-store1\include\masinamanager.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"Masina.h"
 
-1464046767 e:\github\car-store1\include\displaycarsscreen.h
+1464100270 e:\github\car-store1\include\displaycarsscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
-	"utils.h"
 	"Masina.h"
 	"MasinaManager.h"
 	"Screen.h"
@@ -2018,32 +2017,37 @@
 	"Label.h"
 	"User.h"
 
-1464046767 e:\github\car-store1\include\mycartscreen.h
+1464100270 e:\github\car-store1\include\mycartscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
-	"utils.h"
-	"Button.h"
+	"Masina.h"
 	"MasinaManager.h"
+	"Screen.h"
+	"Button.h"
+	"utils.h"
+	"Label.h"
+	"CheckBox.h"
+	"CheckBoxManager.h"
 
-1464081387 e:\github\car-store1\include\masinadecurse.h
+1464111973 e:\github\car-store1\include\masinadecurse.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464046767 e:\github\car-store1\include\masinasport.h
+1464111972 e:\github\car-store1\include\masinasport.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464046767 e:\github\car-store1\include\suv.h
+1464112020 e:\github\car-store1\include\suv.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
 	"Masina.h"
 
-1464046767 e:\github\car-store1\include\limuzina.h
+1464111971 e:\github\car-store1\include\limuzina.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -2064,7 +2068,7 @@
 1464046767 source:e:\github\car-store1\src\checker.cpp
 	"Checker.h"
 
-1464046767 source:e:\github\car-store1\src\displaycarsscreen.cpp
+1464100271 source:e:\github\car-store1\src\displaycarsscreen.cpp
 	"DisplayCarsScreen.h"
 
 1464046767 source:e:\github\car-store1\src\formfield.cpp
@@ -2073,7 +2077,7 @@
 1464046767 source:e:\github\car-store1\src\label.cpp
 	"Label.h"
 
-1464046767 source:e:\github\car-store1\src\limuzina.cpp
+1464113450 source:e:\github\car-store1\src\limuzina.cpp
 	"Limuzina.h"
 
 1464046767 source:e:\github\car-store1\src\loginfoscreen.cpp
@@ -2093,19 +2097,19 @@
 	<ctime>
 	<random>
 
-1464046767 source:e:\github\car-store1\src\masinadecurse.cpp
+1464113450 source:e:\github\car-store1\src\masinadecurse.cpp
 	"MasinaDeCurse.h"
 
 1464046767 source:e:\github\car-store1\src\masinamanager.cpp
 	"MasinaManager.h"
 
-1464046767 source:e:\github\car-store1\src\masinasport.cpp
+1464113450 source:e:\github\car-store1\src\masinasport.cpp
 	"MasinaSport.h"
 
 1464046767 source:e:\github\car-store1\src\menu.cpp
 	"Menu.h"
 
-1464046767 source:e:\github\car-store1\src\mycartscreen.cpp
+1464100271 source:e:\github\car-store1\src\mycartscreen.cpp
 	"MyCartScreen.h"
 
 1464046767 source:e:\github\car-store1\src\registerscreen.cpp
@@ -2117,7 +2121,7 @@
 1463843079 source:e:\github\car-store1\src\splashscreen.cpp
 	"SplashScreen.h"
 
-1464046767 source:e:\github\car-store1\src\suv.cpp
+1464113450 source:e:\github\car-store1\src\suv.cpp
 	"SUV.h"
 
 1464092203 source:e:\github\car-store1\src\user.cpp
@@ -2248,7 +2252,7 @@
 1464086962 source:c:\users\vladoots\documents\github\car-store1\src\suv.cpp
 	"SUV.h"
 
-1464086647 source:e:\github\car-store1\src\mycart.cpp
+1464100271 source:e:\github\car-store1\src\mycart.cpp
 	<iostream>
 	"MyCart.h"
 

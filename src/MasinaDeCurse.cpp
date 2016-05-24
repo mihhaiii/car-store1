@@ -26,3 +26,10 @@ string MasinaDeCurse::toName() {
     return "MasinaDeCurse";
 }
 
+void MasinaDeCurse::ShowDetail(sf::RenderWindow&)
+{
+
+}
+
+
+

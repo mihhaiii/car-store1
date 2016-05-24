@@ -19,6 +19,8 @@ class SUV : public Masina
         virtual void showInfo(sf::RenderWindow&);
         virtual string toName();
 
+        virtual void ShowDetail(sf::RenderWindow&);
+
     protected:
 
     private:
