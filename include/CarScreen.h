@@ -8,6 +8,7 @@
 #include "MasinaManager.h"
 #include "Button.h"
 #include "Label.h"
+#include "User.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ class CarScreen
         CarScreen();
         virtual ~CarScreen();
 
-        ButtonAction Show(sf::RenderWindow&, Masina*);
+        ButtonAction Show(sf::RenderWindow&, Masina*, UserManager&);
         void DrawAll(sf::RenderWindow&, Masina*);
 
     protected:

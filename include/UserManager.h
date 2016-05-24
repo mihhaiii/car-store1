@@ -20,6 +20,9 @@ class UserManager
         bool CheckLogInfo(string,string);
         void WriteData(const char*);
 
+        User* LoggedInUser();
+        User* UserToLogIn(string username);
+
     protected:
 
     private:
