@@ -1464,7 +1464,7 @@
 	"magazin.h"
 	<typeinfo>
 
-1464046767 e:\github\car-store1\include\magazin.h
+1464086184 e:\github\car-store1\include\magazin.h
 	<iostream>
 	<string>
 	<map>
@@ -1491,6 +1491,7 @@
 	"MasinaSport.h"
 	"SUV.h"
 	"Limuzina.h"
+	"MyCart.h"
 
 1464046767 e:\github\car-store1\include\masina.h
 	<iostream>
@@ -1992,7 +1993,7 @@
 	"utils.h"
 	"CheckBox.h"
 
-1464046767 e:\github\car-store1\include\carscreen.h
+1464085027 e:\github\car-store1\include\carscreen.h
 	<bits/stdc++.h>
 	"SFML/Graphics.hpp"
 	"utils.h"
@@ -2035,7 +2036,7 @@
 1464046767 source:e:\github\car-store1\src\button.cpp
 	"Button.h"
 
-1464046767 source:e:\github\car-store1\src\carscreen.cpp
+1464086604 source:e:\github\car-store1\src\carscreen.cpp
 	"CarScreen.h"
 
 1464046767 source:e:\github\car-store1\src\checkbox.cpp
@@ -2117,7 +2118,7 @@
 	<iostream>
 	"SatisfiedClientEvent.h"
 
-1464082093 e:\github\car-store1\include\satisfiedclientevent.h
+1464082302 e:\github\car-store1\include\satisfiedclientevent.h
 	<string>
 	"RandomEvent.h"
 
@@ -2127,4 +2128,20 @@
 1464082093 source:e:\github\car-store1\src\randomevent.cpp
 	<iostream>
 	"RandomEvent.h"
+
+1464082102 source:e:\github\car-store1\src\stolencarevent.cpp
+	<iostream>
+	"StolenCarEvent.h"
+
+1464082297 e:\github\car-store1\include\stolencarevent.h
+	<string>
+	"RandomEvent.h"
+
+1464082398 source:e:\github\car-store1\src\satisfiedclientevent.cpp
+	<iostream>
+	"SatisfiedClientEvent.h"
+
+1464086624 e:\github\car-store1\include\mycart.h
+	<vector>
+	"Masina.h"
 

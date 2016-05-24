@@ -10,6 +10,7 @@ public:
     StolenCarEvent(std::string description);
 
     virtual void EventStart();
+
 protected:
 
 private:

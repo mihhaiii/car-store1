@@ -27,6 +27,7 @@ class CarScreen
         sf::Texture _texture;
 
         Button backButtonObj;
+        Button buyCarButtonObj;
 };
 
 #endif // CARSCREEN_H

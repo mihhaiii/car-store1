@@ -10,6 +10,7 @@ public:
     SatisfiedClientEvent(std::string description);
 
     virtual void EventStart();
+
 protected:
 
 private:

@@ -27,6 +27,7 @@
 #include "MasinaSport.h"
 #include "SUV.h"
 #include "Limuzina.h"
+#include "MyCart.h"
 
 using namespace std;
 
@@ -54,6 +55,7 @@ class Magazin
 
         UserManager _userManager;
         MasinaManager _carManager;
+        MyCart myCart;
 
         void appLoop();
 };
