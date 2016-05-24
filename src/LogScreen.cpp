@@ -82,13 +82,15 @@ ButtonAction LogScreen::Show(sf::RenderWindow& window, UserManager* userManager)
                         usernameFormObj.SetActive(false), passwordFormObj.SetActive(false);
 
                     if (okButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
-                            if (Checker::CheckLogIn(usernameFormObj.GetText(), passwordFormObj.GetText(), userManager))
+                    {
+                        if (Checker::CheckLogIn(usernameFormObj.GetText(), passwordFormObj.GetText(), userManager))
                             {
                                 User* user = userManager->UserToLogIn(usernameFormObj.GetText());
                                 user->LogIn();
                                 return ShowMenuAction;
                             }
                             else warningLabelObj.SetVisible(true);
+                    }
                     else if (backButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                         return BackAction;
                     break;

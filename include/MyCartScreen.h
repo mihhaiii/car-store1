@@ -9,6 +9,7 @@
 #include "Button.h"
 #include "utils.h"
 #include "Label.h"
+#include "User.h"
 #include "CheckBox.h"
 #include "CheckBoxManager.h"
 
@@ -20,7 +21,7 @@ class MyCartScreen
         MyCartScreen();
         virtual ~MyCartScreen();
 
-        ButtonAction Show(sf::RenderWindow& , MasinaManager*);
+        ButtonAction Show(sf::RenderWindow&, MyCart*);
 
     protected:
 
@@ -29,6 +30,7 @@ class MyCartScreen
         sf::Sprite _sprite;
 
         Button backButtonObj, upButtonObj, downButtonObj;
+        Label warningLabelObj;
 
         vector<CheckBox*> boxes;
 };

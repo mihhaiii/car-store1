@@ -27,6 +27,10 @@ string User::GetPassword()
 {
     return _password;
 }
+MyCart* User::GetMyCart()
+{
+    return &myCart;
+}
 bool User::CheckPassword(string password)
 {
     return this->_password == password;
@@ -35,7 +39,7 @@ int noUsers = 0; //?? TODO
 
 void User::AddCarToCart(Masina* masina)
 {
-    myCart.addMasina(masina);
+    myCart.AddMasina(masina);
 }
 
 void User::LogIn()

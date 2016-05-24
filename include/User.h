@@ -19,6 +19,7 @@ class User
         string GetUsername();
         string GetName();
         string GetPassword();
+        MyCart* GetMyCart();
 
         void LogIn();
         void LogOut();

@@ -15,6 +15,13 @@ MyCartScreen::MyCartScreen() :
     backButtonObj.SetAction(BackAction);
     upButtonObj.SetAction(ShowPrevCarAction);
     downButtonObj.SetAction(ShowNextCarAction);
+
+    warningLabelObj.SetText("Nu exista masini");
+    warningLabelObj.SetStyle("italic");
+    warningLabelObj.SetColor("red");
+    warningLabelObj.SetCharacterSize(30);
+    warningLabelObj.SetPosition(550,450);
+    warningLabelObj.SetVisible(false);
 }
 
 MyCartScreen::~MyCartScreen()
@@ -22,11 +29,11 @@ MyCartScreen::~MyCartScreen()
     //dtor
 }
 
-ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MasinaManager* mm)
+ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MyCart *myCart)
 {
-
+    int ok = 1;
     int currentCarIndex = 0;
-    int cartCarsNumber = mm->GetCarsCount();
+    int cartCarsNumber = myCart->GetMyCarsCount();
 
     vector<Button*> cartButtons;
     cartButtons.push_back(&backButtonObj);
@@ -47,6 +54,7 @@ ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MasinaManager* mm)
 
     while(1)
     {
+        ok = 1;
         sf::Event event;
         while(window.pollEvent(event))
         {
@@ -58,20 +66,20 @@ ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MasinaManager* mm)
             else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up)  ||
                      (event.type == sf::Event::MouseWheelMoved && event.mouseWheel.delta < 0))
             {
-                if (boxes[0]->getCheck()) mm->MoveBackward();
-                if (boxes[1]->getCheck()) mm->movePrev_Limuzina();
-                if (boxes[2]->getCheck()) mm->movePrev_MasinaSport();
-                if (boxes[3]->getCheck()) mm->movePrev_MasinaDeCurse();
-                if (boxes[4]->getCheck()) mm->movePrev_SUV();
+                if (boxes[0]->getCheck()) myCart->MoveBackward();
+                if (boxes[1]->getCheck()) myCart->MovePrev_Limuzina();
+                if (boxes[2]->getCheck()) myCart->MovePrev_MasinaSport();
+                if (boxes[3]->getCheck()) myCart->MovePrev_MasinaDeCurse();
+                if (boxes[4]->getCheck()) myCart->MovePrev_SUV();
             }
-            else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up) ||
+            else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down) ||
                       (event.type == sf::Event::MouseWheelMoved && event.mouseWheel.delta > 0))
             {
-                if (boxes[0]->getCheck()) mm->MoveForward();
-                if (boxes[1]->getCheck()) mm->moveNext_Limuzina();
-                if (boxes[2]->getCheck()) mm->moveNext_MasinaSport();
-                if (boxes[3]->getCheck()) mm->moveNext_MasinaDeCurse();
-                if (boxes[4]->getCheck()) mm->moveNext_SUV();
+                if (boxes[0]->getCheck()) myCart->MoveForward();
+                if (boxes[1]->getCheck()) myCart->MoveNext_Limuzina();
+                if (boxes[2]->getCheck()) myCart->MoveNext_MasinaSport();
+                if (boxes[3]->getCheck()) myCart->MoveNext_MasinaDeCurse();
+                if (boxes[4]->getCheck()) myCart->MoveNext_SUV();
             }
             else if (event.type == sf::Event::MouseButtonPressed)
             {
@@ -81,19 +89,19 @@ ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MasinaManager* mm)
                     {
                         if (button->GetAction() == ShowPrevCarAction)
                         {
-                            if (boxes[0]->getCheck()) mm->MoveBackward();
-                            if (boxes[1]->getCheck()) mm->movePrev_Limuzina();
-                            if (boxes[2]->getCheck()) mm->movePrev_MasinaSport();
-                            if (boxes[3]->getCheck()) mm->movePrev_MasinaDeCurse();
-                            if (boxes[4]->getCheck()) mm->movePrev_SUV();
+                            if (boxes[0]->getCheck()) myCart->MoveBackward();
+                            if (boxes[1]->getCheck()) myCart->MovePrev_Limuzina();
+                            if (boxes[2]->getCheck()) myCart->MovePrev_MasinaSport();
+                            if (boxes[3]->getCheck()) myCart->MovePrev_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) myCart->MovePrev_SUV();
                         }
                         else if (button->GetAction() == ShowNextCarAction)
                         {
-                            if (boxes[0]->getCheck()) mm->MoveForward();
-                            if (boxes[1]->getCheck()) mm->moveNext_Limuzina();
-                            if (boxes[2]->getCheck()) mm->moveNext_MasinaSport();
-                            if (boxes[3]->getCheck()) mm->moveNext_MasinaDeCurse();
-                            if (boxes[4]->getCheck()) mm->moveNext_SUV();
+                            if (boxes[0]->getCheck()) myCart->MoveForward();
+                            if (boxes[1]->getCheck()) myCart->MoveNext_Limuzina();
+                            if (boxes[2]->getCheck()) myCart->MoveNext_MasinaSport();
+                            if (boxes[3]->getCheck()) myCart->MoveNext_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) myCart->MoveNext_SUV();
                         }
                         else return button->GetAction();
                     }
@@ -105,19 +113,40 @@ ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MasinaManager* mm)
                         for(int j=0;j<5;j++)
                             boxes[j]->setCheck(false);
                         boxes[i]->setCheck(true);
-                        if (i==1) mm->moveNext_Limuzina();
-                        if (i==2) mm->moveNext_MasinaSport();
-                        if (i==3) mm->moveNext_MasinaDeCurse();
-                        if (i==4) mm->moveNext_SUV();
+                        if (i==1 && myCart->IsInCart_Limuzina()) myCart->MoveNext_Limuzina();
+                        else if (i==2 && myCart->IsInCart_MasinaSport()) myCart->MoveNext_MasinaSport();
+                        else if (i==3 && myCart->IsInCart_MasinaDeCurse()) myCart->MoveNext_MasinaDeCurse();
+                        else if (i==4 && myCart->IsInCart_SUV()) myCart->MoveNext_SUV();
+                        else if (i==0) myCart->NewIndex();
+                        else
+                        {
+                            boxes[i]->setCheck(false);
+                            boxes[0]->setCheck(true);
+                            cout<<"ceva";
+                            ok = 0;
+                        }
                     }
                 }
             }
         }
     window.clear();
     window.draw(_sprite);
+
     backButtonObj.Show(window);
     upButtonObj.Show(window);
     downButtonObj.Show(window);
+
+    if (ok)
+    {
+        warningLabelObj.SetVisible(false);
+        myCart->GetCurrentCar()->showImage(window);
+        myCart->GetCurrentCar()->showInfo(window);
+    }
+    else
+    {
+        warningLabelObj.SetVisible(true);
+        warningLabelObj.Show(window);
+    }
     for(int i=0;i<5;i++)
         boxes[i]->show(window);
     window.display();
