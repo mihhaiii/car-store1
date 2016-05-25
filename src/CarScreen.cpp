@@ -3,7 +3,7 @@
 
 CarScreen::CarScreen()
 :backButtonObj("images/backbutton.png")
-,buyCarButtonObj("images/cumparamasina.png")
+,buyCarButtonObj("images/adaugaincosbutton.png")
 {
     _texture.loadFromFile("images/background1.png");
     _sprite.setTexture(_texture);
@@ -21,7 +21,7 @@ void CarScreen::DrawAll(sf::RenderWindow& window, Masina* masina) {
     backButtonObj.Show(window);
     buyCarButtonObj.Show(window);
 }
-ButtonAction CarScreen::Show(sf::RenderWindow& window, Masina* masina, UserManager& userManager)
+ButtonAction CarScreen::Show(sf::RenderWindow& window, Masina* masina, User* user)
 {
 
     sf::Event event;
@@ -39,7 +39,7 @@ ButtonAction CarScreen::Show(sf::RenderWindow& window, Masina* masina, UserManag
                 if (backButtonObj.IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y)) return BackAction;
                 if (buyCarButtonObj.IsButtonPressedAt(event.mouseButton.x, event.mouseButton.y))
                 {
-                    userManager.LoggedInUser()->AddCarToCart(masina);
+                    user->addCarToCart(masina);
                     return BackAction;
                 }
             }

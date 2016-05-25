@@ -5,7 +5,7 @@ using namespace std;
 
 MyCart::MyCart()
 {
-
+    currentCarIndex = 0;
 }
 
 MyCart::~MyCart()
@@ -26,6 +26,7 @@ int MyCart::GetMyCarsCount()
 }
 
 Masina* MyCart::GetCurrentCar() {
+    if (myCars.size() == 0) return NULL;
     return myCars[currentCarIndex];
 }
 

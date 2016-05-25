@@ -18,7 +18,7 @@ class CarScreen
         CarScreen();
         virtual ~CarScreen();
 
-        ButtonAction Show(sf::RenderWindow&, Masina*, UserManager&);
+        ButtonAction Show(sf::RenderWindow&, Masina*, User*);
         void DrawAll(sf::RenderWindow&, Masina*);
 
     protected:

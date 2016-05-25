@@ -19,9 +19,8 @@ class MyCartScreen
 {
     public:
         MyCartScreen();
-        virtual ~MyCartScreen();
 
-        ButtonAction Show(sf::RenderWindow&, MyCart*);
+        ButtonAction Show(sf::RenderWindow&, User*, MasinaManager*);
 
     protected:
 
@@ -30,9 +29,11 @@ class MyCartScreen
         sf::Sprite _sprite;
 
         Button backButtonObj, upButtonObj, downButtonObj;
+        Button buyButton, deleteButton;
         Label warningLabelObj;
 
         vector<CheckBox*> boxes;
+        void ShowSuccess(sf::RenderWindow&);
 };
 
 #endif // MYCARTSCREEN_H

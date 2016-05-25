@@ -5,9 +5,9 @@
 #include <typeinfo>
 using namespace std;
 
-
 int main()
 {
+
     Magazin magazin;
     magazin.startApp();
 

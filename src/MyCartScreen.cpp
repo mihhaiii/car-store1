@@ -3,7 +3,9 @@
 MyCartScreen::MyCartScreen() :
     backButtonObj("images/backbutton.png"),
     upButtonObj("images/upButton.png"),
-    downButtonObj("images/downButton.png")
+    downButtonObj("images/downButton.png"),
+    buyButton("images/cumparamasina.png"),
+    deleteButton("images/scoatedincos.png")
 {
     _texture.loadFromFile("images/background.png");
     _sprite.setTexture(_texture);
@@ -11,34 +13,34 @@ MyCartScreen::MyCartScreen() :
     backButtonObj.SetPosition(10,540);
     upButtonObj.SetPosition(300,30);
     downButtonObj.SetPosition(300,540);
+    buyButton.SetPosition(550,100);
+    deleteButton.SetPosition(550, 160);
 
     backButtonObj.SetAction(BackAction);
     upButtonObj.SetAction(ShowPrevCarAction);
     downButtonObj.SetAction(ShowNextCarAction);
+    buyButton.SetAction(BuyCarAction);
+    deleteButton.SetAction(DeleteFromCartAction);
 
-    warningLabelObj.SetText("Nu exista masini");
-    warningLabelObj.SetStyle("italic");
-    warningLabelObj.SetColor("red");
+    warningLabelObj.SetText("Nu exista masini de afisat");
+    warningLabelObj.SetStyle("normal");
     warningLabelObj.SetCharacterSize(30);
-    warningLabelObj.SetPosition(550,450);
+    warningLabelObj.SetPosition(200,250);
+    warningLabelObj.SetCharacterSize(12);
     warningLabelObj.SetVisible(false);
 }
 
-MyCartScreen::~MyCartScreen()
-{
-    //dtor
-}
 
-ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MyCart *myCart)
+ButtonAction MyCartScreen::Show(sf::RenderWindow& window, User* user, MasinaManager* storeCars)
 {
-    int ok = 1;
-    int currentCarIndex = 0;
-    int cartCarsNumber = myCart->GetMyCarsCount();
+    MasinaManager* mm = user->getCarList();
 
-    vector<Button*> cartButtons;
-    cartButtons.push_back(&backButtonObj);
-    cartButtons.push_back(&upButtonObj);
-    cartButtons.push_back(&downButtonObj);
+    vector<Button*> buttons;
+    buttons.push_back(&backButtonObj);
+    buttons.push_back(&upButtonObj);
+    buttons.push_back(&downButtonObj);
+    buttons.push_back(&deleteButton);
+    buttons.push_back(&buyButton);
 
     for(int i=0;i<5;i++)
        boxes.push_back(new CheckBox());
@@ -52,104 +54,167 @@ ButtonAction MyCartScreen::Show(sf::RenderWindow& window, MyCart *myCart)
    boxes[4]->setText("SUV");
    boxes[0]->setCheck(true);
 
+
+   Masina *m = mm->GetCurrentCar();
     while(1)
     {
-        ok = 1;
-        sf::Event event;
-        while(window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
-            {
-                window.close();
+          sf::Event event;
+          while (window.pollEvent(event))
+          {
+              switch(event.type)
+              {
+              case sf::Event::Closed:
                 return ExitAction;
-            }
-            else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up)  ||
-                     (event.type == sf::Event::MouseWheelMoved && event.mouseWheel.delta < 0))
-            {
-                if (boxes[0]->getCheck()) myCart->MoveBackward();
-                if (boxes[1]->getCheck()) myCart->MovePrev_Limuzina();
-                if (boxes[2]->getCheck()) myCart->MovePrev_MasinaSport();
-                if (boxes[3]->getCheck()) myCart->MovePrev_MasinaDeCurse();
-                if (boxes[4]->getCheck()) myCart->MovePrev_SUV();
-            }
-            else if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down) ||
-                      (event.type == sf::Event::MouseWheelMoved && event.mouseWheel.delta > 0))
-            {
-                if (boxes[0]->getCheck()) myCart->MoveForward();
-                if (boxes[1]->getCheck()) myCart->MoveNext_Limuzina();
-                if (boxes[2]->getCheck()) myCart->MoveNext_MasinaSport();
-                if (boxes[3]->getCheck()) myCart->MoveNext_MasinaDeCurse();
-                if (boxes[4]->getCheck()) myCart->MoveNext_SUV();
-            }
-            else if (event.type == sf::Event::MouseButtonPressed)
-            {
-                for(auto button : cartButtons)
+                break;
+                case sf::Event::MouseButtonPressed:
                 {
-                    if (button->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                    for(auto button:buttons)
+                        if (button->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                     {
+                        if (button->GetAction() == BackAction) return BackAction;
                         if (button->GetAction() == ShowPrevCarAction)
                         {
-                            if (boxes[0]->getCheck()) myCart->MoveBackward();
-                            if (boxes[1]->getCheck()) myCart->MovePrev_Limuzina();
-                            if (boxes[2]->getCheck()) myCart->MovePrev_MasinaSport();
-                            if (boxes[3]->getCheck()) myCart->MovePrev_MasinaDeCurse();
-                            if (boxes[4]->getCheck()) myCart->MovePrev_SUV();
+                            if (boxes[0]->getCheck()) mm->MoveBackward();
+                            if (boxes[1]->getCheck()) mm->movePrev_Limuzina();
+                            if (boxes[2]->getCheck()) mm->movePrev_MasinaSport();
+                            if (boxes[3]->getCheck()) mm->movePrev_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) mm->movePrev_SUV();
                         }
-                        else if (button->GetAction() == ShowNextCarAction)
+                        if (button->GetAction() == ShowNextCarAction)
                         {
-                            if (boxes[0]->getCheck()) myCart->MoveForward();
-                            if (boxes[1]->getCheck()) myCart->MoveNext_Limuzina();
-                            if (boxes[2]->getCheck()) myCart->MoveNext_MasinaSport();
-                            if (boxes[3]->getCheck()) myCart->MoveNext_MasinaDeCurse();
-                            if (boxes[4]->getCheck()) myCart->MoveNext_SUV();
+                            if (boxes[0]->getCheck()) mm->MoveForward();
+                            if (boxes[1]->getCheck()) mm->moveNext_Limuzina();
+                            if (boxes[2]->getCheck()) mm->moveNext_MasinaSport();
+                            if (boxes[3]->getCheck()) mm->moveNext_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) mm->moveNext_SUV();
                         }
-                        else return button->GetAction();
+                        if (button->GetAction() == BuyCarAction)
+                        {
+
+                            // sterg masina din magazin si din cos
+
+                            if (m!=NULL)
+                            {
+                                 ShowSuccess(window);
+
+                                mm->DeleteCar(mm->getCurrentCarIndex());
+                                storeCars->DeleteCar(m);
+                            }
+
+                            return ShowMenuAction;
+
+                        }
+                        if (button->GetAction() == DeleteFromCartAction)
+                        {
+                            if (m!=NULL)
+                            {
+                                mm->DeleteCar(mm->getCurrentCarIndex());
+                            }
+                        }
                     }
-                }
-                for (int i=0;i<5;i++)
-                {
-                    if (boxes[i]->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
+                    for(int i=0;i<5;i++)
+                        if (boxes[i]->IsButtonPressedAt(event.mouseButton.x,event.mouseButton.y))
                     {
-                        for(int j=0;j<5;j++)
-                            boxes[j]->setCheck(false);
+                        for(int j=0;j<5;j++) boxes[j]->setCheck(false);
                         boxes[i]->setCheck(true);
-                        if (i==1 && myCart->IsInCart_Limuzina()) myCart->MoveNext_Limuzina();
-                        else if (i==2 && myCart->IsInCart_MasinaSport()) myCart->MoveNext_MasinaSport();
-                        else if (i==3 && myCart->IsInCart_MasinaDeCurse()) myCart->MoveNext_MasinaDeCurse();
-                        else if (i==4 && myCart->IsInCart_SUV()) myCart->MoveNext_SUV();
-                        else if (i==0) myCart->NewIndex();
-                        else
-                        {
-                            boxes[i]->setCheck(false);
-                            boxes[0]->setCheck(true);
-                            cout<<"ceva";
-                            ok = 0;
-                        }
                     }
                 }
+                break;
+                case sf::Event::KeyPressed:
+                    {
+                        if (event.key.code == sf::Keyboard::Up)
+                        {
+                            if (boxes[0]->getCheck()) mm->MoveBackward();
+                            if (boxes[1]->getCheck()) mm->movePrev_Limuzina();
+                            if (boxes[2]->getCheck()) mm->movePrev_MasinaSport();
+                            if (boxes[3]->getCheck()) mm->movePrev_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) mm->movePrev_SUV();
+                        }
+                        if (event.key.code == sf::Keyboard::Down)
+                        {
+                            if (boxes[0]->getCheck()) mm->MoveForward();
+                            if (boxes[1]->getCheck()) mm->moveNext_Limuzina();
+                            if (boxes[2]->getCheck()) mm->moveNext_MasinaSport();
+                            if (boxes[3]->getCheck()) mm->moveNext_MasinaDeCurse();
+                            if (boxes[4]->getCheck()) mm->moveNext_SUV();
+                        }
+                    }
+                    break;
+              }
+          }
+
+        window.clear();
+        window.draw(_sprite);
+        for(auto button:buttons) button->Show(window);
+        for(auto box:boxes) box->show(window);
+
+        warningLabelObj.SetVisible(false);
+        m = mm->GetCurrentCar();
+        for(int i=0;i<5;i++)
+            if (boxes[i]->getCheck())
+        {
+            if (i==0) {
+                if (mm->GetCarsCount()==0) warningLabelObj.SetVisible(true), m = NULL;
+            }
+            if (i==1) {
+                if (!mm->areLimuzina()) warningLabelObj.SetVisible(true), m=NULL;
+                    else if (m->toName() != "Limuzina") mm->moveNext_Limuzina();
+            }
+            if (i==2) {
+                if (!mm->areMasinaSport()) warningLabelObj.SetVisible(true), m=NULL;
+                    else if (m->toName() != "MasinaSport") mm->moveNext_MasinaSport();
+            }
+            if (i==3) {
+                if (!mm->areMasinaDeCurse()) warningLabelObj.SetVisible(true), m=NULL;
+                    else if (m->toName() != "MasinaDeCurse") mm->moveNext_MasinaDeCurse();
+            }
+            if (i==4) {
+                if (!mm->areSUV()) warningLabelObj.SetVisible(true), m=NULL;
+                    else if (m->toName() != "SUV") mm->moveNext_SUV();
             }
         }
-    window.clear();
-    window.draw(_sprite);
 
-    backButtonObj.Show(window);
-    upButtonObj.Show(window);
-    downButtonObj.Show(window);
 
-    if (ok)
-    {
-        warningLabelObj.SetVisible(false);
-        myCart->GetCurrentCar()->showImage(window);
-        myCart->GetCurrentCar()->showInfo(window);
-    }
-    else
-    {
-        warningLabelObj.SetVisible(true);
+        if (m!=NULL) {
+            m->showImage(window);
+            m->showInfo(window);
+        }
         warningLabelObj.Show(window);
+
+        window.display();
+
+
     }
-    for(int i=0;i<5;i++)
-        boxes[i]->show(window);
-    window.display();
+    return BackAction;
 }
 
+void MyCartScreen::ShowSuccess(sf::RenderWindow& window)
+{
+    Label success;
+    success.SetText("Achizitionare reusita!");
+    success.SetStyle("normal");
+    success.SetCharacterSize(24);
+    success.SetColor("green");
+    success.SetPosition(250,230);
+
+    sf::Texture tex;
+    tex.loadFromFile("images/success.jpg");
+    sf::Sprite spr;
+    spr.setTexture(tex);
+
+    window.clear();
+    window.draw(spr);
+    success.Show(window);
+    window.display();
+    sf::Event event;
+    while(1)
+    {
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::KeyPressed
+                || event.type == sf::Event::Closed) return;
+        }
+    }
 }
+
+

@@ -4,6 +4,7 @@
 #include <string>
 #include "UserManager.h"
 #include "MyCart.h"
+#include "MasinaManager.h"
 
 using namespace std;
 
@@ -14,20 +15,19 @@ class User
     public:
         User();
         User(string,string,string);
-        virtual ~User();
 
         string GetUsername();
         string GetName();
         string GetPassword();
-        MyCart* GetMyCart();
 
         void LogIn();
         void LogOut();
         bool IsLoggedIn();
-
         bool CheckPassword(string);
 
-        void AddCarToCart(Masina* masina);
+        void addCarToCart(Masina*);
+
+        MasinaManager* getCarList();
 
     protected:
 
@@ -39,7 +39,7 @@ class User
         bool _loggedIn;
 
         static int noUsers;
-        MyCart myCart;
+        MasinaManager myCart;
 };
 
 #endif // USER_H

@@ -49,6 +49,7 @@
 		<Unit filename="include/CheckBox.h" />
 		<Unit filename="include/CheckBoxManager.h" />
 		<Unit filename="include/Checker.h" />
+		<Unit filename="include/Cos.h" />
 		<Unit filename="include/DisplayCarsScreen.h" />
 		<Unit filename="include/FormField.h" />
 		<Unit filename="include/Label.h" />
@@ -79,6 +80,7 @@
 		<Unit filename="src/CheckBox.cpp" />
 		<Unit filename="src/CheckBoxManager.cpp" />
 		<Unit filename="src/Checker.cpp" />
+		<Unit filename="src/Cos.cpp" />
 		<Unit filename="src/DisplayCarsScreen.cpp" />
 		<Unit filename="src/FormField.cpp" />
 		<Unit filename="src/Label.cpp" />

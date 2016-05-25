@@ -26,6 +26,7 @@ class Label
         string GetText();
         sf::Vector2f getPosition();
         void SetVisible(bool);
+        bool isVisible();
         void SetColor(string);
 
     protected:

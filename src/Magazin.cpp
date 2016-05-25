@@ -200,7 +200,7 @@ void Magazin::DisplayCars()
 void Magazin::ShowCarScreen()
 {
     CarScreen cs;
-    ButtonAction res = cs.Show(_mainWindow, _carManager.GetCurrentCar(), _userManager);
+    ButtonAction res = cs.Show(_mainWindow, _carManager.GetCurrentCar(), _userManager.LoggedInUser());
     switch(res)
     {
     case BackAction:
@@ -215,9 +215,10 @@ void Magazin::ShowCarScreen()
 void Magazin::ShowMyCartScreen()
  {
     MyCartScreen mcs;
-    ButtonAction res = mcs.Show(_mainWindow, _userManager.LoggedInUser()->GetMyCart());
+    ButtonAction res = mcs.Show(_mainWindow, _userManager.LoggedInUser(), &_carManager);
     switch(res)
     {
+
         case BackAction:
             _state = showingMenuState;
             break;

@@ -14,7 +14,10 @@ class MasinaManager
         virtual ~MasinaManager();
 
         void AddCar(Masina*);
+        void ShadowCar(int id);
+        void ShadowCar(Masina*);
         void DeleteCar(int id);
+        void DeleteCar(Masina*);
 
         Masina* GetCurrentCar();
         void MoveForward();
@@ -31,6 +34,11 @@ class MasinaManager
         void movePrev_MasinaDeCurse();
         int getCurrentCarIndex();
         int GetCarsCount();
+
+        bool areLimuzina();
+        bool areMasinaSport();
+        bool areMasinaDeCurse();
+        bool areSUV();
 
     protected:
 
